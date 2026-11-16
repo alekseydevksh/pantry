@@ -1,0 +1,3572 @@
+[
+  {
+    "id": "p1",
+    "name": "Tomatoes",
+    "description": "Tomatoes, 500 g. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p1/600/400",
+    "priceCents": 249,
+    "unit": "500 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p2",
+    "name": "Organic Tomatoes",
+    "description": "Tomatoes, 500 g. Certified organic. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p2/600/400",
+    "priceCents": 339,
+    "unit": "500 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p3",
+    "name": "Cucumber",
+    "description": "Cucumber, 1 pc. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p3/600/400",
+    "priceCents": 99,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p4",
+    "name": "Everyday Cucumber",
+    "description": "Cucumber, 1 pc. Our best-value pick. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p4/600/400",
+    "priceCents": 79,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p5",
+    "name": "Bell Pepper",
+    "description": "Bell Pepper, 1 pc. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p5/600/400",
+    "priceCents": 129,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p6",
+    "name": "Everyday Bell Pepper",
+    "description": "Bell Pepper, 1 pc. Our best-value pick. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p6/600/400",
+    "priceCents": 109,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p7",
+    "name": "Spinach",
+    "description": "Spinach, 200 g. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p7/600/400",
+    "priceCents": 199,
+    "unit": "200 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": false
+  },
+  {
+    "id": "p8",
+    "name": "Everyday Spinach",
+    "description": "Spinach, 200 g. Our best-value pick. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p8/600/400",
+    "priceCents": 169,
+    "unit": "200 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p9",
+    "name": "Carrots",
+    "description": "Carrots, 1 kg. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p9/600/400",
+    "priceCents": 119,
+    "unit": "1 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p10",
+    "name": "Everyday Carrots",
+    "description": "Carrots, 1 kg. Our best-value pick. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p10/600/400",
+    "priceCents": 99,
+    "unit": "1 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p11",
+    "name": "Onions",
+    "description": "Onions, 1 kg. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p11/600/400",
+    "priceCents": 109,
+    "unit": "1 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p12",
+    "name": "Premium Onions",
+    "description": "Onions, 1 kg. The best of the range. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p12/600/400",
+    "priceCents": 159,
+    "unit": "1 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p13",
+    "name": "Garlic",
+    "description": "Garlic, 1 bulb. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p13/600/400",
+    "priceCents": 89,
+    "unit": "1 bulb",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p14",
+    "name": "Everyday Garlic",
+    "description": "Garlic, 1 bulb. Our best-value pick. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p14/600/400",
+    "priceCents": 79,
+    "unit": "1 bulb",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p15",
+    "name": "Potatoes",
+    "description": "Potatoes, 2 kg. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p15/600/400",
+    "priceCents": 189,
+    "unit": "2 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p16",
+    "name": "Farmhouse Potatoes",
+    "description": "Potatoes, 2 kg. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p16/600/400",
+    "priceCents": 229,
+    "unit": "2 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p17",
+    "name": "Sweet Potatoes",
+    "description": "Sweet Potatoes, 1 kg. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p17/600/400",
+    "priceCents": 229,
+    "unit": "1 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p18",
+    "name": "Farmhouse Sweet Potatoes",
+    "description": "Sweet Potatoes, 1 kg. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p18/600/400",
+    "priceCents": 269,
+    "unit": "1 kg",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p19",
+    "name": "Broccoli",
+    "description": "Broccoli, 1 pc. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p19/600/400",
+    "priceCents": 159,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p20",
+    "name": "Farmhouse Broccoli",
+    "description": "Broccoli, 1 pc. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p20/600/400",
+    "priceCents": 189,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": false
+  },
+  {
+    "id": "p21",
+    "name": "Mushrooms",
+    "description": "Mushrooms, 250 g. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p21/600/400",
+    "priceCents": 179,
+    "unit": "250 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p22",
+    "name": "Organic Mushrooms",
+    "description": "Mushrooms, 250 g. Certified organic. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p22/600/400",
+    "priceCents": 239,
+    "unit": "250 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p23",
+    "name": "Zucchini",
+    "description": "Zucchini, 2 pcs. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p23/600/400",
+    "priceCents": 139,
+    "unit": "2 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p24",
+    "name": "Everyday Zucchini",
+    "description": "Zucchini, 2 pcs. Our best-value pick. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p24/600/400",
+    "priceCents": 119,
+    "unit": "2 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p25",
+    "name": "Avocado",
+    "description": "Avocado, 1 pc. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p25/600/400",
+    "priceCents": 149,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p26",
+    "name": "Organic Avocado",
+    "description": "Avocado, 1 pc. Certified organic. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p26/600/400",
+    "priceCents": 199,
+    "unit": "1 pc",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p27",
+    "name": "Lemons",
+    "description": "Lemons, 4 pcs. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p27/600/400",
+    "priceCents": 159,
+    "unit": "4 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p28",
+    "name": "Premium Lemons",
+    "description": "Lemons, 4 pcs. The best of the range. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p28/600/400",
+    "priceCents": 239,
+    "unit": "4 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p29",
+    "name": "Bananas",
+    "description": "Bananas, 5 pcs. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p29/600/400",
+    "priceCents": 139,
+    "unit": "5 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p30",
+    "name": "Farmhouse Bananas",
+    "description": "Bananas, 5 pcs. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p30/600/400",
+    "priceCents": 169,
+    "unit": "5 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p31",
+    "name": "Apples",
+    "description": "Apples, 6 pcs. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p31/600/400",
+    "priceCents": 219,
+    "unit": "6 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p32",
+    "name": "Farmhouse Apples",
+    "description": "Apples, 6 pcs. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p32/600/400",
+    "priceCents": 259,
+    "unit": "6 pcs",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p33",
+    "name": "Blueberries",
+    "description": "Blueberries, 150 g. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p33/600/400",
+    "priceCents": 299,
+    "unit": "150 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p34",
+    "name": "Farmhouse Blueberries",
+    "description": "Blueberries, 150 g. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p34/600/400",
+    "priceCents": 359,
+    "unit": "150 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p35",
+    "name": "Basil",
+    "description": "Basil, 1 pot. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p35/600/400",
+    "priceCents": 149,
+    "unit": "1 pot",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p36",
+    "name": "Farmhouse Basil",
+    "description": "Basil, 1 pot. From small farms. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p36/600/400",
+    "priceCents": 179,
+    "unit": "1 pot",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": false
+  },
+  {
+    "id": "p37",
+    "name": "Coriander",
+    "description": "Coriander, 1 bunch. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p37/600/400",
+    "priceCents": 129,
+    "unit": "1 bunch",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p38",
+    "name": "Premium Coriander",
+    "description": "Coriander, 1 bunch. The best of the range. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p38/600/400",
+    "priceCents": 189,
+    "unit": "1 bunch",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p39",
+    "name": "Ginger",
+    "description": "Ginger, 100 g. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p39/600/400",
+    "priceCents": 99,
+    "unit": "100 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p40",
+    "name": "Premium Ginger",
+    "description": "Ginger, 100 g. The best of the range. Picked fresh and delivered chilled.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p40/600/400",
+    "priceCents": 149,
+    "unit": "100 g",
+    "category": "PRODUCE",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p41",
+    "name": "Whole Milk",
+    "description": "Whole Milk, 1 l. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p41/600/400",
+    "priceCents": 129,
+    "unit": "1 l",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p42",
+    "name": "Premium Whole Milk",
+    "description": "Whole Milk, 1 l. The best of the range. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p42/600/400",
+    "priceCents": 189,
+    "unit": "1 l",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p43",
+    "name": "Butter",
+    "description": "Butter, 250 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p43/600/400",
+    "priceCents": 249,
+    "unit": "250 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p44",
+    "name": "Organic Butter",
+    "description": "Butter, 250 g. Certified organic. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p44/600/400",
+    "priceCents": 339,
+    "unit": "250 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p45",
+    "name": "Greek Yogurt",
+    "description": "Greek Yogurt, 500 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p45/600/400",
+    "priceCents": 199,
+    "unit": "500 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p46",
+    "name": "Everyday Greek Yogurt",
+    "description": "Greek Yogurt, 500 g. Our best-value pick. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p46/600/400",
+    "priceCents": 169,
+    "unit": "500 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p47",
+    "name": "Cheddar",
+    "description": "Cheddar, 350 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p47/600/400",
+    "priceCents": 329,
+    "unit": "350 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p48",
+    "name": "Premium Cheddar",
+    "description": "Cheddar, 350 g. The best of the range. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p48/600/400",
+    "priceCents": 489,
+    "unit": "350 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p49",
+    "name": "Mozzarella",
+    "description": "Mozzarella, 125 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p49/600/400",
+    "priceCents": 149,
+    "unit": "125 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p50",
+    "name": "Organic Mozzarella",
+    "description": "Mozzarella, 125 g. Certified organic. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p50/600/400",
+    "priceCents": 199,
+    "unit": "125 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p51",
+    "name": "Parmesan",
+    "description": "Parmesan, 200 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p51/600/400",
+    "priceCents": 399,
+    "unit": "200 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p52",
+    "name": "Farmhouse Parmesan",
+    "description": "Parmesan, 200 g. From small farms. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p52/600/400",
+    "priceCents": 479,
+    "unit": "200 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p53",
+    "name": "Feta",
+    "description": "Feta, 200 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p53/600/400",
+    "priceCents": 229,
+    "unit": "200 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p54",
+    "name": "Farmhouse Feta",
+    "description": "Feta, 200 g. From small farms. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p54/600/400",
+    "priceCents": 269,
+    "unit": "200 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p55",
+    "name": "Double Cream",
+    "description": "Double Cream, 300 ml. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p55/600/400",
+    "priceCents": 179,
+    "unit": "300 ml",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p56",
+    "name": "Premium Double Cream",
+    "description": "Double Cream, 300 ml. The best of the range. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p56/600/400",
+    "priceCents": 269,
+    "unit": "300 ml",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p57",
+    "name": "Eggs",
+    "description": "Eggs, 10 pcs. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p57/600/400",
+    "priceCents": 279,
+    "unit": "10 pcs",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p58",
+    "name": "Premium Eggs",
+    "description": "Eggs, 10 pcs. The best of the range. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p58/600/400",
+    "priceCents": 419,
+    "unit": "10 pcs",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p59",
+    "name": "Oat Drink",
+    "description": "Oat Drink, 1 l. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p59/600/400",
+    "priceCents": 189,
+    "unit": "1 l",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p60",
+    "name": "Organic Oat Drink",
+    "description": "Oat Drink, 1 l. Certified organic. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p60/600/400",
+    "priceCents": 259,
+    "unit": "1 l",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p61",
+    "name": "Soy Yogurt",
+    "description": "Soy Yogurt, 400 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p61/600/400",
+    "priceCents": 219,
+    "unit": "400 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p62",
+    "name": "Organic Soy Yogurt",
+    "description": "Soy Yogurt, 400 g. Certified organic. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p62/600/400",
+    "priceCents": 299,
+    "unit": "400 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p63",
+    "name": "Halloumi",
+    "description": "Halloumi, 225 g. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p63/600/400",
+    "priceCents": 299,
+    "unit": "225 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p64",
+    "name": "Premium Halloumi",
+    "description": "Halloumi, 225 g. The best of the range. Kept cold from the dairy to your door.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p64/600/400",
+    "priceCents": 449,
+    "unit": "225 g",
+    "category": "DAIRY_AND_EGGS",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p65",
+    "name": "Chicken Breast",
+    "description": "Chicken Breast, 500 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p65/600/400",
+    "priceCents": 549,
+    "unit": "500 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p66",
+    "name": "Everyday Chicken Breast",
+    "description": "Chicken Breast, 500 g. Our best-value pick. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p66/600/400",
+    "priceCents": 469,
+    "unit": "500 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p67",
+    "name": "Chicken Thighs",
+    "description": "Chicken Thighs, 600 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p67/600/400",
+    "priceCents": 449,
+    "unit": "600 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": false
+  },
+  {
+    "id": "p68",
+    "name": "Everyday Chicken Thighs",
+    "description": "Chicken Thighs, 600 g. Our best-value pick. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p68/600/400",
+    "priceCents": 379,
+    "unit": "600 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p69",
+    "name": "Beef Mince",
+    "description": "Beef Mince, 500 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p69/600/400",
+    "priceCents": 499,
+    "unit": "500 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p70",
+    "name": "Everyday Beef Mince",
+    "description": "Beef Mince, 500 g. Our best-value pick. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p70/600/400",
+    "priceCents": 419,
+    "unit": "500 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p71",
+    "name": "Beef Steak",
+    "description": "Beef Steak, 2 pcs. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p71/600/400",
+    "priceCents": 799,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p72",
+    "name": "Farmhouse Beef Steak",
+    "description": "Beef Steak, 2 pcs. From small farms. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p72/600/400",
+    "priceCents": 959,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p73",
+    "name": "Pork Sausages",
+    "description": "Pork Sausages, 8 pcs. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p73/600/400",
+    "priceCents": 349,
+    "unit": "8 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p74",
+    "name": "Everyday Pork Sausages",
+    "description": "Pork Sausages, 8 pcs. Our best-value pick. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p74/600/400",
+    "priceCents": 299,
+    "unit": "8 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p75",
+    "name": "Bacon",
+    "description": "Bacon, 200 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p75/600/400",
+    "priceCents": 299,
+    "unit": "200 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p76",
+    "name": "Farmhouse Bacon",
+    "description": "Bacon, 200 g. From small farms. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p76/600/400",
+    "priceCents": 359,
+    "unit": "200 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p77",
+    "name": "Salmon Fillet",
+    "description": "Salmon Fillet, 2 pcs. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p77/600/400",
+    "priceCents": 699,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p78",
+    "name": "Farmhouse Salmon Fillet",
+    "description": "Salmon Fillet, 2 pcs. From small farms. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p78/600/400",
+    "priceCents": 839,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p79",
+    "name": "Cod Fillet",
+    "description": "Cod Fillet, 2 pcs. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p79/600/400",
+    "priceCents": 599,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p80",
+    "name": "Farmhouse Cod Fillet",
+    "description": "Cod Fillet, 2 pcs. From small farms. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p80/600/400",
+    "priceCents": 719,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p81",
+    "name": "Prawns",
+    "description": "Prawns, 200 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p81/600/400",
+    "priceCents": 549,
+    "unit": "200 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SHELLFISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p82",
+    "name": "Premium Prawns",
+    "description": "Prawns, 200 g. The best of the range. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p82/600/400",
+    "priceCents": 819,
+    "unit": "200 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SHELLFISH"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p83",
+    "name": "Smoked Tofu",
+    "description": "Smoked Tofu, 200 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p83/600/400",
+    "priceCents": 279,
+    "unit": "200 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p84",
+    "name": "Premium Smoked Tofu",
+    "description": "Smoked Tofu, 200 g. The best of the range. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p84/600/400",
+    "priceCents": 419,
+    "unit": "200 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p85",
+    "name": "Turkey Mince",
+    "description": "Turkey Mince, 500 g. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p85/600/400",
+    "priceCents": 429,
+    "unit": "500 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p86",
+    "name": "Organic Turkey Mince",
+    "description": "Turkey Mince, 500 g. Certified organic. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p86/600/400",
+    "priceCents": 579,
+    "unit": "500 g",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p87",
+    "name": "Tuna Steak",
+    "description": "Tuna Steak, 2 pcs. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p87/600/400",
+    "priceCents": 749,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p88",
+    "name": "Organic Tuna Steak",
+    "description": "Tuna Steak, 2 pcs. Certified organic. Prepared by our butchers and fishmongers.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p88/600/400",
+    "priceCents": 1009,
+    "unit": "2 pcs",
+    "category": "MEAT_AND_FISH",
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p89",
+    "name": "Sourdough Loaf",
+    "description": "Sourdough Loaf, 1 pc. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p89/600/400",
+    "priceCents": 349,
+    "unit": "1 pc",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p90",
+    "name": "Farmhouse Sourdough Loaf",
+    "description": "Sourdough Loaf, 1 pc. From small farms. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p90/600/400",
+    "priceCents": 419,
+    "unit": "1 pc",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p91",
+    "name": "Wholemeal Bread",
+    "description": "Wholemeal Bread, 1 pc. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p91/600/400",
+    "priceCents": 189,
+    "unit": "1 pc",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p92",
+    "name": "Farmhouse Wholemeal Bread",
+    "description": "Wholemeal Bread, 1 pc. From small farms. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p92/600/400",
+    "priceCents": 229,
+    "unit": "1 pc",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p93",
+    "name": "Tortilla Wraps",
+    "description": "Tortilla Wraps, 8 pcs. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p93/600/400",
+    "priceCents": 199,
+    "unit": "8 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p94",
+    "name": "Everyday Tortilla Wraps",
+    "description": "Tortilla Wraps, 8 pcs. Our best-value pick. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p94/600/400",
+    "priceCents": 169,
+    "unit": "8 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p95",
+    "name": "Pita Bread",
+    "description": "Pita Bread, 6 pcs. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p95/600/400",
+    "priceCents": 149,
+    "unit": "6 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p96",
+    "name": "Premium Pita Bread",
+    "description": "Pita Bread, 6 pcs. The best of the range. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p96/600/400",
+    "priceCents": 219,
+    "unit": "6 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p97",
+    "name": "Burger Buns",
+    "description": "Burger Buns, 4 pcs. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p97/600/400",
+    "priceCents": 179,
+    "unit": "4 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p98",
+    "name": "Premium Burger Buns",
+    "description": "Burger Buns, 4 pcs. The best of the range. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p98/600/400",
+    "priceCents": 269,
+    "unit": "4 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p99",
+    "name": "Croissants",
+    "description": "Croissants, 4 pcs. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p99/600/400",
+    "priceCents": 259,
+    "unit": "4 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p100",
+    "name": "Premium Croissants",
+    "description": "Croissants, 4 pcs. The best of the range. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p100/600/400",
+    "priceCents": 389,
+    "unit": "4 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p101",
+    "name": "Gluten-Free Bread",
+    "description": "Gluten-Free Bread, 1 pc. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p101/600/400",
+    "priceCents": 329,
+    "unit": "1 pc",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p102",
+    "name": "Premium Gluten-Free Bread",
+    "description": "Gluten-Free Bread, 1 pc. The best of the range. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p102/600/400",
+    "priceCents": 489,
+    "unit": "1 pc",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p103",
+    "name": "Naan",
+    "description": "Naan, 2 pcs. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p103/600/400",
+    "priceCents": 169,
+    "unit": "2 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p104",
+    "name": "Farmhouse Naan",
+    "description": "Naan, 2 pcs. From small farms. Baked this morning.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p104/600/400",
+    "priceCents": 199,
+    "unit": "2 pcs",
+    "category": "BAKERY",
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p105",
+    "name": "Spaghetti",
+    "description": "Spaghetti, 500 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p105/600/400",
+    "priceCents": 129,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p106",
+    "name": "Premium Spaghetti",
+    "description": "Spaghetti, 500 g. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p106/600/400",
+    "priceCents": 189,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p107",
+    "name": "Penne",
+    "description": "Penne, 500 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p107/600/400",
+    "priceCents": 129,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p108",
+    "name": "Premium Penne",
+    "description": "Penne, 500 g. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p108/600/400",
+    "priceCents": 189,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p109",
+    "name": "Basmati Rice",
+    "description": "Basmati Rice, 1 kg. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p109/600/400",
+    "priceCents": 249,
+    "unit": "1 kg",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p110",
+    "name": "Farmhouse Basmati Rice",
+    "description": "Basmati Rice, 1 kg. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p110/600/400",
+    "priceCents": 299,
+    "unit": "1 kg",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p111",
+    "name": "Risotto Rice",
+    "description": "Risotto Rice, 500 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p111/600/400",
+    "priceCents": 229,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p112",
+    "name": "Everyday Risotto Rice",
+    "description": "Risotto Rice, 500 g. Our best-value pick. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p112/600/400",
+    "priceCents": 189,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p113",
+    "name": "Couscous",
+    "description": "Couscous, 500 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p113/600/400",
+    "priceCents": 159,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p114",
+    "name": "Premium Couscous",
+    "description": "Couscous, 500 g. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p114/600/400",
+    "priceCents": 239,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p115",
+    "name": "Quinoa",
+    "description": "Quinoa, 500 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p115/600/400",
+    "priceCents": 349,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p116",
+    "name": "Everyday Quinoa",
+    "description": "Quinoa, 500 g. Our best-value pick. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p116/600/400",
+    "priceCents": 299,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p117",
+    "name": "Red Lentils",
+    "description": "Red Lentils, 500 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p117/600/400",
+    "priceCents": 199,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p118",
+    "name": "Farmhouse Red Lentils",
+    "description": "Red Lentils, 500 g. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p118/600/400",
+    "priceCents": 239,
+    "unit": "500 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p119",
+    "name": "Chickpeas",
+    "description": "Chickpeas, 400 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p119/600/400",
+    "priceCents": 89,
+    "unit": "400 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p120",
+    "name": "Farmhouse Chickpeas",
+    "description": "Chickpeas, 400 g. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p120/600/400",
+    "priceCents": 109,
+    "unit": "400 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p121",
+    "name": "Black Beans",
+    "description": "Black Beans, 400 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p121/600/400",
+    "priceCents": 89,
+    "unit": "400 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p122",
+    "name": "Farmhouse Black Beans",
+    "description": "Black Beans, 400 g. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p122/600/400",
+    "priceCents": 109,
+    "unit": "400 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p123",
+    "name": "Chopped Tomatoes",
+    "description": "Chopped Tomatoes, 400 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p123/600/400",
+    "priceCents": 79,
+    "unit": "400 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p124",
+    "name": "Farmhouse Chopped Tomatoes",
+    "description": "Chopped Tomatoes, 400 g. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p124/600/400",
+    "priceCents": 89,
+    "unit": "400 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p125",
+    "name": "Coconut Milk",
+    "description": "Coconut Milk, 400 ml. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p125/600/400",
+    "priceCents": 149,
+    "unit": "400 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p126",
+    "name": "Everyday Coconut Milk",
+    "description": "Coconut Milk, 400 ml. Our best-value pick. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p126/600/400",
+    "priceCents": 129,
+    "unit": "400 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p127",
+    "name": "Olive Oil",
+    "description": "Olive Oil, 500 ml. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p127/600/400",
+    "priceCents": 699,
+    "unit": "500 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p128",
+    "name": "Premium Olive Oil",
+    "description": "Olive Oil, 500 ml. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p128/600/400",
+    "priceCents": 1049,
+    "unit": "500 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p129",
+    "name": "Sesame Oil",
+    "description": "Sesame Oil, 250 ml. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p129/600/400",
+    "priceCents": 349,
+    "unit": "250 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p130",
+    "name": "Premium Sesame Oil",
+    "description": "Sesame Oil, 250 ml. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p130/600/400",
+    "priceCents": 519,
+    "unit": "250 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p131",
+    "name": "Soy Sauce",
+    "description": "Soy Sauce, 150 ml. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p131/600/400",
+    "priceCents": 229,
+    "unit": "150 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p132",
+    "name": "Organic Soy Sauce",
+    "description": "Soy Sauce, 150 ml. Certified organic. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p132/600/400",
+    "priceCents": 309,
+    "unit": "150 ml",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p133",
+    "name": "Vegetable Stock",
+    "description": "Vegetable Stock, 6 cubes. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p133/600/400",
+    "priceCents": 149,
+    "unit": "6 cubes",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p134",
+    "name": "Premium Vegetable Stock",
+    "description": "Vegetable Stock, 6 cubes. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p134/600/400",
+    "priceCents": 219,
+    "unit": "6 cubes",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p135",
+    "name": "Peanut Butter",
+    "description": "Peanut Butter, 340 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p135/600/400",
+    "priceCents": 279,
+    "unit": "340 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "PEANUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p136",
+    "name": "Premium Peanut Butter",
+    "description": "Peanut Butter, 340 g. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p136/600/400",
+    "priceCents": 419,
+    "unit": "340 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "PEANUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p137",
+    "name": "Honey",
+    "description": "Honey, 340 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p137/600/400",
+    "priceCents": 399,
+    "unit": "340 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p138",
+    "name": "Organic Honey",
+    "description": "Honey, 340 g. Certified organic. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p138/600/400",
+    "priceCents": 539,
+    "unit": "340 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p139",
+    "name": "Plain Flour",
+    "description": "Plain Flour, 1 kg. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p139/600/400",
+    "priceCents": 119,
+    "unit": "1 kg",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p140",
+    "name": "Premium Plain Flour",
+    "description": "Plain Flour, 1 kg. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p140/600/400",
+    "priceCents": 179,
+    "unit": "1 kg",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p141",
+    "name": "Rolled Oats",
+    "description": "Rolled Oats, 1 kg. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p141/600/400",
+    "priceCents": 149,
+    "unit": "1 kg",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p142",
+    "name": "Premium Rolled Oats",
+    "description": "Rolled Oats, 1 kg. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p142/600/400",
+    "priceCents": 219,
+    "unit": "1 kg",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p143",
+    "name": "Curry Paste",
+    "description": "Curry Paste, 200 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p143/600/400",
+    "priceCents": 219,
+    "unit": "200 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p144",
+    "name": "Organic Curry Paste",
+    "description": "Curry Paste, 200 g. Certified organic. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p144/600/400",
+    "priceCents": 299,
+    "unit": "200 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p145",
+    "name": "Tomato Paste",
+    "description": "Tomato Paste, 200 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p145/600/400",
+    "priceCents": 99,
+    "unit": "200 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p146",
+    "name": "Farmhouse Tomato Paste",
+    "description": "Tomato Paste, 200 g. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p146/600/400",
+    "priceCents": 119,
+    "unit": "200 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p147",
+    "name": "Egg Noodles",
+    "description": "Egg Noodles, 250 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p147/600/400",
+    "priceCents": 159,
+    "unit": "250 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p148",
+    "name": "Everyday Egg Noodles",
+    "description": "Egg Noodles, 250 g. Our best-value pick. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p148/600/400",
+    "priceCents": 139,
+    "unit": "250 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p149",
+    "name": "Rice Noodles",
+    "description": "Rice Noodles, 250 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p149/600/400",
+    "priceCents": 179,
+    "unit": "250 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p150",
+    "name": "Farmhouse Rice Noodles",
+    "description": "Rice Noodles, 250 g. From small farms. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p150/600/400",
+    "priceCents": 209,
+    "unit": "250 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p151",
+    "name": "Tahini",
+    "description": "Tahini, 300 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p151/600/400",
+    "priceCents": 329,
+    "unit": "300 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p152",
+    "name": "Organic Tahini",
+    "description": "Tahini, 300 g. Certified organic. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p152/600/400",
+    "priceCents": 439,
+    "unit": "300 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p153",
+    "name": "Pesto",
+    "description": "Pesto, 190 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p153/600/400",
+    "priceCents": 249,
+    "unit": "190 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "NUTS"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "p154",
+    "name": "Premium Pesto",
+    "description": "Pesto, 190 g. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p154/600/400",
+    "priceCents": 369,
+    "unit": "190 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p155",
+    "name": "Chili Flakes",
+    "description": "Chili Flakes, 35 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p155/600/400",
+    "priceCents": 129,
+    "unit": "35 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p156",
+    "name": "Premium Chili Flakes",
+    "description": "Chili Flakes, 35 g. The best of the range. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p156/600/400",
+    "priceCents": 189,
+    "unit": "35 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p157",
+    "name": "Cumin",
+    "description": "Cumin, 40 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p157/600/400",
+    "priceCents": 119,
+    "unit": "40 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p158",
+    "name": "Everyday Cumin",
+    "description": "Cumin, 40 g. Our best-value pick. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p158/600/400",
+    "priceCents": 99,
+    "unit": "40 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p159",
+    "name": "Paprika",
+    "description": "Paprika, 45 g. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p159/600/400",
+    "priceCents": 119,
+    "unit": "45 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p160",
+    "name": "Everyday Paprika",
+    "description": "Paprika, 45 g. Our best-value pick. A cupboard staple for everyday cooking.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p160/600/400",
+    "priceCents": 99,
+    "unit": "45 g",
+    "category": "PANTRY",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p161",
+    "name": "Frozen Peas",
+    "description": "Frozen Peas, 900 g. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p161/600/400",
+    "priceCents": 149,
+    "unit": "900 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p162",
+    "name": "Farmhouse Frozen Peas",
+    "description": "Frozen Peas, 900 g. From small farms. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p162/600/400",
+    "priceCents": 179,
+    "unit": "900 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p163",
+    "name": "Frozen Berries",
+    "description": "Frozen Berries, 500 g. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p163/600/400",
+    "priceCents": 329,
+    "unit": "500 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p164",
+    "name": "Premium Frozen Berries",
+    "description": "Frozen Berries, 500 g. The best of the range. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p164/600/400",
+    "priceCents": 489,
+    "unit": "500 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p165",
+    "name": "Frozen Spinach",
+    "description": "Frozen Spinach, 900 g. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p165/600/400",
+    "priceCents": 139,
+    "unit": "900 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p166",
+    "name": "Farmhouse Frozen Spinach",
+    "description": "Frozen Spinach, 900 g. From small farms. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p166/600/400",
+    "priceCents": 169,
+    "unit": "900 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p167",
+    "name": "Fish Fingers",
+    "description": "Fish Fingers, 10 pcs. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p167/600/400",
+    "priceCents": 299,
+    "unit": "10 pcs",
+    "category": "FROZEN",
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p168",
+    "name": "Premium Fish Fingers",
+    "description": "Fish Fingers, 10 pcs. The best of the range. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p168/600/400",
+    "priceCents": 449,
+    "unit": "10 pcs",
+    "category": "FROZEN",
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "FISH"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p169",
+    "name": "Vanilla Ice Cream",
+    "description": "Vanilla Ice Cream, 900 ml. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p169/600/400",
+    "priceCents": 349,
+    "unit": "900 ml",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p170",
+    "name": "Farmhouse Vanilla Ice Cream",
+    "description": "Vanilla Ice Cream, 900 ml. From small farms. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p170/600/400",
+    "priceCents": 419,
+    "unit": "900 ml",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "EGGS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p171",
+    "name": "Frozen Sweetcorn",
+    "description": "Frozen Sweetcorn, 900 g. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p171/600/400",
+    "priceCents": 139,
+    "unit": "900 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": false
+  },
+  {
+    "id": "p172",
+    "name": "Organic Frozen Sweetcorn",
+    "description": "Frozen Sweetcorn, 900 g. Certified organic. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p172/600/400",
+    "priceCents": 189,
+    "unit": "900 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p173",
+    "name": "Veggie Burgers",
+    "description": "Veggie Burgers, 4 pcs. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p173/600/400",
+    "priceCents": 319,
+    "unit": "4 pcs",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p174",
+    "name": "Premium Veggie Burgers",
+    "description": "Veggie Burgers, 4 pcs. The best of the range. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p174/600/400",
+    "priceCents": 479,
+    "unit": "4 pcs",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p175",
+    "name": "Frozen Edamame",
+    "description": "Frozen Edamame, 500 g. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p175/600/400",
+    "priceCents": 259,
+    "unit": "500 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p176",
+    "name": "Everyday Frozen Edamame",
+    "description": "Frozen Edamame, 500 g. Our best-value pick. Frozen within hours to lock in flavour.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p176/600/400",
+    "priceCents": 219,
+    "unit": "500 g",
+    "category": "FROZEN",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p177",
+    "name": "Orange Juice",
+    "description": "Orange Juice, 1 l. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p177/600/400",
+    "priceCents": 249,
+    "unit": "1 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p178",
+    "name": "Farmhouse Orange Juice",
+    "description": "Orange Juice, 1 l. From small farms. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p178/600/400",
+    "priceCents": 299,
+    "unit": "1 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": false
+  },
+  {
+    "id": "p179",
+    "name": "Sparkling Water",
+    "description": "Sparkling Water, 1.5 l. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p179/600/400",
+    "priceCents": 79,
+    "unit": "1.5 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p180",
+    "name": "Everyday Sparkling Water",
+    "description": "Sparkling Water, 1.5 l. Our best-value pick. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p180/600/400",
+    "priceCents": 69,
+    "unit": "1.5 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p181",
+    "name": "Cold Brew Coffee",
+    "description": "Cold Brew Coffee, 500 ml. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p181/600/400",
+    "priceCents": 299,
+    "unit": "500 ml",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p182",
+    "name": "Everyday Cold Brew Coffee",
+    "description": "Cold Brew Coffee, 500 ml. Our best-value pick. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p182/600/400",
+    "priceCents": 249,
+    "unit": "500 ml",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p183",
+    "name": "Green Tea",
+    "description": "Green Tea, 20 bags. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p183/600/400",
+    "priceCents": 219,
+    "unit": "20 bags",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p184",
+    "name": "Everyday Green Tea",
+    "description": "Green Tea, 20 bags. Our best-value pick. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p184/600/400",
+    "priceCents": 189,
+    "unit": "20 bags",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p185",
+    "name": "Apple Juice",
+    "description": "Apple Juice, 1 l. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p185/600/400",
+    "priceCents": 199,
+    "unit": "1 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p186",
+    "name": "Farmhouse Apple Juice",
+    "description": "Apple Juice, 1 l. From small farms. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p186/600/400",
+    "priceCents": 239,
+    "unit": "1 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p187",
+    "name": "Kombucha",
+    "description": "Kombucha, 330 ml. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p187/600/400",
+    "priceCents": 279,
+    "unit": "330 ml",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p188",
+    "name": "Premium Kombucha",
+    "description": "Kombucha, 330 ml. The best of the range. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p188/600/400",
+    "priceCents": 419,
+    "unit": "330 ml",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p189",
+    "name": "Almond Drink",
+    "description": "Almond Drink, 1 l. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p189/600/400",
+    "priceCents": 219,
+    "unit": "1 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p190",
+    "name": "Premium Almond Drink",
+    "description": "Almond Drink, 1 l. The best of the range. Best served cold.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p190/600/400",
+    "priceCents": 329,
+    "unit": "1 l",
+    "category": "DRINKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p191",
+    "name": "Mixed Nuts",
+    "description": "Mixed Nuts, 200 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p191/600/400",
+    "priceCents": 399,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p192",
+    "name": "Premium Mixed Nuts",
+    "description": "Mixed Nuts, 200 g. The best of the range. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p192/600/400",
+    "priceCents": 599,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p193",
+    "name": "Roasted Peanuts",
+    "description": "Roasted Peanuts, 200 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p193/600/400",
+    "priceCents": 199,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "PEANUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p194",
+    "name": "Organic Roasted Peanuts",
+    "description": "Roasted Peanuts, 200 g. Certified organic. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p194/600/400",
+    "priceCents": 269,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "PEANUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p195",
+    "name": "Dark Chocolate",
+    "description": "Dark Chocolate, 100 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p195/600/400",
+    "priceCents": 229,
+    "unit": "100 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p196",
+    "name": "Everyday Dark Chocolate",
+    "description": "Dark Chocolate, 100 g. Our best-value pick. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p196/600/400",
+    "priceCents": 189,
+    "unit": "100 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SOY"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p197",
+    "name": "Hummus",
+    "description": "Hummus, 200 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p197/600/400",
+    "priceCents": 179,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p198",
+    "name": "Farmhouse Hummus",
+    "description": "Hummus, 200 g. From small farms. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p198/600/400",
+    "priceCents": 209,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p199",
+    "name": "Tortilla Chips",
+    "description": "Tortilla Chips, 200 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p199/600/400",
+    "priceCents": 169,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p200",
+    "name": "Farmhouse Tortilla Chips",
+    "description": "Tortilla Chips, 200 g. From small farms. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p200/600/400",
+    "priceCents": 199,
+    "unit": "200 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p201",
+    "name": "Granola Bars",
+    "description": "Granola Bars, 6 pcs. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p201/600/400",
+    "priceCents": 249,
+    "unit": "6 pcs",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p202",
+    "name": "Farmhouse Granola Bars",
+    "description": "Granola Bars, 6 pcs. From small farms. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p202/600/400",
+    "priceCents": 299,
+    "unit": "6 pcs",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p203",
+    "name": "Rice Cakes",
+    "description": "Rice Cakes, 130 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p203/600/400",
+    "priceCents": 129,
+    "unit": "130 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p204",
+    "name": "Everyday Rice Cakes",
+    "description": "Rice Cakes, 130 g. Our best-value pick. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p204/600/400",
+    "priceCents": 109,
+    "unit": "130 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "inStock": true
+  },
+  {
+    "id": "p205",
+    "name": "Walnuts",
+    "description": "Walnuts, 150 g. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p205/600/400",
+    "priceCents": 349,
+    "unit": "150 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "NUTS"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "p206",
+    "name": "Premium Walnuts",
+    "description": "Walnuts, 150 g. The best of the range. For the gap between meals.",
+    "imageUrl": "https://picsum.photos/seed/pantry-p206/600/400",
+    "priceCents": 519,
+    "unit": "150 g",
+    "category": "SNACKS",
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "NUTS"
+    ],
+    "inStock": true
+  }
+]

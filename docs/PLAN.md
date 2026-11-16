@@ -43,7 +43,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.2 [fable] GraphQL schema.** Write the complete `packages/shared/schema.graphql`. Fill the gaps in the spec: `SearchFilters` (diet, maxTimeMin, maxPrice, excludeAllergens), `SortOrder`, `SearchResult` (edges, pageInfo, totalCount), `RecContext`, connection types, a feed that returns products and recipes, `Cart`/`CartLine`, and cart mutations that take an `idempotencyKey` (`addToCart`, `removeFromCart`, `setCartQty`).
   - Accept: schema parses; every type used in SPEC sections 1, 4, 5 and 6 exists; a short comment explains each non-obvious field.
   - Proof: a unit test in `packages/shared` that builds the schema with `buildSchema`.
-- [ ] **0.3 [sonnet] Seed data.** A script that writes about 200 products and 60 recipes to JSON (fictional names, placeholder images, allergens, diets, prices, cook times). Deterministic (fixed seed). Commit the output.
+- [x] **0.3 [sonnet] Seed data.** A script that writes about 200 products and 60 recipes to JSON (fictional names, placeholder images, allergens, diets, prices, cook times). Deterministic (fixed seed). Commit the output.
   - Accept: running the script twice gives the same files; every recipe ingredient points to an existing product.
   - Proof: a test that validates the JSON with Zod and checks referential integrity.
 - [ ] **0.4 [sonnet] Mock server.** GraphQL Yoga server with resolvers for the whole schema, in-memory cart, cursor pagination, simple text search with filters, random 100–800 ms delay and `ERROR_RATE` env variable (both can be turned off for tests). `recommendations` is a stub.
