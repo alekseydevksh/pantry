@@ -28,6 +28,11 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | On-device AI | `@react-native-ai/apple` in Phase 6, tested on the iOS Simulator (host: macOS 26.6.2 with Apple Intelligence). No physical iPhone |
 | Sentry, EAS | Config only. Sentry is a no-op without a DSN |
 | Git | Local repo only. The owner creates the remote and pushes |
+| Lint version (Phase 0) | ESLint 9.39, not 10: `eslint-plugin-react` inside the Expo preset crashes on ESLint 10. Move to 10 when `eslint-config-expo` supports it |
+| Routes folder (Phase 0) | `apps/mobile/app/`, as in CLAUDE.md. The SDK 58 template uses `src/app/`; both work |
+| App id (Phase 0) | `dev.pantry.app` for iOS and Android, scheme `pantry`. Placeholder; change in `app.config.ts` before any store build |
+| Codegen output (Phase 0) | Client preset with fragment masking off and enums as string unions. Revisit masking in task 2.1 |
+| Prices (Phase 0) | Integer cents everywhere, so the price filter is `maxPriceCents` (the plan called it `maxPrice`) |
 
 ## Android status
 
@@ -64,7 +69,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.9 [sonnet] CI and README skeleton.** GitHub Actions workflow (install, typecheck, lint, test, codegen check, Expo Doctor). README with the section headings from SPEC section 8.
   - Accept: the workflow file is valid; all its steps pass when run locally in the same order.
   - Proof: run the steps locally. CI itself goes green after the owner pushes.
-- [ ] **0.10 [sonnet] Phase gate.** Learning log for Phase 0 (Expo vs bare, dev builds vs Expo Go, CNG, Hermes, New Architecture). Summary to the owner.
+- [x] **0.10 [sonnet] Phase gate.** Learning log for Phase 0 (Expo vs bare, dev builds vs Expo Go, CNG, Hermes, New Architecture). Summary to the owner.
 
 ## Phase 1 — Shell and design system
 
