@@ -58,7 +58,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.7 [sonnet] Lint and format.** ESLint flat config with the Expo preset and the React Compiler rule, Prettier, TS `strict` everywhere, a rule that forbids `any` without a comment.
   - Accept: `pnpm lint` and `pnpm typecheck` pass on all three packages.
   - Proof: both commands; a deliberate `any` fails lint.
-- [ ] **0.8 [sonnet] Jest.** `jest-expo` + React Native Testing Library, shared test setup file, one render test for the placeholder screen.
+- [x] **0.8 [sonnet] Jest.** `jest-expo` + React Native Testing Library, shared test setup file, one render test for the placeholder screen.
   - Accept: `pnpm test` runs tests in all packages.
   - Proof: `pnpm test`.
 - [ ] **0.9 [sonnet] CI and README skeleton.** GitHub Actions workflow (install, typecheck, lint, test, codegen check, Expo Doctor). README with the section headings from SPEC section 8.
