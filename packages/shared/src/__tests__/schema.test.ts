@@ -59,7 +59,10 @@ describe('schema.graphql', () => {
   it('lets the feed and search return products and recipes', () => {
     const union = schema.getType('CatalogItem');
     expect(union).toBeInstanceOf(GraphQLUnionType);
-    expect((union as GraphQLUnionType).getTypes().map((t) => t.name)).toEqual(['Product', 'Recipe']);
+    expect((union as GraphQLUnionType).getTypes().map((t) => t.name)).toEqual([
+      'Product',
+      'Recipe',
+    ]);
   });
 
   it('has cart lines with a product and a quantity', () => {

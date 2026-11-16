@@ -131,7 +131,14 @@ export function search(index: readonly IndexedItem[], input: SearchInput): Catal
   return hits.map((hit) => hit.item);
 }
 
-const EXTRA_TERMS = ['vegan', 'vegetarian', 'gluten free', 'dairy free', 'quick dinner', 'breakfast'];
+const EXTRA_TERMS = [
+  'vegan',
+  'vegetarian',
+  'gluten free',
+  'dairy free',
+  'quick dinner',
+  'breakfast',
+];
 export const MAX_SUGGESTIONS = 8;
 
 /** Typeahead. Names that start with the prefix come before names that contain a word starting with it. */
@@ -145,7 +152,8 @@ export function suggest(catalog: Catalog, prefix: string): string[] {
   for (const candidate of candidates) {
     const lower = candidate.toLowerCase();
     if (lower.startsWith(needle)) startsWith.push(candidate);
-    else if (lower.split(/\s+/).some((word) => word.startsWith(needle))) wordStartsWith.push(candidate);
+    else if (lower.split(/\s+/).some((word) => word.startsWith(needle)))
+      wordStartsWith.push(candidate);
   }
   return [...new Set([...startsWith, ...wordStartsWith])].slice(0, MAX_SUGGESTIONS);
 }

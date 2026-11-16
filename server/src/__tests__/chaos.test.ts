@@ -30,7 +30,10 @@ describe('simulated delay and errors', () => {
     // A fixed sequence instead of real randomness: 0.1 fails (below 0.5), 0.9 passes.
     const sequence = [0.1, 0.9, 0.9, 0.1];
     let call = 0;
-    const { gql } = createTestClient({ errorRate: 0.5, random: () => sequence[call++ % sequence.length]! });
+    const { gql } = createTestClient({
+      errorRate: 0.5,
+      random: () => sequence[call++ % sequence.length]!,
+    });
 
     const statuses = [];
     for (let i = 0; i < 4; i += 1) statuses.push((await gql(QUERY)).status);
@@ -72,8 +75,16 @@ describe('readConfig', () => {
   });
 
   it('turns the delay off when both limits are 0, and reads the error rate', () => {
-    Object.assign(process.env, { DELAY_MIN_MS: '0', DELAY_MAX_MS: '0', ERROR_RATE: '0.2', PORT: '4100' });
-    expect(readConfig()).toEqual({ port: 4100, app: { delayMs: null, errorRate: 0.2, logging: true } });
+    Object.assign(process.env, {
+      DELAY_MIN_MS: '0',
+      DELAY_MAX_MS: '0',
+      ERROR_RATE: '0.2',
+      PORT: '4100',
+    });
+    expect(readConfig()).toEqual({
+      port: 4100,
+      app: { delayMs: null, errorRate: 0.2, logging: true },
+    });
   });
 
   it('rejects values that make no sense', () => {

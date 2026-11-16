@@ -1,4 +1,4 @@
-import { buildSchema, GraphQLEnumType } from 'graphql';
+import { buildSchema, type GraphQLEnumType } from 'graphql';
 
 import { loadTypeDefs } from '@pantry/shared/schema';
 

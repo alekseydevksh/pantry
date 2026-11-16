@@ -290,13 +290,27 @@ const RECIPE_TEMPLATES: readonly RecipeTemplate[] = [
   },
   {
     name: 'Chicken Fajita Wraps',
-    ingredients: ['Chicken Breast', 'Bell Pepper', 'Onions', 'Tortilla Wraps', 'Paprika', 'Avocado'],
+    ingredients: [
+      'Chicken Breast',
+      'Bell Pepper',
+      'Onions',
+      'Tortilla Wraps',
+      'Paprika',
+      'Avocado',
+    ],
     cookTimeMin: 25,
     method: 'pan',
   },
   {
     name: 'Beef Chili',
-    ingredients: ['Beef Mince', 'Black Beans', 'Chopped Tomatoes', 'Onions', 'Cumin', 'Basmati Rice'],
+    ingredients: [
+      'Beef Mince',
+      'Black Beans',
+      'Chopped Tomatoes',
+      'Onions',
+      'Cumin',
+      'Basmati Rice',
+    ],
     cookTimeMin: 45,
     method: 'pot',
   },
@@ -326,7 +340,14 @@ const RECIPE_TEMPLATES: readonly RecipeTemplate[] = [
   },
   {
     name: 'Tofu Peanut Noodles',
-    ingredients: ['Smoked Tofu', 'Rice Noodles', 'Peanut Butter', 'Soy Sauce', 'Carrots', 'Coriander'],
+    ingredients: [
+      'Smoked Tofu',
+      'Rice Noodles',
+      'Peanut Butter',
+      'Soy Sauce',
+      'Carrots',
+      'Coriander',
+    ],
     cookTimeMin: 20,
     method: 'pan',
   },
@@ -344,7 +365,14 @@ const RECIPE_TEMPLATES: readonly RecipeTemplate[] = [
   },
   {
     name: 'Sweet Potato Black Bean Tacos',
-    ingredients: ['Sweet Potatoes', 'Black Beans', 'Tortilla Wraps', 'Avocado', 'Coriander', 'Cumin'],
+    ingredients: [
+      'Sweet Potatoes',
+      'Black Beans',
+      'Tortilla Wraps',
+      'Avocado',
+      'Coriander',
+      'Cumin',
+    ],
     cookTimeMin: 30,
     method: 'oven',
   },
@@ -412,7 +440,14 @@ const RECIPE_TEMPLATES: readonly RecipeTemplate[] = [
   },
   {
     name: 'Tuna Steak Rice Bowl',
-    ingredients: ['Tuna Steak', 'Basmati Rice', 'Frozen Edamame', 'Soy Sauce', 'Sesame Oil', 'Cucumber'],
+    ingredients: [
+      'Tuna Steak',
+      'Basmati Rice',
+      'Frozen Edamame',
+      'Soy Sauce',
+      'Sesame Oil',
+      'Cucumber',
+    ],
     cookTimeMin: 20,
     method: 'pan',
   },
@@ -442,14 +477,28 @@ const RECIPE_TEMPLATES: readonly RecipeTemplate[] = [
   },
   {
     name: 'Chicken Thigh Curry',
-    ingredients: ['Chicken Thighs', 'Coconut Milk', 'Curry Paste', 'Onions', 'Basmati Rice', 'Coriander'],
+    ingredients: [
+      'Chicken Thighs',
+      'Coconut Milk',
+      'Curry Paste',
+      'Onions',
+      'Basmati Rice',
+      'Coriander',
+    ],
     cookTimeMin: 40,
     method: 'pot',
   },
 ];
 
 /** Every template also gets a second recipe with one extra ingredient. */
-const SAVOURY_EXTRAS = ['Spinach', 'Chili Flakes', 'Mushrooms', 'Bell Pepper', 'Coriander', 'Tomatoes'];
+const SAVOURY_EXTRAS = [
+  'Spinach',
+  'Chili Flakes',
+  'Mushrooms',
+  'Bell Pepper',
+  'Coriander',
+  'Tomatoes',
+];
 const SWEET_EXTRAS = ['Bananas', 'Blueberries', 'Walnuts', 'Peanut Butter'];
 
 const QUANTITIES: Record<Category, readonly string[]> = {
@@ -468,7 +517,8 @@ function quantityFor(rng: () => number, product: SeedProduct): string {
   if (product.category === 'PANTRY' && /^(400|500) g$|^1 kg$/.test(product.unit)) {
     return pick(rng, ['200 g', '250 g', '300 g']);
   }
-  if (product.category === 'PANTRY' && product.unit === '400 ml') return pick(rng, ['200 ml', '400 ml']);
+  if (product.category === 'PANTRY' && product.unit === '400 ml')
+    return pick(rng, ['200 ml', '400 ml']);
   return pick(rng, QUANTITIES[product.category]);
 }
 
@@ -506,7 +556,11 @@ function stepsFor(method: Method, ingredients: readonly string[], cookTimeMin: n
         serve,
       ];
     case 'bowl':
-      return [prep, `Chop what needs chopping and combine the ${list(ingredients)} in a bowl.`, serve];
+      return [
+        prep,
+        `Chop what needs chopping and combine the ${list(ingredients)} in a bowl.`,
+        serve,
+      ];
   }
 }
 

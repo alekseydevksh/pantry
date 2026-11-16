@@ -99,8 +99,12 @@ describe('search', () => {
   it('finds recipes by ingredient and ranks name matches first', async () => {
     const items = await searchAll({ query: 'halloumi' });
     expect(items.some((item) => item.__typename === 'Recipe')).toBe(true);
-    const firstWithoutName = items.findIndex((item) => !item.name.toLowerCase().includes('halloumi'));
-    const lastWithName = items.findLastIndex((item) => item.name.toLowerCase().includes('halloumi'));
+    const firstWithoutName = items.findIndex(
+      (item) => !item.name.toLowerCase().includes('halloumi'),
+    );
+    const lastWithName = items.findLastIndex((item) =>
+      item.name.toLowerCase().includes('halloumi'),
+    );
     if (firstWithoutName !== -1) expect(lastWithName).toBeLessThan(firstWithoutName);
   });
 
@@ -127,7 +131,10 @@ describe('search', () => {
 
   it('excludes allergens', async () => {
     const all = await searchAll({ query: 'noodles' });
-    const safe = await searchAll({ query: 'noodles', filters: { excludeAllergens: ['PEANUTS', 'EGGS'] } });
+    const safe = await searchAll({
+      query: 'noodles',
+      filters: { excludeAllergens: ['PEANUTS', 'EGGS'] },
+    });
     expect(safe.length).toBeGreaterThan(0);
     expect(safe.length).toBeLessThan(all.length);
     for (const item of safe) {
@@ -151,7 +158,13 @@ describe('search', () => {
   it('applies a price limit and combines filters with AND', async () => {
     const items = await searchAll({
       query: '',
-      filters: { kind: 'RECIPE', diets: ['VEGETARIAN'], maxTimeMin: 30, maxPriceCents: 1200, excludeAllergens: ['NUTS'] },
+      filters: {
+        kind: 'RECIPE',
+        diets: ['VEGETARIAN'],
+        maxTimeMin: 30,
+        maxPriceCents: 1200,
+        excludeAllergens: ['NUTS'],
+      },
     });
     expect(items.length).toBeGreaterThan(0);
     for (const item of items) {
@@ -220,7 +233,9 @@ describe('other queries', () => {
 
   it('returns a product, and null for an unknown id', async () => {
     const query = `query ($id: ID!) { product(id: $id) { id name unit category inStock imageUrl description } }`;
-    const { product } = await ok<{ product: { id: string; category: string } }>(query, { id: 'p1' });
+    const { product } = await ok<{ product: { id: string; category: string } }>(query, {
+      id: 'p1',
+    });
     expect(product).toMatchObject({ id: 'p1', category: 'PRODUCE' });
     expect(await ok(query, { id: 'r1' })).toEqual({ product: null });
   });
