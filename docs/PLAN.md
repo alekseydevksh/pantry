@@ -33,6 +33,9 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | App id (Phase 0) | `dev.pantry.app` for iOS and Android, scheme `pantry`. Placeholder; change in `app.config.ts` before any store build |
 | Codegen output (Phase 0) | Client preset with fragment masking off and enums as string unions. Revisit masking in task 2.1 |
 | Prices (Phase 0) | Integer cents everywhere, so the price filter is `maxPriceCents` (the plan called it `maxPrice`) |
+| Unistyles setup (Phase 1) | Babel plugin with `root: 'src'` (the Metro-only setup is still experimental). The app entry is `apps/mobile/index.ts`, which registers the themes before Expo Router loads the routes. Adaptive themes are on (the app follows the system) until task 1.7 adds the user's choice |
+| Unistyles in Jest (Phase 1) | The library's own mock plus `src/test/unistyles.ts`, which adds theme switching (`setTestTheme`). After a switch, a test re-renders to see new StyleSheet values; on a device, native code updates them without a re-render |
+| Safe areas with Unistyles (Phase 1) | Themed styles go on React Native's own components. Unistyles cannot restyle a third-party view (for example `SafeAreaView`) on a theme change unless it is wrapped with `withUnistyles`, so insets come from `rt.insets` in the StyleSheet |
 
 ## Android status
 
@@ -73,7 +76,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 
 ## Phase 1 — Shell and design system
 
-- [ ] **1.1 [fable] Tokens and themes.** `src/design-system/tokens.ts` (color, spacing, radius, typography), light and dark themes, Unistyles 3 configuration, Jest setup for Unistyles.
+- [x] **1.1 [fable] Tokens and themes.** `src/design-system/tokens.ts` (color, spacing, radius, typography), light and dark themes, Unistyles 3 configuration, Jest setup for Unistyles.
   - Accept: a component reads theme values; switching theme changes them.
   - Proof: unit test for token shape (both themes have the same keys); render test under each theme.
 - [ ] **1.2 [sonnet] Primitives: Text, Button.** Variants, disabled and loading states, accessibility role and label, 44 pt minimum touch target, respects dynamic type.

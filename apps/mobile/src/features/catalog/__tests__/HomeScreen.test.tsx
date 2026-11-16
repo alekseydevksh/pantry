@@ -2,6 +2,9 @@ import { render, screen } from '@testing-library/react-native';
 
 import type { FeedPreviewQuery } from '@pantry/shared';
 
+import { darkTheme } from '@/design-system';
+import { setTestTheme } from '@/test/unistyles';
+
 import { HomeScreen } from '../components/HomeScreen';
 
 const feed: FeedPreviewQuery = {
@@ -43,6 +46,20 @@ describe('HomeScreen (Phase 0 placeholder)', () => {
     const body = JSON.parse(fetchSpy.mock.calls[0]?.[1]?.body as string);
     expect(body.query).toContain('query FeedPreview');
     expect(body.variables).toEqual({ first: 4 });
+  });
+
+  it('uses the colors of the active theme', async () => {
+    mockFetch(async () => ({ status: 200, json: async () => ({ data: feed }) }));
+    setTestTheme('dark');
+
+    await render(<HomeScreen />);
+
+    expect(screen.getByRole('header', { name: 'Pantry' })).toHaveStyle({
+      color: darkTheme.colors.text,
+    });
+    expect(await screen.findByText('Tomatoes · €2.49')).toHaveStyle({
+      color: darkTheme.colors.text,
+    });
   });
 
   it('explains how to start the server when the API is not reachable', async () => {

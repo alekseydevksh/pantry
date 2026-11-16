@@ -1,14 +1,10 @@
-import { StyleSheet, Text, useColorScheme, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
+import { StyleSheet } from 'react-native-unistyles';
 
 import { useFeedPreview, type FeedPreviewItem } from '../hooks/useFeedPreview';
 
-// Phase 0 placeholder. Raw colors, spacing and English strings are temporary:
-// theme tokens arrive in task 1.1, i18n in 1.6, and the real feed in 2.5.
-const palette = {
-  light: { background: '#FAF4E6', text: '#1F2A24', muted: '#5B6B62' },
-  dark: { background: '#14201A', text: '#FAF4E6', muted: '#A9B8AF' },
-};
+// Phase 0 placeholder. The English strings are temporary:
+// the Text primitive arrives in task 1.2, i18n in 1.6, and the real feed in 2.5.
 
 const PREVIEW_SIZE = 4;
 
@@ -24,47 +20,57 @@ function describe(item: FeedPreviewItem): string {
 }
 
 export function HomeScreen() {
-  const colors = palette[useColorScheme() === 'dark' ? 'dark' : 'light'];
   const preview = useFeedPreview(PREVIEW_SIZE);
 
   return (
-    <SafeAreaView style={[styles.screen, { backgroundColor: colors.background }]}>
-      <Text accessibilityRole="header" style={[styles.title, { color: colors.text }]}>
+    <View style={styles.screen}>
+      <Text accessibilityRole="header" style={styles.title}>
         Pantry
       </Text>
-      <Text style={[styles.subtitle, { color: colors.muted }]}>
+      <Text style={styles.subtitle}>
         Groceries and recipes, with an assistant that helps you shop.
       </Text>
 
       <View style={styles.preview}>
         {preview.status === 'loading' && (
-          <Text style={[styles.status, { color: colors.muted }]}>Loading from the mock API…</Text>
+          <Text style={styles.status}>Loading from the mock API…</Text>
         )}
         {preview.status === 'error' && (
-          <Text style={[styles.status, { color: colors.muted }]}>
+          <Text style={styles.status}>
             The mock API is not reachable. Start it with “pnpm dev:server” and reload.
           </Text>
         )}
         {preview.status === 'ready' && (
           <>
-            <Text style={[styles.status, { color: colors.muted }]}>From the mock API:</Text>
+            <Text style={styles.status}>From the mock API:</Text>
             {preview.items.map((item) => (
-              <Text key={item.id} style={[styles.item, { color: colors.text }]}>
+              <Text key={item.id} style={styles.item}>
                 {describe(item)}
               </Text>
             ))}
           </>
         )}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  screen: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 8 },
-  title: { fontSize: 34, fontWeight: '700' },
-  subtitle: { fontSize: 17, textAlign: 'center' },
-  preview: { marginTop: 24, alignItems: 'center', gap: 4 },
-  status: { fontSize: 15, textAlign: 'center' },
-  item: { fontSize: 15 },
-});
+// Unistyles can only restyle React Native's own components on a theme change, so the safe
+// area comes from its runtime (`rt.insets`) and not from a third-party SafeAreaView.
+const styles = StyleSheet.create((theme, rt) => ({
+  screen: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: rt.insets.top + theme.spacing.xl,
+    paddingBottom: rt.insets.bottom + theme.spacing.xl,
+    paddingHorizontal: theme.spacing.xl,
+    gap: theme.spacing.sm,
+    backgroundColor: theme.colors.background,
+  },
+  title: { ...theme.typography.display, color: theme.colors.text },
+  subtitle: { ...theme.typography.body, color: theme.colors.textMuted, textAlign: 'center' },
+  preview: { marginTop: theme.spacing.xl, alignItems: 'center', gap: theme.spacing.xs },
+  status: { ...theme.typography.callout, color: theme.colors.textMuted, textAlign: 'center' },
+  item: { ...theme.typography.callout, color: theme.colors.text },
+}));
