@@ -1,0 +1,200 @@
+# Pantry API. Single source of truth for the server resolvers and the app's generated types.
+#
+# Conventions:
+# - Money is an integer number of cents (`...Cents`). No floats, no currency maths on the client.
+# - Lists that can grow use cursor pagination: `first` + `after`, and a connection with `edges` and `pageInfo`.
+# - Cursors are opaque strings. The client only passes them back.
+# - Cart mutations take an `idempotencyKey`, so the offline queue can retry safely.
+
+enum Diet {
+  VEGETARIAN
+  VEGAN
+  GLUTEN_FREE
+  DAIRY_FREE
+}
+
+enum Allergen {
+  GLUTEN
+  DAIRY
+  EGGS
+  NUTS
+  PEANUTS
+  SOY
+  FISH
+  SHELLFISH
+  SESAME
+}
+
+enum ProductCategory {
+  PRODUCE
+  DAIRY_AND_EGGS
+  MEAT_AND_FISH
+  BAKERY
+  PANTRY
+  FROZEN
+  DRINKS
+  SNACKS
+}
+
+enum CatalogKind {
+  PRODUCT
+  RECIPE
+}
+
+enum SortOrder {
+  "Best text match first. The default. With an empty query it is the catalog order."
+  RELEVANCE
+  PRICE_ASC
+  PRICE_DESC
+  "Shortest cook time first. Products have no cook time and come after all recipes."
+  TIME_ASC
+}
+
+interface Node {
+  id: ID!
+}
+
+type Product implements Node {
+  id: ID!
+  name: String!
+  description: String!
+  imageUrl: String!
+  priceCents: Int!
+  "Human-readable pack size, for example \"500 g\" or \"6 pcs\"."
+  unit: String!
+  category: ProductCategory!
+  "Diets this product is suitable for."
+  diets: [Diet!]!
+  "Allergens this product contains."
+  allergens: [Allergen!]!
+  inStock: Boolean!
+}
+
+type RecipeIngredient {
+  product: Product!
+  "Amount used by the recipe as text, for example \"200 g\". Not the same as the product's pack size."
+  quantity: String!
+}
+
+type Recipe implements Node {
+  id: ID!
+  name: String!
+  description: String!
+  imageUrl: String!
+  cookTimeMin: Int!
+  "Number of people the recipe feeds as written."
+  servings: Int!
+  "A recipe has a diet only if every ingredient has it."
+  diets: [Diet!]!
+  "Union of the allergens of all ingredients."
+  allergens: [Allergen!]!
+  ingredients: [RecipeIngredient!]!
+  steps: [String!]!
+  "Price of buying one pack of every ingredient. Used for the price filter and sort."
+  priceCents: Int!
+}
+
+"Anything that can appear in the feed or in search results."
+union CatalogItem = Product | Recipe
+
+type PageInfo {
+  hasNextPage: Boolean!
+  "Pass as `after` to get the next page. Null when the page is empty."
+  endCursor: String
+}
+
+type FeedEdge {
+  cursor: String!
+  node: CatalogItem!
+}
+
+"The home feed mixes products and recipes (SPEC section 1), so it is not a plain ProductConnection."
+type FeedConnection {
+  edges: [FeedEdge!]!
+  pageInfo: PageInfo!
+}
+
+type SearchEdge {
+  cursor: String!
+  node: CatalogItem!
+}
+
+type SearchResult {
+  edges: [SearchEdge!]!
+  pageInfo: PageInfo!
+  "Number of matches over all pages. Zero drives the empty state and the `search_zero_results` event."
+  totalCount: Int!
+}
+
+"All filters are optional and combined with AND."
+input SearchFilters {
+  "Limit results to products or to recipes. Null means both."
+  kind: CatalogKind
+  "The item must have every diet in the list."
+  diets: [Diet!]
+  "Recipes only: cook time at most this many minutes. When set, products are left out (they have no cook time)."
+  maxTimeMin: Int
+  "Price at most this many cents (for a recipe: the price of its ingredients)."
+  maxPriceCents: Int
+  "The item must contain none of these allergens. The app always sets this from the user's settings in code, never only from model output."
+  excludeAllergens: [Allergen!]
+}
+
+input SearchInput {
+  "Free text. An empty string matches everything, so filters can be used alone."
+  query: String!
+  filters: SearchFilters
+  "Defaults to RELEVANCE."
+  sort: SortOrder
+}
+
+"What the client knows about the user right now. The mock user has no server-side history."
+input RecContext {
+  cartProductIds: [ID!]
+  recentlyViewedIds: [ID!]
+  "Maximum number of products to return. Defaults to 10."
+  limit: Int
+}
+
+type CartLine {
+  "Same as the product id: a cart has at most one line per product. Gives the Apollo cache a stable key."
+  id: ID!
+  product: Product!
+  qty: Int!
+  lineTotalCents: Int!
+}
+
+type Cart {
+  "Always the mock user's cart. There is one cart per server process."
+  id: ID!
+  lines: [CartLine!]!
+  "Sum of all quantities."
+  itemCount: Int!
+  totalCents: Int!
+}
+
+type Query {
+  feed(first: Int!, after: String): FeedConnection!
+  search(input: SearchInput!, first: Int!, after: String): SearchResult!
+  "Typeahead: catalog names and common terms that start with or contain the prefix. At most 8."
+  suggestions(prefix: String!): [String!]!
+  "Null when the id is unknown."
+  recipe(id: ID!): Recipe
+  "Null when the id is unknown."
+  product(id: ID!): Product
+  recommendations(context: RecContext!): [Product!]!
+  cart: Cart!
+}
+
+# Cart mutations return the whole cart, so one response updates every cart view in the Apollo cache.
+#
+# `idempotencyKey` is made by the client, one per user action. Sending the same key again returns the
+# current cart and changes nothing, so a retry after a lost response cannot apply the action twice.
+type Mutation {
+  "Adds `qty` to the line for this product, or creates the line. `qty` must be at least 1."
+  addToCart(productId: ID!, qty: Int!, idempotencyKey: ID!): Cart!
+  "Removes the whole line. Removing a product that is not in the cart is not an error."
+  removeFromCart(productId: ID!, idempotencyKey: ID!): Cart!
+  "Sets the quantity to an absolute value. 0 removes the line. Unlike addToCart, it is safe to coalesce in the offline queue."
+  setCartQty(productId: ID!, qty: Int!, idempotencyKey: ID!): Cart!
+}

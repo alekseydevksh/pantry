@@ -2,8 +2,26 @@
   "name": "@pantry/shared",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.node.ts",
+    "./schema.graphql": "./schema.graphql"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
   "dependencies": {
     "graphql": "^16.15.0"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.16.22",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.19.2",
+    "jest": "^30.5.2",
+    "typescript": "~6.0.3"
   }
 }
