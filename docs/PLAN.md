@@ -46,7 +46,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.3 [sonnet] Seed data.** A script that writes about 200 products and 60 recipes to JSON (fictional names, placeholder images, allergens, diets, prices, cook times). Deterministic (fixed seed). Commit the output.
   - Accept: running the script twice gives the same files; every recipe ingredient points to an existing product.
   - Proof: a test that validates the JSON with Zod and checks referential integrity.
-- [ ] **0.4 [sonnet] Mock server.** GraphQL Yoga server with resolvers for the whole schema, in-memory cart, cursor pagination, simple text search with filters, random 100–800 ms delay and `ERROR_RATE` env variable (both can be turned off for tests). `recommendations` is a stub.
+- [x] **0.4 [sonnet] Mock server.** GraphQL Yoga server with resolvers for the whole schema, in-memory cart, cursor pagination, simple text search with filters, random 100–800 ms delay and `ERROR_RATE` env variable (both can be turned off for tests). `recommendations` is a stub.
   - Accept: every query and mutation in the schema returns data; a repeated mutation with the same `idempotencyKey` is applied once.
   - Proof: server integration tests (search filters, pagination cursors, idempotency).
 - [ ] **0.5 [sonnet] Expo app.** `create-expo-app@latest` in `apps/mobile`, Expo Router, `expo-dev-client`, React Compiler enabled, `ios/` and `android/` ignored (CNG), bundle id and `pantry` URL scheme set.
