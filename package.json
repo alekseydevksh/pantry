@@ -1,0 +1,17 @@
+{
+  "name": "pantry",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "lint": "pnpm -r --if-present run lint",
+    "test": "pnpm -r --if-present run test",
+    "codegen": "pnpm --filter @pantry/shared run codegen",
+    "dev:server": "pnpm --filter @pantry/server run dev",
+    "ios": "pnpm --filter @pantry/mobile run ios"
+  }
+}
