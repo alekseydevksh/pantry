@@ -11,6 +11,7 @@
     "lint": "pnpm -r --if-present run lint",
     "test": "pnpm -r --if-present run test",
     "codegen": "pnpm --filter @pantry/shared run codegen",
+    "codegen:check": "pnpm codegen && git diff --exit-code -- packages/shared/src/generated",
     "dev:server": "pnpm --filter @pantry/server run dev",
     "ios": "pnpm --filter @pantry/mobile run ios"
   }

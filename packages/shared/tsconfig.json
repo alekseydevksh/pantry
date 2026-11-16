@@ -1,7 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node", "jest"]
+    "types": [
+      "node",
+      "jest"
+    ]
   },
-  "include": ["src", "jest.config.js"]
+  "include": [
+    "src",
+    "codegen.ts",
+    "jest.config.js"
+  ]
 }
