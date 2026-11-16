@@ -1,7 +1,6 @@
 import { z } from 'zod';
 
-// Enum values mirror packages/shared/schema.graphql. The server typecheck compares them with the
-// generated GraphQL types once codegen exists (task 0.6).
+// Enum values mirror packages/shared/schema.graphql. `__tests__/enums.test.ts` checks that they match.
 export const DIETS = ['VEGETARIAN', 'VEGAN', 'GLUTEN_FREE', 'DAIRY_FREE'] as const;
 export const ALLERGENS = [
   'GLUTEN',

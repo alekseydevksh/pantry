@@ -26,6 +26,7 @@ Run from the repo root. (Scripts are created in Phase 0. If you change one, upda
 | `pnpm lint` | ESLint + Prettier check |
 | `pnpm test` | Jest in every package |
 | `pnpm codegen` | Regenerate GraphQL types into `packages/shared` |
+| `pnpm codegen:check` | Regenerate and fail if the committed output was stale (CI) |
 | `pnpm dev:server` | Start the mock GraphQL server and LLM proxy |
 | `pnpm ios` | Build and run the dev build on the iOS Simulator |
 | `pnpm --filter @pantry/mobile test -- <pattern>` | Run one test file |

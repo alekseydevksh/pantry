@@ -1,0 +1,26 @@
+# Phase 0 sample operation: proves the path schema -> codegen -> typed data in a component.
+# The real feed query (pagination, full cards) replaces it in task 2.5.
+query FeedPreview($first: Int!) {
+  feed(first: $first) {
+    edges {
+      cursor
+      node {
+        __typename
+        ... on Product {
+          id
+          name
+          priceCents
+        }
+        ... on Recipe {
+          id
+          name
+          cookTimeMin
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

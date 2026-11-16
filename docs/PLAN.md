@@ -52,7 +52,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.5 [sonnet] Expo app.** `create-expo-app@latest` in `apps/mobile`, Expo Router, `expo-dev-client`, React Compiler enabled, `ios/` and `android/` ignored (CNG), bundle id and `pantry` URL scheme set.
   - Accept: the dev build starts on the iOS Simulator and shows a placeholder screen; `npx expo-doctor` is clean.
   - Proof: `pnpm ios` + `npx expo-doctor`. (Manual check; note it in the commit body.)
-- [ ] **0.6 [sonnet] Codegen.** GraphQL Codegen with the client preset; output in `packages/shared`; `pnpm codegen` and a CI check that the output is up to date.
+- [x] **0.6 [sonnet] Codegen.** GraphQL Codegen with the client preset; output in `packages/shared`; `pnpm codegen` and a CI check that the output is up to date.
   - Accept: one sample query in the app is fully typed without manual types.
   - Proof: `pnpm codegen && git diff --exit-code`, plus `pnpm typecheck`.
 - [ ] **0.7 [sonnet] Lint and format.** ESLint flat config with the Expo preset and the React Compiler rule, Prettier, TS `strict` everywhere, a rule that forbids `any` without a comment.
