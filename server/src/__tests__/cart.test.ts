@@ -4,7 +4,12 @@ interface Cart {
   id: string;
   itemCount: number;
   totalCents: number;
-  lines: { id: string; qty: number; lineTotalCents: number; product: { id: string; priceCents: number } }[];
+  lines: {
+    id: string;
+    qty: number;
+    lineTotalCents: number;
+    product: { id: string; priceCents: number };
+  }[];
 }
 
 const CART_FIELDS = `id itemCount totalCents lines { id qty lineTotalCents product { id priceCents } }`;
@@ -31,7 +36,11 @@ describe('cart', () => {
     const { ok } = createTestClient();
     await ok(ADD, { productId: 'p1', qty: 2, key: 'k1' });
     await ok(ADD, { productId: 'p2', qty: 1, key: 'k2' });
-    const { addToCart: afterAdd } = await ok<{ addToCart: Cart }>(ADD, { productId: 'p1', qty: 1, key: 'k3' });
+    const { addToCart: afterAdd } = await ok<{ addToCart: Cart }>(ADD, {
+      productId: 'p1',
+      qty: 1,
+      key: 'k3',
+    });
 
     expect(afterAdd.lines.map((line) => [line.id, line.qty])).toEqual([
       ['p1', 3],
@@ -42,13 +51,24 @@ describe('cart', () => {
     expect(p1?.lineTotalCents).toBe(3 * p1!.product.priceCents);
     expect(afterAdd.totalCents).toBe(p1!.lineTotalCents + p2!.lineTotalCents);
 
-    const { setCartQty } = await ok<{ setCartQty: Cart }>(SET_QTY, { productId: 'p1', qty: 5, key: 'k4' });
+    const { setCartQty } = await ok<{ setCartQty: Cart }>(SET_QTY, {
+      productId: 'p1',
+      qty: 5,
+      key: 'k4',
+    });
     expect(setCartQty.lines[0]?.qty).toBe(5);
 
-    const { removeFromCart } = await ok<{ removeFromCart: Cart }>(REMOVE, { productId: 'p1', key: 'k5' });
+    const { removeFromCart } = await ok<{ removeFromCart: Cart }>(REMOVE, {
+      productId: 'p1',
+      key: 'k5',
+    });
     expect(removeFromCart.lines.map((line) => line.id)).toEqual(['p2']);
 
-    const { setCartQty: emptied } = await ok<{ setCartQty: Cart }>(SET_QTY, { productId: 'p2', qty: 0, key: 'k6' });
+    const { setCartQty: emptied } = await ok<{ setCartQty: Cart }>(SET_QTY, {
+      productId: 'p2',
+      qty: 0,
+      key: 'k6',
+    });
     expect(emptied.lines).toEqual([]);
 
     // The cart query sees the same state as the mutation results.
@@ -58,13 +78,25 @@ describe('cart', () => {
   describe('idempotency', () => {
     it('applies a repeated addToCart once', async () => {
       const { ok } = createTestClient();
-      const first = await ok<{ addToCart: Cart }>(ADD, { productId: 'p1', qty: 2, key: 'same-key' });
-      const retry = await ok<{ addToCart: Cart }>(ADD, { productId: 'p1', qty: 2, key: 'same-key' });
+      const first = await ok<{ addToCart: Cart }>(ADD, {
+        productId: 'p1',
+        qty: 2,
+        key: 'same-key',
+      });
+      const retry = await ok<{ addToCart: Cart }>(ADD, {
+        productId: 'p1',
+        qty: 2,
+        key: 'same-key',
+      });
       expect(first.addToCart.lines[0]?.qty).toBe(2);
       expect(retry).toEqual(first);
 
       // A new key is a new user action.
-      const next = await ok<{ addToCart: Cart }>(ADD, { productId: 'p1', qty: 2, key: 'other-key' });
+      const next = await ok<{ addToCart: Cart }>(ADD, {
+        productId: 'p1',
+        qty: 2,
+        key: 'other-key',
+      });
       expect(next.addToCart.lines[0]?.qty).toBe(4);
     });
 
@@ -73,12 +105,19 @@ describe('cart', () => {
       await ok(ADD, { productId: 'p1', qty: 1, key: 'a1' });
       await ok(REMOVE, { productId: 'p1', key: 'r1' });
       await ok(ADD, { productId: 'p1', qty: 3, key: 'a2' });
-      const { removeFromCart } = await ok<{ removeFromCart: Cart }>(REMOVE, { productId: 'p1', key: 'r1' });
+      const { removeFromCart } = await ok<{ removeFromCart: Cart }>(REMOVE, {
+        productId: 'p1',
+        key: 'r1',
+      });
       expect(removeFromCart.lines[0]?.qty).toBe(3);
 
       await ok(SET_QTY, { productId: 'p1', qty: 7, key: 's1' });
       await ok(SET_QTY, { productId: 'p1', qty: 2, key: 's2' });
-      const { setCartQty } = await ok<{ setCartQty: Cart }>(SET_QTY, { productId: 'p1', qty: 7, key: 's1' });
+      const { setCartQty } = await ok<{ setCartQty: Cart }>(SET_QTY, {
+        productId: 'p1',
+        qty: 7,
+        key: 's1',
+      });
       expect(setCartQty.lines[0]?.qty).toBe(2);
     });
 
@@ -87,7 +126,11 @@ describe('cart', () => {
       const rejected = await gql(ADD, { productId: 'p1', qty: 0, key: 'k1' });
       expect(rejected.errors?.[0]?.extensions?.code).toBe('BAD_USER_INPUT');
 
-      const { addToCart } = await ok<{ addToCart: Cart }>(ADD, { productId: 'p1', qty: 1, key: 'k1' });
+      const { addToCart } = await ok<{ addToCart: Cart }>(ADD, {
+        productId: 'p1',
+        qty: 1,
+        key: 'k1',
+      });
       expect(addToCart.lines[0]?.qty).toBe(1);
     });
   });
@@ -108,7 +151,10 @@ describe('cart', () => {
 
   it('treats removing a product that is not in the cart as a no-op', async () => {
     const { ok } = createTestClient();
-    const { removeFromCart } = await ok<{ removeFromCart: Cart }>(REMOVE, { productId: 'p9', key: 'k1' });
+    const { removeFromCart } = await ok<{ removeFromCart: Cart }>(REMOVE, {
+      productId: 'p9',
+      key: 'k1',
+    });
     expect(removeFromCart.lines).toEqual([]);
   });
 

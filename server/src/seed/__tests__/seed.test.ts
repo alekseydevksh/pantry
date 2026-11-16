@@ -41,7 +41,9 @@ describe('seed data', () => {
     for (const recipe of recipes) {
       const used = recipe.ingredients.map((ingredient) => productsById.get(ingredient.productId)!);
       expect(recipe.allergens).toEqual(
-        ALLERGENS.filter((allergen) => used.some((product) => product.allergens.includes(allergen))),
+        ALLERGENS.filter((allergen) =>
+          used.some((product) => product.allergens.includes(allergen)),
+        ),
       );
       expect(recipe.diets).toEqual(
         DIETS.filter((diet) => used.every((product) => product.diets.includes(diet))),

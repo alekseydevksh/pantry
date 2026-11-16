@@ -24,6 +24,7 @@ Run from the repo root. (Scripts are created in Phase 0. If you change one, upda
 | `pnpm install` | Install all workspaces |
 | `pnpm typecheck` | `tsc --noEmit` in every package |
 | `pnpm lint` | ESLint + Prettier check |
+| `pnpm format` | Format all files with Prettier |
 | `pnpm test` | Jest in every package |
 | `pnpm codegen` | Regenerate GraphQL types into `packages/shared` |
 | `pnpm codegen:check` | Regenerate and fail if the committed output was stale (CI) |

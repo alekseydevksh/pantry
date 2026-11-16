@@ -55,7 +55,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.6 [sonnet] Codegen.** GraphQL Codegen with the client preset; output in `packages/shared`; `pnpm codegen` and a CI check that the output is up to date.
   - Accept: one sample query in the app is fully typed without manual types.
   - Proof: `pnpm codegen && git diff --exit-code`, plus `pnpm typecheck`.
-- [ ] **0.7 [sonnet] Lint and format.** ESLint flat config with the Expo preset and the React Compiler rule, Prettier, TS `strict` everywhere, a rule that forbids `any` without a comment.
+- [x] **0.7 [sonnet] Lint and format.** ESLint flat config with the Expo preset and the React Compiler rule, Prettier, TS `strict` everywhere, a rule that forbids `any` without a comment.
   - Accept: `pnpm lint` and `pnpm typecheck` pass on all three packages.
   - Proof: both commands; a deliberate `any` fails lint.
 - [ ] **0.8 [sonnet] Jest.** `jest-expo` + React Native Testing Library, shared test setup file, one render test for the placeholder screen.

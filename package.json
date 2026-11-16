@@ -8,11 +8,21 @@
   },
   "scripts": {
     "typecheck": "pnpm -r --if-present run typecheck",
-    "lint": "pnpm -r --if-present run lint",
+    "lint": "eslint . --max-warnings 0 && prettier --check .",
     "test": "pnpm -r --if-present run test",
     "codegen": "pnpm --filter @pantry/shared run codegen",
     "codegen:check": "pnpm codegen && git diff --exit-code -- packages/shared/src/generated",
     "dev:server": "pnpm --filter @pantry/server run dev",
-    "ios": "pnpm --filter @pantry/mobile run ios"
+    "ios": "pnpm --filter @pantry/mobile run ios",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~58.0.4",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1",
+    "typescript": "~6.0.3"
   }
 }

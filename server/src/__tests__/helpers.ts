@@ -11,7 +11,10 @@ export function createTestClient(options: AppOptions = {}) {
   const app = createApp(options);
 
   // The response shape depends on the query, so each test names the fields it reads.
-  async function gql<T>(query: string, variables: Record<string, unknown> = {}): Promise<GqlResponse<T>> {
+  async function gql<T>(
+    query: string,
+    variables: Record<string, unknown> = {},
+  ): Promise<GqlResponse<T>> {
     const response = await app.fetch('http://pantry.test/graphql', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },

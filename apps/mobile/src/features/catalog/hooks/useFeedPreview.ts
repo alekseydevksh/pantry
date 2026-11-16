@@ -7,9 +7,7 @@ import { request } from '@/lib/graphql/request';
 export type FeedPreviewItem = FeedPreviewQuery['feed']['edges'][number]['node'];
 
 export type FeedPreviewState =
-  | { status: 'loading' }
-  | { status: 'error' }
-  | { status: 'ready'; items: FeedPreviewItem[] };
+  { status: 'loading' } | { status: 'error' } | { status: 'ready'; items: FeedPreviewItem[] };
 
 /** Phase 0 sample: loads the first feed items once. Replaced by the Apollo feed in task 2.5. */
 export function useFeedPreview(first: number): FeedPreviewState {
