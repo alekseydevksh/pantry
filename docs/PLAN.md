@@ -61,7 +61,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.8 [sonnet] Jest.** `jest-expo` + React Native Testing Library, shared test setup file, one render test for the placeholder screen.
   - Accept: `pnpm test` runs tests in all packages.
   - Proof: `pnpm test`.
-- [ ] **0.9 [sonnet] CI and README skeleton.** GitHub Actions workflow (install, typecheck, lint, test, codegen check, Expo Doctor). README with the section headings from SPEC section 8.
+- [x] **0.9 [sonnet] CI and README skeleton.** GitHub Actions workflow (install, typecheck, lint, test, codegen check, Expo Doctor). README with the section headings from SPEC section 8.
   - Accept: the workflow file is valid; all its steps pass when run locally in the same order.
   - Proof: run the steps locally. CI itself goes green after the owner pushes.
 - [ ] **0.10 [sonnet] Phase gate.** Learning log for Phase 0 (Expo vs bare, dev builds vs Expo Go, CNG, Hermes, New Architecture). Summary to the owner.
