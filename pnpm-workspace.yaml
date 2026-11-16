@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+  - packages/*
+  - server
+
+# One copy of `graphql` in the whole workspace (see docs/adr/0001).
+# @apollo/gateway does not accept v17, and two copies break `instanceof` checks at runtime.
+overrides:
+  graphql: ^16.15.0

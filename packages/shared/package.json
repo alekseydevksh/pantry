@@ -1,0 +1,9 @@
+{
+  "name": "@pantry/shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "graphql": "^16.15.0"
+  }
+}

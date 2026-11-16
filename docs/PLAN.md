@@ -37,7 +37,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 
 ## Phase 0 — Setup
 
-- [ ] **0.1 [sonnet] Workspace.** `git init`, pnpm workspace with `apps/mobile`, `server`, `packages/shared` (packages `@pantry/mobile`, `@pantry/server`, `@pantry/shared`), root scripts (`typecheck`, `lint`, `test`, `codegen`, `dev:server`, `ios`), `.gitignore`, `.nvmrc`, pnpm override pinning `graphql` to v16.
+- [x] **0.1 [sonnet] Workspace.** `git init`, pnpm workspace with `apps/mobile`, `server`, `packages/shared` (packages `@pantry/mobile`, `@pantry/server`, `@pantry/shared`), root scripts (`typecheck`, `lint`, `test`, `codegen`, `dev:server`, `ios`), `.gitignore`, `.nvmrc`, pnpm override pinning `graphql` to v16.
   - Accept: `pnpm install` works from a clean clone; `pnpm why graphql` shows one version.
   - Proof: `pnpm install --frozen-lockfile && pnpm why graphql -r`.
 - [ ] **0.2 [fable] GraphQL schema.** Write the complete `packages/shared/schema.graphql`. Fill the gaps in the spec: `SearchFilters` (diet, maxTimeMin, maxPrice, excludeAllergens), `SortOrder`, `SearchResult` (edges, pageInfo, totalCount), `RecContext`, connection types, a feed that returns products and recipes, `Cart`/`CartLine`, and cart mutations that take an `idempotencyKey` (`addToCart`, `removeFromCart`, `setCartQty`).
