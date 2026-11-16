@@ -7,3 +7,9 @@ packages:
 # @apollo/gateway does not accept v17, and two copies break `instanceof` checks at runtime.
 overrides:
   graphql: ^16.15.0
+
+# pnpm does not run dependency install scripts unless they are listed here.
+# `false` = known and not needed (the prebuilt binaries come from optional dependencies).
+allowBuilds:
+  '@parcel/watcher': false
+  '@swc/core': false
