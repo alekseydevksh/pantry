@@ -1,0 +1,2942 @@
+[
+  {
+    "id": "r1",
+    "name": "Tomato Basil Spaghetti",
+    "description": "Tomato Basil Spaghetti for 4, ready in 20 minutes. Made with spaghetti, chopped tomatoes and basil.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r1/600/400",
+    "cookTimeMin": 20,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p105",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p123",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p35",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p13",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p51",
+        "quantity": "50 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: spaghetti, chopped tomatoes, basil, garlic, olive oil and parmesan.",
+      "Soften the basil, garlic, olive oil and parmesan in a large pot over a medium heat.",
+      "Add the spaghetti and chopped tomatoes and simmer for 12 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1544
+  },
+  {
+    "id": "r2",
+    "name": "Tomato Basil Spaghetti with Coriander",
+    "description": "Tomato Basil Spaghetti with Coriander for 2, ready in 30 minutes. Made with spaghetti, chopped tomatoes and basil.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r2/600/400",
+    "cookTimeMin": 30,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p105",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p123",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p35",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p13",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p51",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p37",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: spaghetti, chopped tomatoes, basil, garlic, olive oil, parmesan and coriander.",
+      "Soften the basil, garlic, olive oil, parmesan and coriander in a large pot over a medium heat.",
+      "Add the spaghetti and chopped tomatoes and simmer for 22 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1673
+  },
+  {
+    "id": "r3",
+    "name": "Creamy Mushroom Risotto",
+    "description": "Creamy Mushroom Risotto for 2, ready in 35 minutes. Made with risotto rice, mushrooms and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r3/600/400",
+    "cookTimeMin": 35,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p111",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p21",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p133",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p51",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p43",
+        "quantity": "50 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: risotto rice, mushrooms, onions, vegetable stock, parmesan and butter.",
+      "Soften the onions, vegetable stock, parmesan and butter in a large pot over a medium heat.",
+      "Add the risotto rice and mushrooms and simmer for 27 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1314
+  },
+  {
+    "id": "r4",
+    "name": "Spicy Creamy Mushroom Risotto",
+    "description": "Spicy Creamy Mushroom Risotto for 2, ready in 35 minutes. Made with risotto rice, mushrooms and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r4/600/400",
+    "cookTimeMin": 35,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p111",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p21",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p133",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p51",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p43",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p155",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: risotto rice, mushrooms, onions, vegetable stock, parmesan, butter and chili flakes.",
+      "Soften the onions, vegetable stock, parmesan, butter and chili flakes in a large pot over a medium heat.",
+      "Add the risotto rice and mushrooms and simmer for 27 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1443
+  },
+  {
+    "id": "r5",
+    "name": "Chickpea Coconut Curry",
+    "description": "Chickpea Coconut Curry for 2, ready in 30 minutes. Made with chickpeas, coconut milk and curry paste.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r5/600/400",
+    "cookTimeMin": 30,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p119",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p125",
+        "quantity": "400 ml"
+      },
+      {
+        "productId": "p143",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p11",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p7",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p109",
+        "quantity": "200 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chickpeas, coconut milk, curry paste, onions, spinach and basmati rice.",
+      "Soften the curry paste, onions, spinach and basmati rice in a large pot over a medium heat.",
+      "Add the chickpeas and coconut milk and simmer for 22 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1014
+  },
+  {
+    "id": "r6",
+    "name": "Chickpea Coconut Curry with Tomatoes",
+    "description": "Chickpea Coconut Curry with Tomatoes for 4, ready in 35 minutes. Made with chickpeas, coconut milk and curry paste.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r6/600/400",
+    "cookTimeMin": 35,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p119",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p125",
+        "quantity": "400 ml"
+      },
+      {
+        "productId": "p143",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p11",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p7",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p109",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p1",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chickpeas, coconut milk, curry paste, onions, spinach, basmati rice and tomatoes.",
+      "Soften the curry paste, onions, spinach, basmati rice and tomatoes in a large pot over a medium heat.",
+      "Add the chickpeas and coconut milk and simmer for 27 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1263
+  },
+  {
+    "id": "r7",
+    "name": "Lemon Garlic Salmon",
+    "description": "Lemon Garlic Salmon for 2, ready in 25 minutes. Made with salmon fillet, lemons and garlic.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r7/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "ingredients": [
+      {
+        "productId": "p77",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p27",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p13",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p19",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p15",
+        "quantity": "200 g"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: salmon fillet, lemons, garlic, broccoli, olive oil and potatoes.",
+      "Spread the salmon fillet and lemons on a tray and add the garlic, broccoli, olive oil and potatoes.",
+      "Roast for 17 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1994
+  },
+  {
+    "id": "r8",
+    "name": "Spicy Lemon Garlic Salmon",
+    "description": "Spicy Lemon Garlic Salmon for 4, ready in 35 minutes. Made with salmon fillet, lemons and garlic.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r8/600/400",
+    "cookTimeMin": 35,
+    "servings": 4,
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "FISH"
+    ],
+    "ingredients": [
+      {
+        "productId": "p77",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p27",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p13",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p19",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p127",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p15",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p155",
+        "quantity": "1 tbsp"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: salmon fillet, lemons, garlic, broccoli, olive oil, potatoes and chili flakes.",
+      "Spread the salmon fillet and lemons on a tray and add the garlic, broccoli, olive oil, potatoes and chili flakes.",
+      "Roast for 27 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 2123
+  },
+  {
+    "id": "r9",
+    "name": "Chicken Fajita Wraps",
+    "description": "Chicken Fajita Wraps for 2, ready in 25 minutes. Made with chicken breast, bell pepper and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r9/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "productId": "p65",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p5",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p11",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p93",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p159",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p25",
+        "quantity": "a handful"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chicken breast, bell pepper, onions, tortilla wraps, paprika and avocado.",
+      "Heat a large pan and cook the chicken breast until golden.",
+      "Add the bell pepper, onions, tortilla wraps, paprika and avocado and cook for 17 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1254
+  },
+  {
+    "id": "r10",
+    "name": "Chicken Fajita Wraps with Coriander",
+    "description": "Chicken Fajita Wraps with Coriander for 2, ready in 35 minutes. Made with chicken breast, bell pepper and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r10/600/400",
+    "cookTimeMin": 35,
+    "servings": 2,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "productId": "p65",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p5",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p11",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p93",
+        "quantity": "4 pcs"
+      },
+      {
+        "productId": "p159",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p25",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p37",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chicken breast, bell pepper, onions, tortilla wraps, paprika, avocado and coriander.",
+      "Heat a large pan and cook the chicken breast until golden.",
+      "Add the bell pepper, onions, tortilla wraps, paprika, avocado and coriander and cook for 27 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1383
+  },
+  {
+    "id": "r11",
+    "name": "Beef Chili",
+    "description": "Beef Chili for 4, ready in 45 minutes. Made with beef mince, black beans and chopped tomatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r11/600/400",
+    "cookTimeMin": 45,
+    "servings": 4,
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p69",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p121",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p123",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p11",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p157",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p109",
+        "quantity": "250 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: beef mince, black beans, chopped tomatoes, onions, cumin and basmati rice.",
+      "Soften the chopped tomatoes, onions, cumin and basmati rice in a large pot over a medium heat.",
+      "Add the beef mince and black beans and simmer for 37 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1144
+  },
+  {
+    "id": "r12",
+    "name": "Spicy Beef Chili",
+    "description": "Spicy Beef Chili for 4, ready in 55 minutes. Made with beef mince, black beans and chopped tomatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r12/600/400",
+    "cookTimeMin": 55,
+    "servings": 4,
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p69",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p121",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p123",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p11",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p157",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p109",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p155",
+        "quantity": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: beef mince, black beans, chopped tomatoes, onions, cumin, basmati rice and chili flakes.",
+      "Soften the chopped tomatoes, onions, cumin, basmati rice and chili flakes in a large pot over a medium heat.",
+      "Add the beef mince and black beans and simmer for 47 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1273
+  },
+  {
+    "id": "r13",
+    "name": "Veggie Stir-Fry Noodles",
+    "description": "Veggie Stir-Fry Noodles for 2, ready in 20 minutes. Made with rice noodles, broccoli and carrots.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r13/600/400",
+    "cookTimeMin": 20,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p149",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p19",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p9",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p5",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p131",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p39",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: rice noodles, broccoli, carrots, bell pepper, soy sauce and ginger.",
+      "Heat a large pan and cook the rice noodles until golden.",
+      "Add the broccoli, carrots, bell pepper, soy sauce and ginger and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 914
+  },
+  {
+    "id": "r14",
+    "name": "Veggie Stir-Fry Noodles with Tomatoes",
+    "description": "Veggie Stir-Fry Noodles with Tomatoes for 2, ready in 25 minutes. Made with rice noodles, broccoli and carrots.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r14/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p149",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p19",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p9",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p5",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p131",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p39",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p1",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: rice noodles, broccoli, carrots, bell pepper, soy sauce, ginger and tomatoes.",
+      "Heat a large pan and cook the rice noodles until golden.",
+      "Add the broccoli, carrots, bell pepper, soy sauce, ginger and tomatoes and cook for 17 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1163
+  },
+  {
+    "id": "r15",
+    "name": "Red Lentil Soup",
+    "description": "Red Lentil Soup for 4, ready in 30 minutes. Made with red lentils, carrots and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r15/600/400",
+    "cookTimeMin": 30,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p117",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p9",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p133",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p157",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p27",
+        "quantity": "a handful"
+      }
+    ],
+    "steps": [
+      "Get everything ready: red lentils, carrots, onions, vegetable stock, cumin and lemons.",
+      "Soften the onions, vegetable stock, cumin and lemons in a large pot over a medium heat.",
+      "Add the red lentils and carrots and simmer for 22 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 854
+  },
+  {
+    "id": "r16",
+    "name": "Red Lentil Soup with Tomatoes",
+    "description": "Red Lentil Soup with Tomatoes for 2, ready in 35 minutes. Made with red lentils, carrots and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r16/600/400",
+    "cookTimeMin": 35,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p117",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p9",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p133",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p157",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p27",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p1",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: red lentils, carrots, onions, vegetable stock, cumin, lemons and tomatoes.",
+      "Soften the onions, vegetable stock, cumin, lemons and tomatoes in a large pot over a medium heat.",
+      "Add the red lentils and carrots and simmer for 27 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1103
+  },
+  {
+    "id": "r17",
+    "name": "Greek Salad Bowl",
+    "description": "Greek Salad Bowl for 4, ready in 10 minutes. Made with cucumber, tomatoes and feta.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r17/600/400",
+    "cookTimeMin": 10,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p3",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p1",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p53",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p11",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p95",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: cucumber, tomatoes, feta, onions, olive oil and pita bread.",
+      "Chop what needs chopping and combine the cucumber, tomatoes, feta, onions, olive oil and pita bread in a bowl.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1534
+  },
+  {
+    "id": "r18",
+    "name": "Greek Salad Bowl with Mushrooms",
+    "description": "Greek Salad Bowl with Mushrooms for 4, ready in 15 minutes. Made with cucumber, tomatoes and feta.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r18/600/400",
+    "cookTimeMin": 15,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p3",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p1",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p53",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p95",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p21",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: cucumber, tomatoes, feta, onions, olive oil, pita bread and mushrooms.",
+      "Chop what needs chopping and combine the cucumber, tomatoes, feta, onions, olive oil, pita bread and mushrooms in a bowl.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1713
+  },
+  {
+    "id": "r19",
+    "name": "Garlic Prawn Spaghetti",
+    "description": "Garlic Prawn Spaghetti for 4, ready in 20 minutes. Made with prawns, spaghetti and garlic.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r19/600/400",
+    "cookTimeMin": 20,
+    "servings": 4,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SHELLFISH"
+    ],
+    "ingredients": [
+      {
+        "productId": "p81",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p105",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p155",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p27",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: prawns, spaghetti, garlic, chili flakes, olive oil and lemons.",
+      "Heat a large pan and cook the prawns until golden.",
+      "Add the spaghetti, garlic, chili flakes, olive oil and lemons and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1754
+  },
+  {
+    "id": "r20",
+    "name": "Garlic Prawn Spaghetti with Spinach",
+    "description": "Garlic Prawn Spaghetti with Spinach for 6, ready in 30 minutes. Made with prawns, spaghetti and garlic.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r20/600/400",
+    "cookTimeMin": 30,
+    "servings": 6,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SHELLFISH"
+    ],
+    "ingredients": [
+      {
+        "productId": "p81",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p105",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p155",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p27",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p7",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: prawns, spaghetti, garlic, chili flakes, olive oil, lemons and spinach.",
+      "Heat a large pan and cook the prawns until golden.",
+      "Add the spaghetti, garlic, chili flakes, olive oil, lemons and spinach and cook for 22 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1953
+  },
+  {
+    "id": "r21",
+    "name": "Tofu Peanut Noodles",
+    "description": "Tofu Peanut Noodles for 4, ready in 20 minutes. Made with smoked tofu, rice noodles and peanut butter.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r21/600/400",
+    "cookTimeMin": 20,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "PEANUTS",
+      "SOY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p83",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p149",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p135",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p131",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p9",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p37",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: smoked tofu, rice noodles, peanut butter, soy sauce, carrots and coriander.",
+      "Heat a large pan and cook the smoked tofu until golden.",
+      "Add the rice noodles, peanut butter, soy sauce, carrots and coriander and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1214
+  },
+  {
+    "id": "r22",
+    "name": "Tofu Peanut Noodles with Bell Pepper",
+    "description": "Tofu Peanut Noodles with Bell Pepper for 2, ready in 20 minutes. Made with smoked tofu, rice noodles and peanut butter.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r22/600/400",
+    "cookTimeMin": 20,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "PEANUTS",
+      "SOY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p83",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p149",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p135",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p131",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p9",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p37",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p5",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: smoked tofu, rice noodles, peanut butter, soy sauce, carrots, coriander and bell pepper.",
+      "Heat a large pan and cook the smoked tofu until golden.",
+      "Add the rice noodles, peanut butter, soy sauce, carrots, coriander and bell pepper and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1343
+  },
+  {
+    "id": "r23",
+    "name": "Sausage Tray Bake",
+    "description": "Sausage Tray Bake for 2, ready in 40 minutes. Made with pork sausages, potatoes and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r23/600/400",
+    "cookTimeMin": 40,
+    "servings": 2,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "productId": "p73",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p15",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p11",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p5",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p159",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: pork sausages, potatoes, onions, bell pepper, olive oil and paprika.",
+      "Spread the pork sausages and potatoes on a tray and add the onions, bell pepper, olive oil and paprika.",
+      "Roast for 32 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1594
+  },
+  {
+    "id": "r24",
+    "name": "Spicy Sausage Tray Bake",
+    "description": "Spicy Sausage Tray Bake for 2, ready in 40 minutes. Made with pork sausages, potatoes and onions.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r24/600/400",
+    "cookTimeMin": 40,
+    "servings": 2,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "productId": "p73",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p15",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p5",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p159",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p155",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: pork sausages, potatoes, onions, bell pepper, olive oil, paprika and chili flakes.",
+      "Spread the pork sausages and potatoes on a tray and add the onions, bell pepper, olive oil, paprika and chili flakes.",
+      "Roast for 32 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1723
+  },
+  {
+    "id": "r25",
+    "name": "Halloumi Couscous Bowl",
+    "description": "Halloumi Couscous Bowl for 2, ready in 20 minutes. Made with halloumi, couscous and zucchini.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r25/600/400",
+    "cookTimeMin": 20,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p63",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p113",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p23",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p1",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p27",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: halloumi, couscous, zucchini, tomatoes, lemons and olive oil.",
+      "Heat a large pan and cook the halloumi until golden.",
+      "Add the couscous, zucchini, tomatoes, lemons and olive oil and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1704
+  },
+  {
+    "id": "r26",
+    "name": "Halloumi Couscous Bowl with Bell Pepper",
+    "description": "Halloumi Couscous Bowl with Bell Pepper for 4, ready in 30 minutes. Made with halloumi, couscous and zucchini.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r26/600/400",
+    "cookTimeMin": 30,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p63",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p113",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p23",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p1",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p27",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p5",
+        "quantity": "a handful"
+      }
+    ],
+    "steps": [
+      "Get everything ready: halloumi, couscous, zucchini, tomatoes, lemons, olive oil and bell pepper.",
+      "Heat a large pan and cook the halloumi until golden.",
+      "Add the couscous, zucchini, tomatoes, lemons, olive oil and bell pepper and cook for 22 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1833
+  },
+  {
+    "id": "r27",
+    "name": "Sweet Potato Black Bean Tacos",
+    "description": "Sweet Potato Black Bean Tacos for 2, ready in 30 minutes. Made with sweet potatoes, black beans and tortilla wraps.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r27/600/400",
+    "cookTimeMin": 30,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "productId": "p17",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p121",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p93",
+        "quantity": "4 pcs"
+      },
+      {
+        "productId": "p25",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p37",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p157",
+        "quantity": "1 tbsp"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: sweet potatoes, black beans, tortilla wraps, avocado, coriander and cumin.",
+      "Spread the sweet potatoes and black beans on a tray and add the tortilla wraps, avocado, coriander and cumin.",
+      "Roast for 22 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 914
+  },
+  {
+    "id": "r28",
+    "name": "Sweet Potato Black Bean Tacos with Tomatoes",
+    "description": "Sweet Potato Black Bean Tacos with Tomatoes for 6, ready in 40 minutes. Made with sweet potatoes, black beans and tortilla wraps.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r28/600/400",
+    "cookTimeMin": 40,
+    "servings": 6,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN"
+    ],
+    "ingredients": [
+      {
+        "productId": "p17",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p121",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p93",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p25",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p37",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p157",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p1",
+        "quantity": "200 g"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: sweet potatoes, black beans, tortilla wraps, avocado, coriander, cumin and tomatoes.",
+      "Spread the sweet potatoes and black beans on a tray and add the tortilla wraps, avocado, coriander, cumin and tomatoes.",
+      "Roast for 32 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1163
+  },
+  {
+    "id": "r29",
+    "name": "Pesto Chicken Penne",
+    "description": "Pesto Chicken Penne for 2, ready in 25 minutes. Made with chicken breast, penne and pesto.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r29/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "NUTS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p65",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p107",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p153",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p7",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p51",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chicken breast, penne, pesto, spinach and parmesan.",
+      "Soften the pesto, spinach and parmesan in a large pot over a medium heat.",
+      "Add the chicken breast and penne and simmer for 17 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1525
+  },
+  {
+    "id": "r30",
+    "name": "Spicy Pesto Chicken Penne",
+    "description": "Spicy Pesto Chicken Penne for 2, ready in 25 minutes. Made with chicken breast, penne and pesto.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r30/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "NUTS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p65",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p107",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p153",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p7",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p51",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p155",
+        "quantity": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chicken breast, penne, pesto, spinach, parmesan and chili flakes.",
+      "Soften the pesto, spinach, parmesan and chili flakes in a large pot over a medium heat.",
+      "Add the chicken breast and penne and simmer for 17 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1654
+  },
+  {
+    "id": "r31",
+    "name": "Cod with Peas and Potatoes",
+    "description": "Cod with Peas and Potatoes for 2, ready in 30 minutes. Made with cod fillet, frozen peas and potatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r31/600/400",
+    "cookTimeMin": 30,
+    "servings": 2,
+    "diets": [
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "FISH"
+    ],
+    "ingredients": [
+      {
+        "productId": "p79",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p161",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p15",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p43",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p27",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: cod fillet, frozen peas, potatoes, butter and lemons.",
+      "Spread the cod fillet and frozen peas on a tray and add the potatoes, butter and lemons.",
+      "Roast for 22 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1345
+  },
+  {
+    "id": "r32",
+    "name": "Cod with Peas and Potatoes with Bell Pepper",
+    "description": "Cod with Peas and Potatoes with Bell Pepper for 4, ready in 30 minutes. Made with cod fillet, frozen peas and potatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r32/600/400",
+    "cookTimeMin": 30,
+    "servings": 4,
+    "diets": [
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "FISH"
+    ],
+    "ingredients": [
+      {
+        "productId": "p79",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p161",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p15",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p43",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p27",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p5",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: cod fillet, frozen peas, potatoes, butter, lemons and bell pepper.",
+      "Spread the cod fillet and frozen peas on a tray and add the potatoes, butter, lemons and bell pepper.",
+      "Roast for 22 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1474
+  },
+  {
+    "id": "r33",
+    "name": "Mushroom Omelette",
+    "description": "Mushroom Omelette for 4, ready in 10 minutes. Made with eggs, mushrooms and cheddar.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r33/600/400",
+    "cookTimeMin": 10,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "EGGS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p57",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p21",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p47",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p43",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p7",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: eggs, mushrooms, cheddar, butter and spinach.",
+      "Heat a large pan and cook the eggs until golden.",
+      "Add the mushrooms, cheddar, butter and spinach and cook for 3 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1235
+  },
+  {
+    "id": "r34",
+    "name": "Mushroom Omelette with Tomatoes",
+    "description": "Mushroom Omelette with Tomatoes for 6, ready in 15 minutes. Made with eggs, mushrooms and cheddar.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r34/600/400",
+    "cookTimeMin": 15,
+    "servings": 6,
+    "diets": [
+      "VEGETARIAN",
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY",
+      "EGGS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p57",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p21",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p47",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p43",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p7",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p1",
+        "quantity": "a handful"
+      }
+    ],
+    "steps": [
+      "Get everything ready: eggs, mushrooms, cheddar, butter, spinach and tomatoes.",
+      "Heat a large pan and cook the eggs until golden.",
+      "Add the mushrooms, cheddar, butter, spinach and tomatoes and cook for 7 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1484
+  },
+  {
+    "id": "r35",
+    "name": "Quinoa Power Bowl",
+    "description": "Quinoa Power Bowl for 2, ready in 20 minutes. Made with quinoa, chickpeas and avocado.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r35/600/400",
+    "cookTimeMin": 20,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p115",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p119",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p25",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p7",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p151",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p27",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: quinoa, chickpeas, avocado, spinach, tahini and lemons.",
+      "Chop what needs chopping and combine the quinoa, chickpeas, avocado, spinach, tahini and lemons in a bowl.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1274
+  },
+  {
+    "id": "r36",
+    "name": "Spicy Quinoa Power Bowl",
+    "description": "Spicy Quinoa Power Bowl for 4, ready in 30 minutes. Made with quinoa, chickpeas and avocado.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r36/600/400",
+    "cookTimeMin": 30,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p115",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p119",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p25",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p7",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p151",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p27",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p155",
+        "quantity": "1 tbsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: quinoa, chickpeas, avocado, spinach, tahini, lemons and chili flakes.",
+      "Chop what needs chopping and combine the quinoa, chickpeas, avocado, spinach, tahini, lemons and chili flakes in a bowl.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1403
+  },
+  {
+    "id": "r37",
+    "name": "Turkey Burgers",
+    "description": "Turkey Burgers for 2, ready in 25 minutes. Made with turkey mince, burger buns and tomatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r37/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p85",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p97",
+        "quantity": "4 pcs"
+      },
+      {
+        "productId": "p1",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p11",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p47",
+        "quantity": "50 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: turkey mince, burger buns, tomatoes, onions and cheddar.",
+      "Heat a large pan and cook the turkey mince until golden.",
+      "Add the burger buns, tomatoes, onions and cheddar and cook for 17 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1295
+  },
+  {
+    "id": "r38",
+    "name": "Turkey Burgers with Spinach",
+    "description": "Turkey Burgers with Spinach for 6, ready in 35 minutes. Made with turkey mince, burger buns and tomatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r38/600/400",
+    "cookTimeMin": 35,
+    "servings": 6,
+    "diets": [],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p85",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p97",
+        "quantity": "4 pcs"
+      },
+      {
+        "productId": "p1",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p11",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p47",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p7",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: turkey mince, burger buns, tomatoes, onions, cheddar and spinach.",
+      "Heat a large pan and cook the turkey mince until golden.",
+      "Add the burger buns, tomatoes, onions, cheddar and spinach and cook for 27 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1494
+  },
+  {
+    "id": "r39",
+    "name": "Margherita Flatbread",
+    "description": "Margherita Flatbread for 2, ready in 15 minutes. Made with naan, mozzarella and chopped tomatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r39/600/400",
+    "cookTimeMin": 15,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p103",
+        "quantity": "4 pcs"
+      },
+      {
+        "productId": "p49",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p123",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p35",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p127",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: naan, mozzarella, chopped tomatoes, basil and olive oil.",
+      "Spread the naan and mozzarella on a tray and add the chopped tomatoes, basil and olive oil.",
+      "Roast for 7 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1245
+  },
+  {
+    "id": "r40",
+    "name": "Margherita Flatbread with Bell Pepper",
+    "description": "Margherita Flatbread with Bell Pepper for 2, ready in 15 minutes. Made with naan, mozzarella and chopped tomatoes.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r40/600/400",
+    "cookTimeMin": 15,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p103",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p49",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p123",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p35",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p5",
+        "quantity": "a handful"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: naan, mozzarella, chopped tomatoes, basil, olive oil and bell pepper.",
+      "Spread the naan and mozzarella on a tray and add the chopped tomatoes, basil, olive oil and bell pepper.",
+      "Roast for 7 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1374
+  },
+  {
+    "id": "r41",
+    "name": "Egg Fried Rice",
+    "description": "Egg Fried Rice for 2, ready in 15 minutes. Made with basmati rice, eggs and frozen peas.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r41/600/400",
+    "cookTimeMin": 15,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "EGGS",
+      "SOY",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p109",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p57",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p161",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p131",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p129",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p9",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: basmati rice, eggs, frozen peas, soy sauce, sesame oil and carrots.",
+      "Heat a large pan and cook the basmati rice until golden.",
+      "Add the eggs, frozen peas, soy sauce, sesame oil and carrots and cook for 7 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1374
+  },
+  {
+    "id": "r42",
+    "name": "Egg Fried Rice with Coriander",
+    "description": "Egg Fried Rice with Coriander for 4, ready in 20 minutes. Made with basmati rice, eggs and frozen peas.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r42/600/400",
+    "cookTimeMin": 20,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "EGGS",
+      "SOY",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p109",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p57",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p161",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p131",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p129",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p9",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p37",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: basmati rice, eggs, frozen peas, soy sauce, sesame oil, carrots and coriander.",
+      "Heat a large pan and cook the basmati rice until golden.",
+      "Add the eggs, frozen peas, soy sauce, sesame oil, carrots and coriander and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1503
+  },
+  {
+    "id": "r43",
+    "name": "Steak with Garlic Potatoes",
+    "description": "Steak with Garlic Potatoes for 4, ready in 30 minutes. Made with beef steak, potatoes and garlic.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r43/600/400",
+    "cookTimeMin": 30,
+    "servings": 4,
+    "diets": [
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p71",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p15",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p13",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p43",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p19",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: beef steak, potatoes, garlic, butter and broccoli.",
+      "Heat a large pan and cook the beef steak until golden.",
+      "Add the potatoes, garlic, butter and broccoli and cook for 22 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1485
+  },
+  {
+    "id": "r44",
+    "name": "Steak with Garlic Potatoes with Coriander",
+    "description": "Steak with Garlic Potatoes with Coriander for 2, ready in 30 minutes. Made with beef steak, potatoes and garlic.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r44/600/400",
+    "cookTimeMin": 30,
+    "servings": 2,
+    "diets": [
+      "GLUTEN_FREE"
+    ],
+    "allergens": [
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p71",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p15",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p43",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p19",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p37",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: beef steak, potatoes, garlic, butter, broccoli and coriander.",
+      "Heat a large pan and cook the beef steak until golden.",
+      "Add the potatoes, garlic, butter, broccoli and coriander and cook for 22 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1614
+  },
+  {
+    "id": "r45",
+    "name": "Banana Oat Pancakes",
+    "description": "Banana Oat Pancakes for 2, ready in 15 minutes. Made with bananas, rolled oats and eggs.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r45/600/400",
+    "cookTimeMin": 15,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "EGGS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p29",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p141",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p57",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p41",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p137",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p33",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: bananas, rolled oats, eggs, whole milk, honey and blueberries.",
+      "Heat a large pan and cook the bananas until golden.",
+      "Add the rolled oats, eggs, whole milk, honey and blueberries and cook for 7 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1394
+  },
+  {
+    "id": "r46",
+    "name": "Banana Oat Pancakes with Peanut Butter",
+    "description": "Banana Oat Pancakes with Peanut Butter for 4, ready in 25 minutes. Made with bananas, rolled oats and eggs.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r46/600/400",
+    "cookTimeMin": 25,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "EGGS",
+      "PEANUTS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p29",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p141",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p57",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p41",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p137",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p33",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p135",
+        "quantity": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: bananas, rolled oats, eggs, whole milk, honey, blueberries and peanut butter.",
+      "Heat a large pan and cook the bananas until golden.",
+      "Add the rolled oats, eggs, whole milk, honey, blueberries and peanut butter and cook for 17 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1673
+  },
+  {
+    "id": "r47",
+    "name": "Berry Yogurt Bowl",
+    "description": "Berry Yogurt Bowl for 2, ready in 5 minutes. Made with greek yogurt, frozen berries and rolled oats.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r47/600/400",
+    "cookTimeMin": 5,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "NUTS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p45",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p163",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p141",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p137",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p205",
+        "quantity": "2 tbsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: greek yogurt, frozen berries, rolled oats, honey and walnuts.",
+      "Chop what needs chopping and combine the greek yogurt, frozen berries, rolled oats, honey and walnuts in a bowl.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1425
+  },
+  {
+    "id": "r48",
+    "name": "Berry Yogurt Bowl with Peanut Butter",
+    "description": "Berry Yogurt Bowl with Peanut Butter for 2, ready in 10 minutes. Made with greek yogurt, frozen berries and rolled oats.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r48/600/400",
+    "cookTimeMin": 10,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "NUTS",
+      "PEANUTS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p45",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p163",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p141",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p137",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p205",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p135",
+        "quantity": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Get everything ready: greek yogurt, frozen berries, rolled oats, honey, walnuts and peanut butter.",
+      "Chop what needs chopping and combine the greek yogurt, frozen berries, rolled oats, honey, walnuts and peanut butter in a bowl.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1704
+  },
+  {
+    "id": "r49",
+    "name": "Tuna Steak Rice Bowl",
+    "description": "Tuna Steak Rice Bowl for 2, ready in 20 minutes. Made with tuna steak, basmati rice and frozen edamame.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r49/600/400",
+    "cookTimeMin": 20,
+    "servings": 2,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY",
+      "FISH",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p87",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p109",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p175",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p131",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p129",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p3",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: tuna steak, basmati rice, frozen edamame, soy sauce, sesame oil and cucumber.",
+      "Heat a large pan and cook the tuna steak until golden.",
+      "Add the basmati rice, frozen edamame, soy sauce, sesame oil and cucumber and cook for 12 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1934
+  },
+  {
+    "id": "r50",
+    "name": "Tuna Steak Rice Bowl with Mushrooms",
+    "description": "Tuna Steak Rice Bowl with Mushrooms for 2, ready in 25 minutes. Made with tuna steak, basmati rice and frozen edamame.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r50/600/400",
+    "cookTimeMin": 25,
+    "servings": 2,
+    "diets": [
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SOY",
+      "FISH",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p87",
+        "quantity": "500 g"
+      },
+      {
+        "productId": "p109",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p175",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p131",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p129",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p3",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p21",
+        "quantity": "200 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: tuna steak, basmati rice, frozen edamame, soy sauce, sesame oil, cucumber and mushrooms.",
+      "Heat a large pan and cook the tuna steak until golden.",
+      "Add the basmati rice, frozen edamame, soy sauce, sesame oil, cucumber and mushrooms and cook for 17 minutes.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 2113
+  },
+  {
+    "id": "r51",
+    "name": "Spinach Feta Pita",
+    "description": "Spinach Feta Pita for 2, ready in 15 minutes. Made with pita bread, frozen spinach and feta.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r51/600/400",
+    "cookTimeMin": 15,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p95",
+        "quantity": "4 pcs"
+      },
+      {
+        "productId": "p165",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p53",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: pita bread, frozen spinach, feta, garlic and olive oil.",
+      "Spread the pita bread and frozen spinach on a tray and add the feta, garlic and olive oil.",
+      "Roast for 7 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1305
+  },
+  {
+    "id": "r52",
+    "name": "Spinach Feta Pita with Mushrooms",
+    "description": "Spinach Feta Pita with Mushrooms for 4, ready in 25 minutes. Made with pita bread, frozen spinach and feta.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r52/600/400",
+    "cookTimeMin": 25,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY"
+    ],
+    "ingredients": [
+      {
+        "productId": "p95",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p165",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p53",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p21",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: pita bread, frozen spinach, feta, garlic, olive oil and mushrooms.",
+      "Spread the pita bread and frozen spinach on a tray and add the feta, garlic, olive oil and mushrooms.",
+      "Roast for 17 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1484
+  },
+  {
+    "id": "r53",
+    "name": "Coconut Lentil Dal",
+    "description": "Coconut Lentil Dal for 4, ready in 35 minutes. Made with red lentils, coconut milk and curry paste.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r53/600/400",
+    "cookTimeMin": 35,
+    "servings": 4,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p117",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p125",
+        "quantity": "200 ml"
+      },
+      {
+        "productId": "p143",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p39",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p13",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p109",
+        "quantity": "200 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: red lentils, coconut milk, curry paste, ginger, garlic and basmati rice.",
+      "Soften the curry paste, ginger, garlic and basmati rice in a large pot over a medium heat.",
+      "Add the red lentils and coconut milk and simmer for 27 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1004
+  },
+  {
+    "id": "r54",
+    "name": "Coconut Lentil Dal with Bell Pepper",
+    "description": "Coconut Lentil Dal with Bell Pepper for 2, ready in 45 minutes. Made with red lentils, coconut milk and curry paste.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r54/600/400",
+    "cookTimeMin": 45,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p117",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p125",
+        "quantity": "200 ml"
+      },
+      {
+        "productId": "p143",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p39",
+        "quantity": "2 pcs"
+      },
+      {
+        "productId": "p13",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p109",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p5",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: red lentils, coconut milk, curry paste, ginger, garlic, basmati rice and bell pepper.",
+      "Soften the curry paste, ginger, garlic, basmati rice and bell pepper in a large pot over a medium heat.",
+      "Add the red lentils and coconut milk and simmer for 37 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1133
+  },
+  {
+    "id": "r55",
+    "name": "Bacon Carbonara",
+    "description": "Bacon Carbonara for 4, ready in 20 minutes. Made with spaghetti, bacon and eggs.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r55/600/400",
+    "cookTimeMin": 20,
+    "servings": 4,
+    "diets": [],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "EGGS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p105",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p75",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p57",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p51",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "150 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: spaghetti, bacon, eggs, parmesan and garlic.",
+      "Soften the eggs, parmesan and garlic in a large pot over a medium heat.",
+      "Add the spaghetti and bacon and simmer for 12 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1195
+  },
+  {
+    "id": "r56",
+    "name": "Bacon Carbonara with Bell Pepper",
+    "description": "Bacon Carbonara with Bell Pepper for 6, ready in 25 minutes. Made with spaghetti, bacon and eggs.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r56/600/400",
+    "cookTimeMin": 25,
+    "servings": 6,
+    "diets": [],
+    "allergens": [
+      "GLUTEN",
+      "DAIRY",
+      "EGGS"
+    ],
+    "ingredients": [
+      {
+        "productId": "p105",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p75",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p57",
+        "quantity": "100 g"
+      },
+      {
+        "productId": "p51",
+        "quantity": "50 g"
+      },
+      {
+        "productId": "p13",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p5",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Get everything ready: spaghetti, bacon, eggs, parmesan, garlic and bell pepper.",
+      "Soften the eggs, parmesan, garlic and bell pepper in a large pot over a medium heat.",
+      "Add the spaghetti and bacon and simmer for 17 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1324
+  },
+  {
+    "id": "r57",
+    "name": "Roasted Vegetable Couscous",
+    "description": "Roasted Vegetable Couscous for 2, ready in 30 minutes. Made with couscous, zucchini and bell pepper.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r57/600/400",
+    "cookTimeMin": 30,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p113",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p23",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p5",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p11",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p197",
+        "quantity": "50 g"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: couscous, zucchini, bell pepper, onions, olive oil and hummus.",
+      "Spread the couscous and zucchini on a tray and add the bell pepper, onions, olive oil and hummus.",
+      "Roast for 22 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1414
+  },
+  {
+    "id": "r58",
+    "name": "Roasted Vegetable Couscous with Tomatoes",
+    "description": "Roasted Vegetable Couscous with Tomatoes for 2, ready in 35 minutes. Made with couscous, zucchini and bell pepper.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r58/600/400",
+    "cookTimeMin": 35,
+    "servings": 2,
+    "diets": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "allergens": [
+      "GLUTEN",
+      "SESAME"
+    ],
+    "ingredients": [
+      {
+        "productId": "p113",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p23",
+        "quantity": "a handful"
+      },
+      {
+        "productId": "p5",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p11",
+        "quantity": "150 g"
+      },
+      {
+        "productId": "p127",
+        "quantity": "1 tbsp"
+      },
+      {
+        "productId": "p197",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p1",
+        "quantity": "2 pcs"
+      }
+    ],
+    "steps": [
+      "Heat the oven to 200°C. Get everything ready: couscous, zucchini, bell pepper, onions, olive oil, hummus and tomatoes.",
+      "Spread the couscous and zucchini on a tray and add the bell pepper, onions, olive oil, hummus and tomatoes.",
+      "Roast for 27 minutes, turning once.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1663
+  },
+  {
+    "id": "r59",
+    "name": "Chicken Thigh Curry",
+    "description": "Chicken Thigh Curry for 4, ready in 40 minutes. Made with chicken thighs, coconut milk and curry paste.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r59/600/400",
+    "cookTimeMin": 40,
+    "servings": 4,
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p67",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p125",
+        "quantity": "400 ml"
+      },
+      {
+        "productId": "p143",
+        "quantity": "2 tbsp"
+      },
+      {
+        "productId": "p11",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p109",
+        "quantity": "300 g"
+      },
+      {
+        "productId": "p37",
+        "quantity": "200 g"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chicken thighs, coconut milk, curry paste, onions, basmati rice and coriander.",
+      "Soften the curry paste, onions, basmati rice and coriander in a large pot over a medium heat.",
+      "Add the chicken thighs and coconut milk and simmer for 32 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1304
+  },
+  {
+    "id": "r60",
+    "name": "Chicken Thigh Curry with Tomatoes",
+    "description": "Chicken Thigh Curry with Tomatoes for 2, ready in 50 minutes. Made with chicken thighs, coconut milk and curry paste.",
+    "imageUrl": "https://picsum.photos/seed/pantry-r60/600/400",
+    "cookTimeMin": 50,
+    "servings": 2,
+    "diets": [
+      "GLUTEN_FREE",
+      "DAIRY_FREE"
+    ],
+    "allergens": [],
+    "ingredients": [
+      {
+        "productId": "p67",
+        "quantity": "400 g"
+      },
+      {
+        "productId": "p125",
+        "quantity": "400 ml"
+      },
+      {
+        "productId": "p143",
+        "quantity": "1 tsp"
+      },
+      {
+        "productId": "p11",
+        "quantity": "1 pc"
+      },
+      {
+        "productId": "p109",
+        "quantity": "250 g"
+      },
+      {
+        "productId": "p37",
+        "quantity": "200 g"
+      },
+      {
+        "productId": "p1",
+        "quantity": "1 pc"
+      }
+    ],
+    "steps": [
+      "Get everything ready: chicken thighs, coconut milk, curry paste, onions, basmati rice, coriander and tomatoes.",
+      "Soften the curry paste, onions, basmati rice, coriander and tomatoes in a large pot over a medium heat.",
+      "Add the chicken thighs and coconut milk and simmer for 42 minutes, stirring now and then.",
+      "Taste, season with salt and pepper, and serve."
+    ],
+    "priceCents": 1553
+  }
+]

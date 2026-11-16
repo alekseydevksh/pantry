@@ -2,9 +2,23 @@
   "name": "@pantry/server",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
+  "scripts": {
+    "seed": "tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
   "dependencies": {
     "@pantry/shared": "workspace:*",
-    "graphql": "^16.15.0"
+    "graphql": "^16.15.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.16.22",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.19.2",
+    "jest": "^30.5.2",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3"
   }
 }
