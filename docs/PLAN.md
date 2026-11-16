@@ -49,7 +49,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **0.4 [sonnet] Mock server.** GraphQL Yoga server with resolvers for the whole schema, in-memory cart, cursor pagination, simple text search with filters, random 100–800 ms delay and `ERROR_RATE` env variable (both can be turned off for tests). `recommendations` is a stub.
   - Accept: every query and mutation in the schema returns data; a repeated mutation with the same `idempotencyKey` is applied once.
   - Proof: server integration tests (search filters, pagination cursors, idempotency).
-- [ ] **0.5 [sonnet] Expo app.** `create-expo-app@latest` in `apps/mobile`, Expo Router, `expo-dev-client`, React Compiler enabled, `ios/` and `android/` ignored (CNG), bundle id and `pantry` URL scheme set.
+- [x] **0.5 [sonnet] Expo app.** `create-expo-app@latest` in `apps/mobile`, Expo Router, `expo-dev-client`, React Compiler enabled, `ios/` and `android/` ignored (CNG), bundle id and `pantry` URL scheme set.
   - Accept: the dev build starts on the iOS Simulator and shows a placeholder screen; `npx expo-doctor` is clean.
   - Proof: `pnpm ios` + `npx expo-doctor`. (Manual check; note it in the commit body.)
 - [ ] **0.6 [sonnet] Codegen.** GraphQL Codegen with the client preset; output in `packages/shared`; `pnpm codegen` and a CI check that the output is up to date.
