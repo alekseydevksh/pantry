@@ -5,7 +5,7 @@ import { screen } from '@testing-library/react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Text } from 'react-native';
 
-import { FeedPreviewDocument } from '@pantry/shared';
+import { FeedDocument } from '@pantry/shared';
 
 import { currentLanguage } from '@/lib/i18n';
 import { api } from '@/test/msw/api';
@@ -18,14 +18,14 @@ describe('typed MSW handlers', () => {
   it('give the resolver the typed variables of the document', async () => {
     const seen: number[] = [];
     server.use(
-      api.query(FeedPreviewDocument, ({ variables }) => {
+      api.query(FeedDocument, ({ variables }) => {
         seen.push(variables.first);
         return emptyFeed;
       }),
     );
 
     const result = await createTestClient().query({
-      query: FeedPreviewDocument,
+      query: FeedDocument,
       variables: { first: 7 },
     });
 
@@ -35,18 +35,16 @@ describe('typed MSW handlers', () => {
 
   it('count the calls, so a test can fail once and then succeed', async () => {
     server.use(
-      api.query(FeedPreviewDocument, ({ callCount }) =>
+      api.query(FeedDocument, ({ callCount }) =>
         // 400 is not retried by the retry link, so this is one visible failure.
         callCount === 1 ? api.httpError(400) : emptyFeed,
       ),
     );
     const client = createTestClient();
 
-    await expect(
-      client.query({ query: FeedPreviewDocument, variables: { first: 1 } }),
-    ).rejects.toThrow();
+    await expect(client.query({ query: FeedDocument, variables: { first: 1 } })).rejects.toThrow();
     const second = await client.query({
-      query: FeedPreviewDocument,
+      query: FeedDocument,
       variables: { first: 1 },
       fetchPolicy: 'network-only',
     });
@@ -55,10 +53,10 @@ describe('typed MSW handlers', () => {
   });
 
   it('can answer with a GraphQL error', async () => {
-    server.use(api.query(FeedPreviewDocument, () => api.graphqlError('boom')));
+    server.use(api.query(FeedDocument, () => api.graphqlError('boom')));
 
     await expect(
-      createTestClient().query({ query: FeedPreviewDocument, variables: { first: 1 } }),
+      createTestClient().query({ query: FeedDocument, variables: { first: 1 } }),
     ).rejects.toThrow('boom');
   });
 
@@ -66,14 +64,14 @@ describe('typed MSW handlers', () => {
     const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     await expect(
-      createTestClient().query({ query: FeedPreviewDocument, variables: { first: 1 } }),
+      createTestClient().query({ query: FeedDocument, variables: { first: 1 } }),
     ).rejects.toThrow();
 
     expect(consoleError).toHaveBeenCalled();
   });
 
   it('match by operation name, so another operation is not answered by mistake', async () => {
-    server.use(api.query(FeedPreviewDocument, () => emptyFeed));
+    server.use(api.query(FeedDocument, () => emptyFeed));
     const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
     const other = gql`
       query SomethingElse {
@@ -90,12 +88,12 @@ describe('typed MSW handlers', () => {
 
 describe('renderWithProviders', () => {
   function Feed() {
-    const { data, loading } = useQuery(FeedPreviewDocument, { variables: { first: 1 } });
+    const { data, loading } = useQuery(FeedDocument, { variables: { first: 1 } });
     return <Text>{loading ? 'loading' : `edges: ${data?.feed.edges.length}`}</Text>;
   }
 
   it('gives the component an Apollo client that talks to MSW', async () => {
-    server.use(api.query(FeedPreviewDocument, () => emptyFeed));
+    server.use(api.query(FeedDocument, () => emptyFeed));
 
     await renderWithProviders(<Feed />);
 
@@ -103,7 +101,7 @@ describe('renderWithProviders', () => {
   });
 
   it('uses a new cache for every render', async () => {
-    server.use(api.query(FeedPreviewDocument, () => emptyFeed));
+    server.use(api.query(FeedDocument, () => emptyFeed));
     await renderWithProviders(<Feed />);
     await screen.findByText('edges: 0');
 

@@ -1,6 +1,6 @@
 import { gql, type Reference } from '@apollo/client';
 
-import type { FeedPreviewQuery } from '@pantry/shared';
+import type { TestFeedQuery } from '@pantry/shared';
 
 import { createCache } from '../client';
 import { mergeConnection } from '../pagination';
@@ -127,7 +127,7 @@ describe('feed type policy', () => {
 
   it('replaces the list on a refetch of the first page', () => {
     const cache = createCache();
-    const write = (data: FeedPreviewQuery, after?: string) =>
+    const write = (data: TestFeedQuery, after?: string) =>
       cache.writeQuery({ query: FEED, variables: { first: 2, after }, data });
 
     write(feedPage([product('p1'), product('p2')]));

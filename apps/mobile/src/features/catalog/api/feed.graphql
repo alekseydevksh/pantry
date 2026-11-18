@@ -1,0 +1,25 @@
+# The home feed: products and recipes mixed, one page at a time (cursor pagination, cached by the
+# `feed` field policy in lib/apollo/typePolicies.ts). The cards own their fields as fragments, so this
+# query only selects what the list itself needs: the type and the id of each row, and the page info.
+query Feed($first: Int!, $after: String) {
+  feed(first: $first, after: $after) {
+    edges {
+      cursor
+      node {
+        __typename
+        ... on Product {
+          id
+          ...ProductCardFields
+        }
+        ... on Recipe {
+          id
+          ...RecipeCardFields
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

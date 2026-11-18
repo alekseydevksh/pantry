@@ -1,76 +1,127 @@
+import { FlashList } from '@shopify/flash-list';
 import { router } from 'expo-router';
-import { Text, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
-import { Button, Screen } from '@/design-system';
-import { currentLanguage, formatPrice, useTranslation } from '@/lib/i18n';
+import { Button, ErrorState, Screen, Text } from '@/design-system';
+import { useTranslation } from '@/lib/i18n';
 
-import { useFeedPreview, type FeedPreviewItem } from '../hooks/useFeedPreview';
-
-// Phase 0 placeholder, replaced by the real feed in task 2.5.
-
-const PREVIEW_SIZE = 4;
+import { useFeed, type FeedState } from '../hooks/useFeed';
+import { END_REACHED_THRESHOLD, rowType } from '../model/feed';
+import { FeedRowView } from './FeedRowView';
+import { FeedSkeleton } from './FeedSkeleton';
 
 export function HomeScreen() {
   const { t } = useTranslation();
-  const preview = useFeedPreview(PREVIEW_SIZE);
-
-  function describe(item: FeedPreviewItem): string {
-    // `__typename` narrows the union, so each branch only sees the fields its type has.
-    return item.__typename === 'Recipe'
-      ? t('home.recipeMeta', { name: item.name, minutes: item.cookTimeMin })
-      : t('home.productMeta', {
-          name: item.name,
-          price: formatPrice(item.priceCents, currentLanguage()),
-        });
-  }
+  const feed = useFeed();
 
   return (
     <Screen bottomInset={false} style={styles.screen}>
-      <Text accessibilityRole="header" style={styles.title}>
-        {t('home.title')}
-      </Text>
-      <Text style={styles.subtitle}>{t('home.subtitle')}</Text>
-
-      <View style={styles.preview}>
-        {preview.status === 'loading' && <Text style={styles.status}>{t('home.loading')}</Text>}
-        {preview.status === 'error' && <Text style={styles.status}>{t('home.error')}</Text>}
-        {preview.status === 'ready' && (
-          <>
-            <Text style={styles.status}>{t('home.fromApi')}</Text>
-            {preview.items.map((item) => (
-              <Text key={item.id} style={styles.item}>
-                {describe(item)}
-              </Text>
-            ))}
-          </>
-        )}
-      </View>
-
-      {/* Temporary links, so every route can be opened by hand. The real feed replaces them in 2.5. */}
-      <View style={styles.links}>
-        <Button
-          title={t('home.openRecipe')}
-          variant="secondary"
-          onPress={() => router.push({ pathname: '/recipe/[id]', params: { id: 'r1' } })}
-        />
-        <Button
-          title={t('home.openProduct')}
-          variant="secondary"
-          onPress={() => router.push({ pathname: '/product/[id]', params: { id: 'p1' } })}
-        />
-        <Button title={t('home.askAssistant')} onPress={() => router.push('/assistant')} />
-      </View>
+      {feed.status === 'ready' ? (
+        <FeedList feed={feed} />
+      ) : (
+        <View style={styles.content}>
+          <FeedHeader />
+          {feed.status === 'loading' ? (
+            <FeedSkeleton />
+          ) : (
+            <ErrorState
+              title={t('feed.error.title')}
+              message={t('feed.error.message')}
+              retryLabel={t('common.retry')}
+              onRetry={feed.retry}
+            />
+          )}
+        </View>
+      )}
     </Screen>
   );
 }
 
+function FeedHeader({ notice }: { notice?: string }) {
+  const { t } = useTranslation();
+
+  return (
+    <View style={styles.header}>
+      <Text variant="display" accessibilityRole="header">
+        {t('home.title')}
+      </Text>
+      <Text tone="muted">{t('home.subtitle')}</Text>
+      <Button title={t('home.askAssistant')} onPress={() => router.push('/assistant')} />
+      {notice ? (
+        <Text tone="danger" accessibilityRole="alert">
+          {notice}
+        </Text>
+      ) : null}
+    </View>
+  );
+}
+
+function FeedFooter({ feed }: { feed: Extract<FeedState, { status: 'ready' }> }) {
+  const { t } = useTranslation();
+
+  if (feed.loadMoreFailed) {
+    return (
+      <ErrorState
+        title={t('feed.loadMoreFailed')}
+        retryLabel={t('common.retry')}
+        onRetry={feed.retryLoadMore}
+      />
+    );
+  }
+  if (feed.loadingMore) {
+    return (
+      <View style={styles.footer} accessible accessibilityLabel={t('feed.loadingMore')}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
+  if (!feed.hasNextPage) {
+    return (
+      <Text tone="muted" style={styles.footer}>
+        {t('feed.endOfFeed')}
+      </Text>
+    );
+  }
+  return null;
+}
+
+function FeedList({ feed }: { feed: Extract<FeedState, { status: 'ready' }> }) {
+  const { t } = useTranslation();
+
+  return (
+    <FlashList
+      testID="feed-list"
+      data={feed.rows}
+      keyExtractor={(row) => row.key}
+      // Products and recipes have different layouts, so each type gets its own pool of recycled rows.
+      getItemType={rowType}
+      renderItem={({ item }) => <FeedRowView row={item} />}
+      ItemSeparatorComponent={Separator}
+      ListHeaderComponent={
+        <FeedHeader notice={feed.refreshFailed ? t('feed.refreshFailed') : undefined} />
+      }
+      ListEmptyComponent={<Text tone="muted">{t('feed.empty')}</Text>}
+      ListFooterComponent={<FeedFooter feed={feed} />}
+      onEndReached={feed.loadMore}
+      onEndReachedThreshold={END_REACHED_THRESHOLD}
+      refreshing={feed.refreshing}
+      onRefresh={feed.refresh}
+      contentContainerStyle={styles.listContent}
+    />
+  );
+}
+
+function Separator() {
+  return <View style={styles.separator} />;
+}
+
 const styles = StyleSheet.create((theme) => ({
-  screen: { alignItems: 'center', justifyContent: 'center' },
-  title: { ...theme.typography.display, color: theme.colors.text },
-  subtitle: { ...theme.typography.body, color: theme.colors.textMuted, textAlign: 'center' },
-  links: { marginTop: theme.spacing.xl, alignSelf: 'stretch', gap: theme.spacing.sm },
-  preview: { marginTop: theme.spacing.xl, alignItems: 'center', gap: theme.spacing.xs },
-  status: { ...theme.typography.callout, color: theme.colors.textMuted, textAlign: 'center' },
-  item: { ...theme.typography.callout, color: theme.colors.text },
+  // The list scrolls edge to edge; its own content padding keeps the cards off the screen edges.
+  screen: { padding: theme.spacing.none, gap: theme.spacing.none },
+  content: { padding: theme.spacing.lg },
+  listContent: { padding: theme.spacing.lg },
+  header: { gap: theme.spacing.sm, marginBottom: theme.spacing.lg },
+  separator: { height: theme.spacing.md },
+  footer: { padding: theme.spacing.xl, textAlign: 'center' },
 }));

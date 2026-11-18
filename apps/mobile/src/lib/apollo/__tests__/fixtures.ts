@@ -1,38 +1,11 @@
 // Shared test data for the Apollo cache tests. Not a test file (Jest only runs `*.test.ts`).
-import { gql, type TypedDocumentNode } from '@apollo/client';
+import { TestFeedDocument, type TestFeedQuery } from '@pantry/shared';
 
-import type { FeedPreviewQuery } from '@pantry/shared';
+export type FeedNode = TestFeedQuery['feed']['edges'][number]['node'];
 
-export type FeedNode = FeedPreviewQuery['feed']['edges'][number]['node'];
-
-// The sample feed query from Phase 0 with an `$after` variable. The real paginated feed query
-// arrives in task 2.5; its result has the same shape, so it reuses the generated result type.
-export const FEED: TypedDocumentNode<FeedPreviewQuery, { first: number; after?: string }> = gql`
-  query TestFeed($first: Int!, $after: String) {
-    feed(first: $first, after: $after) {
-      edges {
-        cursor
-        node {
-          __typename
-          ... on Product {
-            id
-            name
-            priceCents
-          }
-          ... on Recipe {
-            id
-            name
-            cookTimeMin
-          }
-        }
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-    }
-  }
-`;
+// A feed query with an `$after` variable and every field inline (testFeed.graphql), so a test can
+// read the items directly. The app's own feed query uses fragments and is masked.
+export const FEED = TestFeedDocument;
 
 export const product = (id: string): FeedNode => ({
   __typename: 'Product',
@@ -47,7 +20,7 @@ export const recipe = (id: string): FeedNode => ({
   cookTimeMin: 20,
 });
 
-export function feedPage(nodes: FeedNode[], hasNextPage = true): FeedPreviewQuery {
+export function feedPage(nodes: FeedNode[], hasNextPage = true): TestFeedQuery {
   return {
     feed: {
       edges: nodes.map((node) => ({ cursor: `c-${node.id}`, node })),

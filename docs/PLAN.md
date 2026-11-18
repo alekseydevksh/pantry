@@ -124,7 +124,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **2.4 [sonnet] MSW test harness.** MSW server for Jest with typed GraphQL handlers built from the generated documents, a `renderWithProviders` helper (Apollo, theme, i18n, router).
   - Accept: one screen test gets its data from MSW.
   - Proof: that test.
-- [ ] **2.5 [sonnet] Home feed.** FlashList v2 with product and recipe cards, cursor pagination, pull-to-refresh, skeletons, `expo-image` with placeholders.
+- [x] **2.5 [sonnet] Home feed.** FlashList v2 with product and recipe cards, cursor pagination, pull-to-refresh, skeletons, `expo-image` with placeholders.
   - Accept: scrolls through all 200+ items; loads the next page near the end.
   - Proof: RNTL + MSW test (first page, next page, refresh).
 - [ ] **2.6 [sonnet] Recipe screen.** Details, ingredient list linked to products, loading and not-found states.

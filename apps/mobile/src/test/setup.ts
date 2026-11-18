@@ -19,6 +19,15 @@ jest.mock('expo-localization', () => ({
 
 // Reanimated is native code; see src/test/reanimated.ts.
 jest.mock('react-native-reanimated', () => jest.requireActual('./reanimated').reanimatedMock);
+// Expo Router's testing library mocks Reanimated again when a test file imports it, with
+// `react-native-reanimated/mock`, which lacks what our components use (`useReducedMotion`). Pointing
+// that module at our mock keeps Reanimated the same whatever a test file imports first.
+jest.mock('react-native-reanimated/mock', () => jest.requireActual('./reanimated').reanimatedMock);
+
+// FlashList measures its rows on the native side; see src/test/flashlist.ts.
+jest.mock('@shopify/flash-list/dist/recyclerview/utils/measureLayout', () =>
+  jest.requireActual('./flashlist').measureLayoutMock(),
+);
 
 // MMKV is native code; see src/test/mmkv.ts. Each id keeps its values until the end of the test.
 jest.mock('react-native-mmkv', () => jest.requireActual('./mmkv').mmkvMock);

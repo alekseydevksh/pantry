@@ -1,7 +1,7 @@
 import { ApolloLink, gql } from '@apollo/client';
 import { Observable } from 'rxjs';
 
-import { FeedPreviewDocument } from '@pantry/shared';
+import { TestFeedDocument } from '@pantry/shared';
 
 import { setErrorReporter, type ErrorContext } from '@/lib/observability';
 import { createMemoryStorage, createMMKVStorage, STORAGE_IDS } from '@/lib/storage';
@@ -206,7 +206,7 @@ describe('saving', () => {
         }),
     );
     const client = createApolloClient({ cache, link });
-    await client.query({ query: FeedPreviewDocument, variables: { first: 4 } });
+    await client.query({ query: TestFeedDocument, variables: { first: 4 } });
     await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(stored(storage)).toHaveProperty('Product:p1');

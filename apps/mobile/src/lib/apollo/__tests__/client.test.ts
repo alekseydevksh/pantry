@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-import { FeedPreviewDocument } from '@pantry/shared';
+import { TestFeedDocument } from '@pantry/shared';
 
 import { setErrorReporter, type ErrorContext } from '@/lib/observability';
 import { jsonResponse } from '@/test/fetch';
@@ -44,17 +44,17 @@ describe('Apollo link chain', () => {
   it('sends the generated document and its variables', async () => {
     const { apollo, fetchMock } = client([ok]);
 
-    await apollo.query({ query: FeedPreviewDocument, variables: { first: 4 } });
+    await apollo.query({ query: TestFeedDocument, variables: { first: 4 } });
 
     const body = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
-    expect(body.operationName).toBe('FeedPreview');
+    expect(body.operationName).toBe('TestFeed');
     expect(body.variables).toEqual({ first: 4 });
   });
 
   it('retries a network error and does not report a request that succeeds in the end', async () => {
     const { apollo, fetchMock } = client([networkDown, ok]);
 
-    const result = await apollo.query({ query: FeedPreviewDocument, variables: { first: 4 } });
+    const result = await apollo.query({ query: TestFeedDocument, variables: { first: 4 } });
 
     expect(result.data).toEqual(emptyFeed);
     expect(fetchMock).toHaveBeenCalledTimes(2);
@@ -65,14 +65,14 @@ describe('Apollo link chain', () => {
     const { apollo, fetchMock } = client([networkDown, networkDown, networkDown, ok]);
 
     await expect(
-      apollo.query({ query: FeedPreviewDocument, variables: { first: 4 } }),
+      apollo.query({ query: TestFeedDocument, variables: { first: 4 } }),
     ).rejects.toThrow('Network request failed');
 
     expect(fetchMock).toHaveBeenCalledTimes(3);
     expect(reports).toHaveLength(1);
     expect(reports[0]?.context).toEqual({
       source: 'apollo',
-      extra: { operationName: 'FeedPreview', kind: 'network', status: null },
+      extra: { operationName: 'TestFeed', kind: 'network', status: null },
     });
   });
 
@@ -81,7 +81,7 @@ describe('Apollo link chain', () => {
     const { apollo, fetchMock } = client([unavailable, unavailable, unavailable]);
 
     await expect(
-      apollo.query({ query: FeedPreviewDocument, variables: { first: 4 } }),
+      apollo.query({ query: TestFeedDocument, variables: { first: 4 } }),
     ).rejects.toThrow();
 
     expect(fetchMock).toHaveBeenCalledTimes(3);
@@ -94,7 +94,7 @@ describe('Apollo link chain', () => {
     const { apollo, fetchMock } = client([invalid, ok]);
 
     await expect(
-      apollo.query({ query: FeedPreviewDocument, variables: { first: 4 } }),
+      apollo.query({ query: TestFeedDocument, variables: { first: 4 } }),
     ).rejects.toThrow('Invalid cursor');
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -107,7 +107,7 @@ describe('Apollo link chain', () => {
     const { apollo, fetchMock } = client([aborted, ok]);
 
     await expect(
-      apollo.query({ query: FeedPreviewDocument, variables: { first: 4 } }),
+      apollo.query({ query: TestFeedDocument, variables: { first: 4 } }),
     ).rejects.toThrow('Aborted');
 
     expect(fetchMock).toHaveBeenCalledTimes(1);

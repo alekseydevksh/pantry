@@ -14,10 +14,16 @@ import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "query FeedPreview($first: Int!) {\n  feed(first: $first) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": typeof types.FeedPreviewDocument,
+    "query Feed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          ...ProductCardFields\n        }\n        ... on Recipe {\n          id\n          ...RecipeCardFields\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": typeof types.FeedDocument,
+    "fragment ProductCardFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}": typeof types.ProductCardFieldsFragmentDoc,
+    "fragment RecipeCardFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}": typeof types.RecipeCardFieldsFragmentDoc,
+    "query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": typeof types.TestFeedDocument,
 };
 const documents: Documents = {
-    "query FeedPreview($first: Int!) {\n  feed(first: $first) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": types.FeedPreviewDocument,
+    "query Feed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          ...ProductCardFields\n        }\n        ... on Recipe {\n          id\n          ...RecipeCardFields\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": types.FeedDocument,
+    "fragment ProductCardFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}": types.ProductCardFieldsFragmentDoc,
+    "fragment RecipeCardFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}": types.RecipeCardFieldsFragmentDoc,
+    "query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": types.TestFeedDocument,
 };
 
 /**
@@ -37,7 +43,19 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query FeedPreview($first: Int!) {\n  feed(first: $first) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}"): (typeof documents)["query FeedPreview($first: Int!) {\n  feed(first: $first) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}"];
+export function graphql(source: "query Feed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          ...ProductCardFields\n        }\n        ... on Recipe {\n          id\n          ...RecipeCardFields\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}"): (typeof documents)["query Feed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          ...ProductCardFields\n        }\n        ... on Recipe {\n          id\n          ...RecipeCardFields\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "fragment ProductCardFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}"): (typeof documents)["fragment ProductCardFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "fragment RecipeCardFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}"): (typeof documents)["fragment RecipeCardFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}"): (typeof documents)["query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

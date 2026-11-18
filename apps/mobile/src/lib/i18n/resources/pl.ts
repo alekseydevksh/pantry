@@ -3,6 +3,7 @@
 export const pl = {
   common: {
     close: 'Zamknij',
+    retry: 'Spróbuj ponownie',
   },
   tabs: {
     home: 'Start',
@@ -18,14 +19,28 @@ export const pl = {
   home: {
     title: 'Pantry',
     subtitle: 'Zakupy i przepisy z asystentem, który pomaga w zakupach.',
-    loading: 'Wczytuję dane z testowego API…',
-    error: 'Testowe API jest niedostępne. Uruchom je poleceniem „pnpm dev:server” i odśwież.',
-    fromApi: 'Z testowego API:',
-    recipeMeta: '{{name}} · {{minutes}} min',
-    productMeta: '{{name}} · {{price}}',
-    openRecipe: 'Otwórz przykładowy przepis',
-    openProduct: 'Otwórz przykładowy produkt',
     askAssistant: 'Zapytaj asystenta',
+  },
+  feed: {
+    kind: { product: 'Produkt', recipe: 'Przepis' },
+    productLabel: '{{name}}, produkt, {{unit}}, {{price}}',
+    recipeLabel: '{{name}}, przepis, {{minutes}} minut',
+    cookTime: '{{minutes}} min',
+    servings_one: '{{count}} porcja',
+    servings_few: '{{count}} porcje',
+    servings_many: '{{count}} porcji',
+    servings_other: '{{count}} porcji',
+    outOfStock: 'Brak w magazynie',
+    loading: 'Wczytuję ofertę',
+    loadingMore: 'Wczytuję więcej…',
+    endOfFeed: 'To już wszystko.',
+    error: {
+      title: 'Nie udało się wczytać oferty',
+      message: 'Sprawdź połączenie i spróbuj ponownie.',
+    },
+    loadMoreFailed: 'Nie udało się wczytać kolejnych pozycji.',
+    refreshFailed: 'Nie udało się odświeżyć. Pociągnij w dół, aby spróbować ponownie.',
+    empty: 'Na razie nic tu nie ma.',
   },
   search: {
     title: 'Szukaj',

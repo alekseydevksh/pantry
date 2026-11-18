@@ -74,4 +74,8 @@ export const typography = {
 export const sizes = {
   /** Smallest touch target allowed for an interactive element (CLAUDE.md, SPEC section 9). */
   minTouchTarget: 44,
+  /** Height of the photo on a feed or search card. */
+  cardImage: 160,
+  /** Height of the photo at the top of a product or recipe screen. */
+  heroImage: 240,
 } as const;
