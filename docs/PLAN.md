@@ -35,6 +35,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | Prices (Phase 0) | Integer cents everywhere, so the price filter is `maxPriceCents` (the plan called it `maxPrice`) |
 | Unistyles setup (Phase 1) | Babel plugin with `root: 'src'` (the Metro-only setup is still experimental). The app entry is `apps/mobile/index.ts`, which registers the themes before Expo Router loads the routes. Adaptive themes are on (the app follows the system) until task 1.7 adds the user's choice |
 | Unistyles in Jest (Phase 1) | The library's own mock plus `src/test/unistyles.ts`, which adds theme switching (`setTestTheme`). After a switch, a test re-renders to see new StyleSheet values; on a device, native code updates them without a re-render |
+| Typed routes on a fresh clone (Phase 1) | `.expo/types/router.d.ts` and `expo-env.d.ts` are generated and git-ignored, and `tsc` fails without them (CI uses a fresh clone). The mobile `typecheck` script runs `expo customize tsconfig.json` first, which writes both files without changing `tsconfig.json`; this is the command the Expo docs give for CI |
 | Safe areas with Unistyles (Phase 1) | Themed styles go on React Native's own components. Unistyles cannot restyle a third-party view (for example `SafeAreaView`) on a theme change unless it is wrapped with `withUnistyles`, so insets come from `rt.insets` in the StyleSheet |
 
 ## Android status

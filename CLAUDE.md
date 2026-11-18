@@ -22,7 +22,7 @@ Run from the repo root. (Scripts are created in Phase 0. If you change one, upda
 | Command | What it does |
 |---|---|
 | `pnpm install` | Install all workspaces |
-| `pnpm typecheck` | `tsc --noEmit` in every package |
+| `pnpm typecheck` | `tsc --noEmit` in every package (in `apps/mobile` it first generates the git-ignored typed-route types) |
 | `pnpm lint` | ESLint + Prettier check |
 | `pnpm format` | Format all files with Prettier |
 | `pnpm test` | Jest in every package |
