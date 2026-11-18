@@ -1,0 +1,26 @@
+# Search results: products and recipes for one `SearchInput`, one page at a time (cursor pagination,
+# one cached list per input via the `search` field policy in lib/apollo/typePolicies.ts). Build `input`
+# only with `canonicalSearchInput` or `parseSearchParams` (features/search/model/searchParams.ts), so
+# the same search always has the same cache key (ADR 0010).
+# Task 3.3 adds the card fragments to the nodes.
+query SearchResults($input: SearchInput!, $first: Int!, $after: String) {
+  search(input: $input, first: $first, after: $after) {
+    edges {
+      cursor
+      node {
+        __typename
+        ... on Product {
+          id
+        }
+        ... on Recipe {
+          id
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    totalCount
+  }
+}
