@@ -88,7 +88,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.4 [sonnet] Navigation shell.** Root layout, four tabs (Home, Search, Cart, Settings), `recipe/[id]` and `product/[id]` stack screens, `assistant` as a modal.
   - Accept: every route opens; the modal closes back to the previous screen.
   - Proof: Expo Router testing-library test that navigates to each route.
-- [ ] **1.5 [sonnet] Deep links and typed routes.** Typed routes on; `pantry://recipe/:id` and `pantry://product/:id` open the right screen, also from a cold start.
+- [x] **1.5 [sonnet] Deep links and typed routes.** Typed routes on; `pantry://recipe/:id` and `pantry://product/:id` open the right screen, also from a cold start.
   - Accept: the deep link opens the recipe screen with the id.
   - Proof: router test with an initial URL; manual `xcrun simctl openurl booted pantry://recipe/r1`.
 - [ ] **1.6 [sonnet] i18n.** `expo-localization` + i18next, EN and PL resources, typed keys, plural rules for PL.
