@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import { useUnistyles } from 'react-native-unistyles';
 
+import { ThemedStatusBar } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
 
 // The tabs are the first screen of the stack, also when the app opens on a deep link, so a
@@ -14,9 +14,11 @@ export default function RootLayout() {
 
   return (
     <>
-      <StatusBar style="auto" />
+      <ThemedStatusBar />
       <Stack
         screenOptions={{
+          // Only the arrow: the previous screen is the `(tabs)` group, which has no title to show.
+          headerBackButtonDisplayMode: 'minimal',
           headerStyle: { backgroundColor: theme.colors.surface },
           headerTintColor: theme.colors.text,
           contentStyle: { backgroundColor: theme.colors.background },

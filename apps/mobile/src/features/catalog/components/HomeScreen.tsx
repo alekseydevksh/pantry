@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import { Text, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
-import { Button } from '@/design-system';
+import { Button, Screen } from '@/design-system';
 import { currentLanguage, formatPrice, useTranslation } from '@/lib/i18n';
 
 import { useFeedPreview, type FeedPreviewItem } from '../hooks/useFeedPreview';
@@ -26,7 +26,7 @@ export function HomeScreen() {
   }
 
   return (
-    <View style={styles.screen}>
+    <Screen bottomInset={false} style={styles.screen}>
       <Text accessibilityRole="header" style={styles.title}>
         {t('home.title')}
       </Text>
@@ -61,19 +61,12 @@ export function HomeScreen() {
         />
         <Button title={t('home.askAssistant')} onPress={() => router.push('/assistant')} />
       </View>
-    </View>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create((theme) => ({
-  screen: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing.xl,
-    gap: theme.spacing.sm,
-    backgroundColor: theme.colors.background,
-  },
+  screen: { alignItems: 'center', justifyContent: 'center' },
   title: { ...theme.typography.display, color: theme.colors.text },
   subtitle: { ...theme.typography.body, color: theme.colors.textMuted, textAlign: 'center' },
   links: { marginTop: theme.spacing.xl, alignSelf: 'stretch', gap: theme.spacing.sm },

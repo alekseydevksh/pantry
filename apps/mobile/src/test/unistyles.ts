@@ -6,6 +6,9 @@
 // re-render. Here a StyleSheet is resolved when a component reads it, so after
 // `setTestTheme` a test must re-render (`screen.rerender`) to see the new values.
 // Components that call `useUnistyles()` re-render by themselves.
+//
+// Safe-area insets are zero in tests. `setTestInsets` sets them (for example a notch and a home
+// indicator), the same way: re-render to see the new values.
 import 'react-native-unistyles/mocks';
 
 import { useSyncExternalStore } from 'react';
@@ -14,7 +17,11 @@ import { themes, type ThemeName } from '@/design-system/themes';
 
 const DEFAULT_THEME: ThemeName = 'light';
 
+type Insets = { top: number; bottom: number; left: number; right: number };
+const NO_INSETS: Insets = { top: 0, bottom: 0, left: 0, right: 0 };
+
 let activeTheme: ThemeName = DEFAULT_THEME;
+let activeInsets: Insets = NO_INSETS;
 const listeners = new Set<() => void>();
 
 function subscribe(listener: () => void) {
@@ -32,6 +39,16 @@ export function setTestTheme(name: ThemeName) {
 
 export function resetTestTheme() {
   setTestTheme(DEFAULT_THEME);
+}
+
+/** Set the safe-area insets in a test, for example `{ top: 59, bottom: 34 }` for a modern iPhone. */
+export function setTestInsets(insets: Partial<Insets>) {
+  activeInsets = { ...NO_INSETS, ...insets };
+  listeners.forEach((listener) => listener());
+}
+
+export function resetTestInsets() {
+  setTestInsets({});
 }
 
 // The mock module is a plain object. Its members are loosely typed here because this file
@@ -54,13 +71,21 @@ mock.StyleSheet.create = (styles) => {
   }
 
   // Resolve the stylesheet once per theme, when a style is first read under that theme.
-  const resolved = new Map<ThemeName, Record<string, unknown>>();
+  const resolved = new Map<Insets, Map<ThemeName, Record<string, unknown>>>();
   const forActiveTheme = () => {
-    let sheet = resolved.get(activeTheme);
+    const insets = activeInsets;
+    let byTheme = resolved.get(insets);
+    if (!byTheme) {
+      byTheme = new Map();
+      resolved.set(insets, byTheme);
+    }
+    let sheet = byTheme.get(activeTheme);
     if (!sheet) {
       const theme = themes[activeTheme];
-      sheet = createWithFirstTheme((_firstTheme, runtime) => styles(theme, runtime));
-      resolved.set(activeTheme, sheet);
+      sheet = createWithFirstTheme((_firstTheme, runtime) =>
+        styles(theme, { ...(runtime as object), insets }),
+      );
+      byTheme.set(activeTheme, sheet);
     }
     return sheet;
   };
