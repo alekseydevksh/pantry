@@ -42,7 +42,7 @@ function ProductContent({ id }: ProductScreenProps) {
   });
 
   return (
-    <Screen style={styles.screen}>
+    <Screen bottomInset={false} style={styles.screen}>
       <ScrollView contentContainerStyle={styles.content}>
         {status === 'notFound' ? (
           <NotFoundState
@@ -76,9 +76,10 @@ function ProductContent({ id }: ProductScreenProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   // The photo runs to the screen edges; the text below has its own padding.
   screen: { padding: theme.spacing.none, gap: theme.spacing.none },
-  content: { paddingBottom: theme.spacing.xl },
+  // The scroll view runs to the screen edge, and its last row can scroll above the home indicator.
+  content: { paddingBottom: rt.insets.bottom + theme.spacing.xl },
   body: { paddingHorizontal: theme.spacing.lg, gap: theme.spacing.lg },
 }));

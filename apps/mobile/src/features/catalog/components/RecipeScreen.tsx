@@ -14,6 +14,7 @@ import { IngredientList } from './IngredientList';
 import { NotFoundState } from './NotFoundState';
 import { RecipeDetails } from './RecipeDetails';
 import { RecipeHeader } from './RecipeHeader';
+import { RecipeSteps } from './RecipeSteps';
 
 export type RecipeScreenProps = {
   /** The recipe id from the route, for example `r1`. */
@@ -44,7 +45,7 @@ function RecipeContent({ id }: RecipeScreenProps) {
   });
 
   return (
-    <Screen style={styles.screen}>
+    <Screen bottomInset={false} style={styles.screen}>
       <ScrollView contentContainerStyle={styles.content}>
         {status === 'notFound' ? (
           <NotFoundState
@@ -68,6 +69,7 @@ function RecipeContent({ id }: RecipeScreenProps) {
                 <>
                   <RecipeDetails id={id} />
                   <IngredientList id={id} />
+                  <RecipeSteps id={id} />
                 </>
               )}
             </View>
@@ -78,9 +80,10 @@ function RecipeContent({ id }: RecipeScreenProps) {
   );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create((theme, rt) => ({
   // The photo runs to the screen edges; the text below has its own padding.
   screen: { padding: theme.spacing.none, gap: theme.spacing.none },
-  content: { paddingBottom: theme.spacing.xl },
+  // The scroll view runs to the screen edge, and its last row can scroll above the home indicator.
+  content: { paddingBottom: rt.insets.bottom + theme.spacing.xl },
   body: { paddingHorizontal: theme.spacing.lg, gap: theme.spacing.lg },
 }));

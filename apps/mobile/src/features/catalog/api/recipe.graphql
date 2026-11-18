@@ -9,6 +9,7 @@ query Recipe($id: ID!) {
     ...RecipeHeaderFields
     ...RecipeDetailsFields
     ...RecipeIngredientsFields
+    ...RecipeStepsFields
   }
 }
 
@@ -26,7 +27,6 @@ fragment RecipeDetailsFields on Recipe {
   diets
   allergens
   priceCents
-  steps
 }
 
 fragment RecipeIngredientsFields on Recipe {
@@ -38,6 +38,11 @@ fragment RecipeIngredientsFields on Recipe {
       ...IngredientProductFields
     }
   }
+}
+
+fragment RecipeStepsFields on Recipe {
+  id
+  steps
 }
 
 fragment IngredientProductFields on Product {
