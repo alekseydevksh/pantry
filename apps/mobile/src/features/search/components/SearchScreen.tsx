@@ -10,6 +10,7 @@ import { useSearchRoute } from '../hooks/useSearchRoute';
 import { useSearchResults } from '../hooks/useSearchResults';
 import { useSuggestions } from '../hooks/useSuggestions';
 import { suggestionPrefix } from '../model/typeahead';
+import { FilterPanel } from './FilterPanel';
 import { SearchField } from './SearchField';
 import { SearchResults } from './SearchResults';
 import { SuggestionList } from './SuggestionList';
@@ -56,6 +57,7 @@ function SearchContent() {
       <View style={styles.field}>
         <SearchField value={draft} onChangeText={setDraft} onSubmit={submit} />
       </View>
+      <FilterPanel input={input} onChange={setInput} />
       {showSuggestions ? (
         <SuggestionList suggestions={suggestions} onSelect={select} />
       ) : (

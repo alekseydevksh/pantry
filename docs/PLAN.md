@@ -154,7 +154,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.3 [sonnet] Results list.** FlashList, cursor pagination, pull-to-refresh, skeletons, previous results kept while a new query loads.
   - Accept: submit shows results; scrolling loads more.
   - Proof: RNTL + MSW test.
-- [ ] **3.4 [sonnet] Filters and sort.** Filter chips (diet, time, price, allergens) and sort, synced to route params via 3.1.
+- [x] **3.4 [sonnet] Filters and sort.** Filter chips (diet, time, price, allergens) and sort, synced to route params via 3.1.
   - Accept: `pantry://search?q=pasta&diet=vegan` opens with the filter applied; changing a chip updates the URL.
   - Proof: router test with an initial URL; RNTL test for chip → params.
 - [ ] **3.5 [sonnet] Search states.** Empty state with suggested queries, error state with retry, offline banner.
