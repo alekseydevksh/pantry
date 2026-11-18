@@ -140,7 +140,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **2.9 [sonnet] Offline start.** Network status hook, offline banner, `cache-and-network` policy for the feed so the persisted cache shows first.
   - Accept: with the server stopped and the network off, the app opens with the cached feed and the banner.
   - Proof: integration test (pre-filled storage + MSW network error); manual airplane-mode check.
-- [ ] **2.10 [sonnet] Phase gate.** Learning log for Phase 2 (normalized cache, type policies, FlashList v2 recycling, MMKV and JSI, Suspense for data). Summary.
+- [x] **2.10 [sonnet] Phase gate.** Learning log for Phase 2 (normalized cache, type policies, FlashList v2 recycling, MMKV and JSI, Suspense for data). Summary.
 
 ## Phase 3 — Search and cart
 
