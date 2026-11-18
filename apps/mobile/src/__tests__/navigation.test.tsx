@@ -1,18 +1,17 @@
 import { act, userEvent } from '@testing-library/react-native';
-import { renderRouter, screen } from 'expo-router/testing-library';
+import { screen } from 'expo-router/testing-library';
 
 import { setLanguage } from '@/lib/i18n';
-import { mockEmptyFeedFetch } from '@/test/fetch';
+import { emptyFeed } from '@/test/msw/handlers';
+import { server } from '@/test/msw/server';
+import { renderApp } from '@/test/render';
 
-// The real route files in `app/`, not a copy.
-// (Relative to the working directory, which is `apps/mobile` when Jest runs.)
-const APP_DIR = './app';
+// `renderApp` renders the real route files in `app/`, not a copy.
 
 describe('navigation shell', () => {
   beforeEach(() => {
-    mockEmptyFeedFetch();
+    server.use(emptyFeed());
   });
-  afterEach(() => jest.restoreAllMocks());
 
   it.each([
     ['/', 'Home'],
@@ -20,7 +19,7 @@ describe('navigation shell', () => {
     ['/cart', 'Cart'],
     ['/settings', 'Settings'],
   ])('opens the %s tab', async (url, title) => {
-    await renderRouter(APP_DIR, { initialUrl: url });
+    await renderApp(url);
 
     expect(screen).toHavePathname(url);
     expect(screen.getByRole('heading', { name: title })).toBeOnTheScreen();
@@ -28,7 +27,7 @@ describe('navigation shell', () => {
 
   it('moves between the four tabs', async () => {
     const user = userEvent.setup();
-    await renderRouter(APP_DIR, { initialUrl: '/' });
+    await renderApp('/');
 
     await user.press(screen.getByRole('button', { name: /Search/ }));
     expect(screen).toHavePathname('/search');
@@ -41,20 +40,20 @@ describe('navigation shell', () => {
   });
 
   it('opens the recipe screen with the id from the route', async () => {
-    await renderRouter(APP_DIR, { initialUrl: '/recipe/r1' });
+    await renderApp('/recipe/r1');
 
     expect(screen.getByText('Details for recipe r1')).toBeOnTheScreen();
   });
 
   it('opens the product screen with the id from the route', async () => {
-    await renderRouter(APP_DIR, { initialUrl: '/product/p9' });
+    await renderApp('/product/p9');
 
     expect(screen.getByText('Details for product p9')).toBeOnTheScreen();
   });
 
   it('opens the assistant as a modal and closes back to the previous screen', async () => {
     const user = userEvent.setup();
-    await renderRouter(APP_DIR, { initialUrl: '/' });
+    await renderApp('/');
 
     await user.press(screen.getByRole('button', { name: 'Ask the assistant' }));
     expect(screen).toHavePathname('/assistant');
@@ -65,7 +64,7 @@ describe('navigation shell', () => {
 
   it('goes home when the assistant is the first screen and is closed', async () => {
     const user = userEvent.setup();
-    await renderRouter(APP_DIR, { initialUrl: '/assistant' });
+    await renderApp('/assistant');
 
     await user.press(screen.getByRole('button', { name: 'Close' }));
 
@@ -73,7 +72,7 @@ describe('navigation shell', () => {
   });
 
   it('shows the screens in Polish, and switches language without a restart', async () => {
-    await renderRouter(APP_DIR, { initialUrl: '/cart' });
+    await renderApp('/cart');
     expect(screen.getByRole('heading', { name: 'Cart' })).toBeOnTheScreen();
 
     await act(async () => {

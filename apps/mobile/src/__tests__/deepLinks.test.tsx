@@ -1,7 +1,9 @@
 import { router } from 'expo-router';
-import { renderRouter, screen } from 'expo-router/testing-library';
+import { screen } from 'expo-router/testing-library';
 
-import { mockEmptyFeedFetch } from '@/test/fetch';
+import { emptyFeed } from '@/test/msw/handlers';
+import { server } from '@/test/msw/server';
+import { renderApp } from '@/test/render';
 
 // A deep link `pantry://recipe/r1` (scheme in app.config.ts) reaches the router as the path
 // `/recipe/r1`. The step from URL to path runs on the device, because Jest's `URL` does not
@@ -9,31 +11,28 @@ import { mockEmptyFeedFetch } from '@/test/fetch';
 // is checked by hand: `xcrun simctl openurl booted pantry://recipe/r1`.
 //
 // A cold start is a launch with an initial URL, so each test renders the app with one.
-// (The folder is relative to the working directory, which is `apps/mobile` when Jest runs.)
-const APP_DIR = './app';
 
 describe('deep links', () => {
   beforeEach(() => {
-    mockEmptyFeedFetch();
+    server.use(emptyFeed());
   });
-  afterEach(() => jest.restoreAllMocks());
 
   it('opens the recipe screen with the id from the link on a cold start', async () => {
-    await renderRouter(APP_DIR, { initialUrl: '/recipe/r1' });
+    await renderApp('/recipe/r1');
 
     expect(screen).toHavePathname('/recipe/r1');
     expect(screen.getByText('Details for recipe r1')).toBeOnTheScreen();
   });
 
   it('opens the product screen with the id from the link on a cold start', async () => {
-    await renderRouter(APP_DIR, { initialUrl: '/product/p7' });
+    await renderApp('/product/p7');
 
     expect(screen).toHavePathname('/product/p7');
     expect(screen.getByText('Details for product p7')).toBeOnTheScreen();
   });
 
   it('keeps the tabs under the linked screen, so the user can go back', async () => {
-    await renderRouter(APP_DIR, { initialUrl: '/recipe/r1' });
+    await renderApp('/recipe/r1');
 
     expect(router.canGoBack()).toBe(true);
   });

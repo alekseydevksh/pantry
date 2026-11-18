@@ -83,7 +83,7 @@ docs/                         PLAN, ADRs, architecture, learning log
 
 ## Tests
 
-- Jest + React Native Testing Library (user-event API) + MSW for GraphQL. Use the `renderWithProviders` helper.
+- Jest + React Native Testing Library (user-event API) + MSW for GraphQL ([ADR 0008](docs/adr/0008-test-harness-msw-in-jest-expo.md)). Use `renderWithProviders` (a component) or `renderApp(url)` (the real routes) from `src/test/render.tsx`. Declare the API with `server.use(api.query(SomeDocument, ({ variables }) => data))` from `src/test/msw/`; a request without a handler fails the test.
 - Test behavior, not snapshots. Focus coverage on `model/` and `src/ai/`.
 - Use fake timers for debounce, timeouts and retries.
 - The server runs with no delay and no errors in tests; the LLM proxy runs in mock mode.
