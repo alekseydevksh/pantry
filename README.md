@@ -2,7 +2,7 @@
 
 A fictional grocery and recipe app with an AI shopping assistant, built with Expo (React Native) and a mock GraphQL server.
 
-> **Status: Phase 0 of 7 (setup).** The app shows a placeholder screen that reads from the mock API. Sections marked _TODO_ are filled in as the phases in [docs/PLAN.md](docs/PLAN.md) are finished.
+> **Status: Phase 1 of 7 done (shell and design system).** Tabs, detail screens, the assistant modal, deep links, light and dark themes, EN and PL, and the Settings screen work; the screens themselves are still placeholders. Sections marked _TODO_ are filled in as the phases in [docs/PLAN.md](docs/PLAN.md) are finished.
 
 ## What it is
 
@@ -21,7 +21,10 @@ _TODO (task 5.9): full table._ Decided so far:
 | Concern | Choice |
 |---|---|
 | App | Expo SDK 58, React Native 0.88 (New Architecture), React 19 with React Compiler |
-| Navigation | Expo Router |
+| Navigation | Expo Router (typed routes, `pantry://` deep links) |
+| Styling | Unistyles 3 with design tokens, light and dark themes |
+| i18n | i18next + expo-localization (EN, PL) |
+| Client state | Zustand |
 | API | GraphQL: GraphQL Yoga mock server, typed operations from GraphQL Codegen |
 | Language | TypeScript (strict) |
 | Tests | Jest, React Native Testing Library |
