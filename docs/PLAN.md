@@ -100,7 +100,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.8 [sonnet] Edge-to-edge and safe areas.** Safe-area handling on all screens, status bar style per theme.
   - Accept: no content under the notch or home indicator on the iOS Simulator.
   - Proof: manual check on two simulator sizes; screenshots in the commit body are not needed, a note is.
-- [ ] **1.9 [fable] `docs/SYSTEM-DESIGN.md`, first draft.** Follow the structure in SPEC section 8.3. Mark the "how this repo maps to the design" section as pending.
+- [x] **1.9 [fable] `docs/SYSTEM-DESIGN.md`, first draft.** Follow the structure in SPEC section 8.3. Mark the "how this repo maps to the design" section as pending.
   - Accept: about two pages; every heading from the spec is present; all numbers are labeled as assumptions.
   - Proof: review against the SPEC 8.3 list.
 - [ ] **1.10 [sonnet] Phase gate.** Learning log for Phase 1 (Expo Router vs React Navigation, typed routes, Unistyles and the Nitro layer, edge-to-edge). Summary.
