@@ -157,7 +157,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.4 [sonnet] Filters and sort.** Filter chips (diet, time, price, allergens) and sort, synced to route params via 3.1.
   - Accept: `pantry://search?q=pasta&diet=vegan` opens with the filter applied; changing a chip updates the URL.
   - Proof: router test with an initial URL; RNTL test for chip → params.
-- [ ] **3.5 [sonnet] Search states.** Empty state with suggested queries, error state with retry, offline banner.
+- [x] **3.5 [sonnet] Search states.** Empty state with suggested queries, error state with retry, offline banner.
   - Accept: each state shows for the right server response.
   - Proof: RNTL + MSW tests for zero results and server error.
 - [ ] **3.6 [fable] Analytics layer.** Typed event schema in `src/analytics/events.ts`, `track()`, pluggable sinks (console sink in dev, memory sink in tests). Wire `search_submitted`, `search_result_clicked` (position, query), `search_zero_results`.
