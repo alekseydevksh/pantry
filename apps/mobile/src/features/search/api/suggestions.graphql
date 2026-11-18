@@ -1,0 +1,6 @@
+# Typeahead: catalog names and common terms for the text typed so far (at most 8, in the server's
+# order). The prefix comes from `suggestionPrefix` (model/typeahead.ts), so that the same text always
+# has the same cache key.
+query Suggestions($prefix: String!) {
+  suggestions(prefix: $prefix)
+}

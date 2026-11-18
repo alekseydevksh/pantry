@@ -148,7 +148,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.1 [fable] Search params model.** Pure functions in `features/search/model`: URL params ↔ `SearchInput`, Zod-validated, with defaults and unknown-value handling.
   - Accept: round trip is lossless; bad params fall back to defaults.
   - Proof: unit tests, including a table of malformed inputs.
-- [ ] **3.2 [sonnet] Typeahead.** Search field, `suggestions` query with a 250 ms debounce, stale requests cancelled, last good suggestions kept while loading.
+- [x] **3.2 [sonnet] Typeahead.** Search field, `suggestions` query with a 250 ms debounce, stale requests cancelled, last good suggestions kept while loading.
   - Accept: typing fast sends one request; an old response never replaces a newer one.
   - Proof: RNTL + MSW test with fake timers and out-of-order responses.
 - [ ] **3.3 [sonnet] Results list.** FlashList, cursor pagination, pull-to-refresh, skeletons, previous results kept while a new query loads.

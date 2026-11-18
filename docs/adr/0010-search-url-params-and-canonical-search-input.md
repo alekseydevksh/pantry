@@ -35,7 +35,7 @@ All inputs are built by `canonicalSearchInput` in [searchParams.ts](../../apps/m
 | `exclude` | `exclude=nuts,peanuts` | `filters.excludeAllergens` |
 | `sort` | `sort=price-asc` | `sort` |
 
-- **Written in one form:** lowercase values with `-` (`gluten-free`, `price-asc`), lists comma-separated in schema order, and defaults left out. `toSearchParams` returns every key, with `undefined` for a default, so `router.setParams` also clears a filter that was removed.
+- **Written in one form:** lowercase values with `-` (`gluten-free`, `price-asc`), lists comma-separated in schema order, and defaults left out. `toSearchParams` returns every key, with `undefined` for a default. **Do not pass it to `router.setParams`** (see the amendment below): the screen writes `toRouteParams` with `navigation.replaceParams`.
 - **Read leniently:** any case, `_` or `-` (`GLUTEN_FREE`, `gluten_free`), comma lists or repeated keys (`diet=a&diet=b`, which Expo Router gives as an array), spaces around values, leading zeros. A single-value param given twice keeps the first value. Unknown keys (`utm_source`) are ignored.
 - **A bad value falls back to its default on its own.** `diet=vegan,banana` keeps `vegan`, and `maxTime=abc` drops only the time filter. Out-of-range numbers are dropped, not clamped: a link that asks for `maxTime=99999` did not ask for 24 hours. Only digits count as a number, so `1e3`, `30.5`, `-5` and `0x1E` are dropped.
 - **Contradictions are kept as asked.** `kind=product&maxTime=30` returns nothing (products have no cook time), and the empty state explains it (PLAN 3.5). Silently changing the user's filters would be harder to understand.
@@ -43,6 +43,12 @@ All inputs are built by `canonicalSearchInput` in [searchParams.ts](../../apps/m
 - **The URL holds only the user's own choices.** Allergens from the user's settings are merged in code when the query runs (PLAN 4.10, SPEC 5.7), not written into the URL. A shared link does not carry one person's allergies.
 
 Validation uses Zod with one schema per param and `.catch()`, so the parse never fails as a whole. The enum value lists come from the generated unions through `allOf<T>()` in [searchValues.ts](../../apps/mobile/src/features/search/model/searchValues.ts), which does not compile when the schema gains a value the list is missing.
+
+## Amendment (PLAN 3.2): `setParams` does not remove a param
+
+Checked in the Expo Router 58 source and with a router test: `router.setParams({ diet: undefined })` is a shallow merge, so the route keeps the key `diet` with the value `undefined`. `useLocalSearchParams` hides it, so the screen looks right, but the key is still in the route's state, and a URL built from that state (web, a saved navigation state) reads `diet=undefined`. A removed filter would also never leave the URL, and `q=undefined` would search for the word "undefined".
+
+**Decision:** `toRouteParams` (the same as `toSearchParams`, without the keys that are at their default) is written with `navigation.replaceParams`, which replaces all the params of the route. All writes go through `useSearchRoute().setInput`. The cost: unrelated params on the route (`utm_source`) are dropped on the first change, which is what a canonical URL should do anyway. **Alternative:** `setParams` with `null` for each removed key. It gives `diet=null` in the URL, which is no better.
 
 ## Consequences
 

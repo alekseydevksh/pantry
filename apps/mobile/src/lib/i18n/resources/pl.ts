@@ -105,7 +105,12 @@ export const pl = {
   },
   search: {
     title: 'Szukaj',
-    body: 'Tutaj wyszukasz produkty i przepisy.',
+    field: {
+      label: 'Szukaj produktów i przepisów',
+      placeholder: 'Szukaj produktów i przepisów',
+      clear: 'Wyczyść wyszukiwanie',
+    },
+    suggestions: { label: 'Podpowiedzi' },
   },
   cart: {
     title: 'Koszyk',

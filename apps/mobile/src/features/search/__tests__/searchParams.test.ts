@@ -3,6 +3,7 @@ import type { SearchInput } from '@pantry/shared';
 import {
   canonicalSearchInput,
   parseSearchParams,
+  toRouteParams,
   toSearchParams,
   type RawSearchParams,
 } from '../model/searchParams';
@@ -364,5 +365,22 @@ describe('round trip', () => {
       sort: 'RELEVANCE',
     };
     expect(parseSearchParams(toSearchParams(messy))).toStrictEqual(canonicalSearchInput(messy));
+  });
+});
+
+describe('toRouteParams', () => {
+  it('has only the params that are set: no key holds undefined', () => {
+    expect(
+      toRouteParams({
+        query: 'pasta',
+        filters: { diets: ['VEGAN'], maxTimeMin: 30 },
+        sort: 'PRICE_ASC',
+      }),
+    ).toEqual({ q: 'pasta', diet: 'vegan', maxTime: '30', sort: 'price-asc' });
+  });
+
+  it('is empty for the empty search', () => {
+    expect(toRouteParams({ query: '' })).toEqual({});
+    expect(Object.keys(toRouteParams({ query: '  ', filters: {}, sort: 'RELEVANCE' }))).toEqual([]);
   });
 });

@@ -209,3 +209,17 @@ export function toSearchParams(input: SearchInput): SearchUrlParams {
     sort: nonDefaultSort ? toUrlValue(nonDefaultSort) : undefined,
   };
 }
+
+/**
+ * The params to put in the route: `toSearchParams` without the keys that are at their default.
+ *
+ * Expo Router's `router.setParams` merges, and leaves `{ diet: undefined }` in the route's params
+ * (it is hidden from `useLocalSearchParams`, but it is written into the URL as `diet=undefined` on
+ * the web and in a saved navigation state). Use this with `navigation.replaceParams`, which
+ * replaces the params, so a removed filter is really gone.
+ */
+export function toRouteParams(input: SearchInput): Partial<Record<keyof SearchUrlParams, string>> {
+  return Object.fromEntries(
+    Object.entries(toSearchParams(input)).filter(([, value]) => value !== undefined),
+  );
+}
