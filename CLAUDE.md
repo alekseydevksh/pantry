@@ -56,7 +56,7 @@ apps/mobile/src/design-system/ tokens, themes, primitives
 apps/mobile/src/ai/           provider interface, router, providers
 apps/mobile/src/analytics/    typed events and sinks
 apps/mobile/src/flags/        flag provider and definitions
-apps/mobile/src/lib/          apollo, storage, i18n, sentry, error-boundary
+apps/mobile/src/lib/          apollo, storage, session, i18n, sentry, error-boundary
 server/                       mock GraphQL API + LLM proxy
 packages/shared/              schema.graphql, codegen output, Zod schemas
 docs/                         PLAN, ADRs, architecture, learning log
@@ -77,7 +77,7 @@ docs/                         PLAN, ADRs, architecture, learning log
 - All user-visible strings go through i18n, in both EN and PL.
 - Every interactive element has an accessibility role and label, and a touch target of at least 44 pt.
 - Analytics: add the event to `src/analytics/events.ts` first, then call `track()`.
-- Feature flags: define the flag with its type; read it through the flag hook so exposure is logged.
+- Feature flags ([ADR 0012](docs/adr/0012-feature-flags-assignment-and-exposure.md)): define the flag in `src/flags/definitions.ts` and its rollout in `flags.json`; read it with `useFlag` so exposure is logged. Use `useFlag(key, { expose: 'manual' })` and call `expose()` where the variant first changes what the user sees, when that is later than mount.
 - AI ([ADR 0006](docs/adr/0006-ai-provider-abstraction.md)): the model returns an intent, the app runs the real search. Validate all model output with Zod. Allergen filters are applied in code. No API keys in the app.
 - Each feature screen is wrapped in `FeatureErrorBoundary` (`@/lib/error-boundary`), which shows a retry and reports to `lib/observability`. A failed query is not thrown: show an inline `ErrorState` with a retry. No red screens.
 

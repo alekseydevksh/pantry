@@ -1,0 +1,6 @@
+{
+  "search_layout": {
+    "enabled": true,
+    "weights": { "list": 50, "grid": 50 }
+  }
+}

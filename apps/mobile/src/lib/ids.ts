@@ -1,4 +1,4 @@
-// Random ids for events and sessions: RFC 4122 version 4 UUIDs.
+// Random ids for analytics events, sessions and the mock user: RFC 4122 version 4 UUIDs.
 //
 // Not a security token: an event id only lets a backend drop a duplicate when a sink retries, and a
 // session id only groups events. So no native dependency (expo-crypto) is added for it: the Web

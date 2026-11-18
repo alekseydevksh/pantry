@@ -37,7 +37,7 @@ And one from the router: the search screen writes its params with `replaceParams
 
 **What a session is.** One JS runtime: the app makes the session when the analytics module loads. A cold start begins a new one; coming back from the background does not. An inactivity timeout (a new session after 30 minutes in the background, like web analytics) needs `AppState` and is left for when a real backend defines sessions. The session id is not persisted.
 
-**The ids.** `crypto.randomUUID` where the engine has it, then `crypto.getRandomValues`, then `Math.random` ([ids.ts](../../apps/mobile/src/analytics/ids.ts)). The ids are not secrets (they only dedupe and group), so no native module (`expo-crypto`) and no new dev build are needed for them. The `Math.random` fallback is not cryptographic and can be predicted, which does not matter for an id that only dedupes; collisions stay unlikely at app scale.
+**The ids.** `crypto.randomUUID` where the engine has it, then `crypto.getRandomValues`, then `Math.random` ([ids.ts](../../apps/mobile/src/lib/ids.ts)). The ids are not secrets (they only dedupe and group), so no native module (`expo-crypto`) and no new dev build are needed for them. The `Math.random` fallback is not cryptographic and can be predicted, which does not matter for an id that only dedupes; collisions stay unlikely at app scale.
 
 **Personal data.** The search text is free text, so it can hold anything a user types. It is cut to 100 code points (ADR 0010) and sent, because search analytics are useless without the query. A real deployment would add a scrubbing step in the vendor sink (emails, phone numbers) and honour an analytics opt-out before any sink runs.
 
