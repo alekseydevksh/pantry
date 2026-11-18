@@ -22,11 +22,16 @@ const WEIGHT_NAME = 3;
 const WEIGHT_INGREDIENT = 2;
 const WEIGHT_OTHER = 1;
 
-/** Lowercase words, without a plural "s", so "tomato" finds "Tomatoes" and "lemons" finds "lemon". */
+/**
+ * Lowercase words, without a plural "s", so "tomato" finds "Tomatoes" and "lemons" finds "lemon".
+ * A word is a run of letters, combining marks and digits in any script ("żurek" stays one word).
+ * NFC first, so "é" typed as two code points matches the one-code-point form.
+ */
 export function tokenize(text: string): string[] {
   return text
+    .normalize('NFC')
     .toLowerCase()
-    .split(/[^a-z0-9]+/)
+    .split(/[^\p{L}\p{M}\p{N}]+/u)
     .filter(Boolean)
     .map((word) => (word.length > 3 ? word.replace(/(es|s)$/, '') : word));
 }
