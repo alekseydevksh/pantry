@@ -104,7 +104,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.9 [fable] `docs/SYSTEM-DESIGN.md`, first draft.** Follow the structure in SPEC section 8.3. Mark the "how this repo maps to the design" section as pending.
   - Accept: about two pages; every heading from the spec is present; all numbers are labeled as assumptions.
   - Proof: review against the SPEC 8.3 list.
-- [ ] **1.10 [sonnet] Phase gate.** Learning log for Phase 1 (Expo Router vs React Navigation, typed routes, Unistyles and the Nitro layer, edge-to-edge). Summary.
+- [x] **1.10 [sonnet] Phase gate.** Learning log for Phase 1 (Expo Router vs React Navigation, typed routes, Unistyles and the Nitro layer, edge-to-edge). Summary.
 
 ## Phase 2 — Data layer
 
