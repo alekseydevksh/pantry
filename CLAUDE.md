@@ -56,7 +56,7 @@ apps/mobile/src/design-system/ tokens, themes, primitives
 apps/mobile/src/ai/           provider interface, router, providers
 apps/mobile/src/analytics/    typed events and sinks
 apps/mobile/src/flags/        flag provider and definitions
-apps/mobile/src/lib/          apollo, storage, i18n, sentry
+apps/mobile/src/lib/          apollo, storage, i18n, sentry, error-boundary
 server/                       mock GraphQL API + LLM proxy
 packages/shared/              schema.graphql, codegen output, Zod schemas
 docs/                         PLAN, ADRs, architecture, learning log
@@ -79,7 +79,7 @@ docs/                         PLAN, ADRs, architecture, learning log
 - Analytics: add the event to `src/analytics/events.ts` first, then call `track()`.
 - Feature flags: define the flag with its type; read it through the flag hook so exposure is logged.
 - AI ([ADR 0006](docs/adr/0006-ai-provider-abstraction.md)): the model returns an intent, the app runs the real search. Validate all model output with Zod. Allergen filters are applied in code. No API keys in the app.
-- Each feature screen is wrapped in an error boundary with a retry. No red screens.
+- Each feature screen is wrapped in `FeatureErrorBoundary` (`@/lib/error-boundary`), which shows a retry and reports to `lib/observability`. A failed query is not thrown: show an inline `ErrorState` with a retry. No red screens.
 
 ## Tests
 

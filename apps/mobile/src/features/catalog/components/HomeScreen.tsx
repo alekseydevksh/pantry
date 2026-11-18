@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native-unistyles';
 
 import { Button, ErrorState, Screen, Text } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
+import { FeatureErrorBoundary } from '@/lib/error-boundary';
 
 import { useFeed, type FeedState } from '../hooks/useFeed';
 import { END_REACHED_THRESHOLD, rowType } from '../model/feed';
@@ -12,6 +13,14 @@ import { FeedRowView } from './FeedRowView';
 import { FeedSkeleton } from './FeedSkeleton';
 
 export function HomeScreen() {
+  return (
+    <FeatureErrorBoundary feature="home">
+      <HomeContent />
+    </FeatureErrorBoundary>
+  );
+}
+
+function HomeContent() {
   const { t } = useTranslation();
   const feed = useFeed();
 

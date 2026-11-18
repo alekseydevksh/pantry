@@ -9,6 +9,12 @@ export const en = {
     retry: 'Try again',
     backToHome: 'Back to Home',
   },
+  errors: {
+    feature: {
+      title: 'Something went wrong',
+      message: 'This screen ran into a problem. Try again.',
+    },
+  },
   tabs: {
     home: 'Home',
     search: 'Search',
