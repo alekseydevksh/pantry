@@ -92,3 +92,7 @@ Object.defineProperty(mock.UnistylesRuntime, 'themeName', {
 });
 mock.UnistylesRuntime.getTheme = (name: ThemeName = activeTheme) => themes[name];
 mock.UnistylesRuntime.setTheme = setTestTheme;
+// "Follow the system" means the light theme in tests, because the test device is always light.
+mock.UnistylesRuntime.setAdaptiveThemes = (enabled: boolean) => {
+  if (enabled) setTestTheme(DEFAULT_THEME);
+};

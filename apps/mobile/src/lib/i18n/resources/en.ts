@@ -42,7 +42,16 @@ export const en = {
   },
   settings: {
     title: 'Settings',
-    body: 'Language, theme and AI mode.',
+    language: { title: 'Language' },
+    theme: { title: 'Theme', system: 'System', light: 'Light', dark: 'Dark' },
+    aiMode: {
+      title: 'Assistant mode',
+      hint: 'Where the assistant may run. Cloud sends your messages to our server.',
+      auto: 'Automatic',
+      'on-device': 'On-device only',
+      cloud: 'Cloud only',
+      off: 'Off',
+    },
   },
   assistant: {
     title: 'Assistant',

@@ -4,3 +4,8 @@
 import './src/design-system/unistyles';
 import './src/lib/i18n';
 import 'expo-router/entry';
+
+import { startSettingsSync } from './src/features/settings';
+
+// Apply the saved language and theme. The first screen renders after this module has run.
+startSettingsSync();
