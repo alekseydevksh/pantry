@@ -79,7 +79,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.1 [fable] Tokens and themes.** `src/design-system/tokens.ts` (color, spacing, radius, typography), light and dark themes, Unistyles 3 configuration, Jest setup for Unistyles.
   - Accept: a component reads theme values; switching theme changes them.
   - Proof: unit test for token shape (both themes have the same keys); render test under each theme.
-- [ ] **1.2 [sonnet] Primitives: Text, Button.** Variants, disabled and loading states, accessibility role and label, 44 pt minimum touch target, respects dynamic type.
+- [x] **1.2 [sonnet] Primitives: Text, Button.** Variants, disabled and loading states, accessibility role and label, 44 pt minimum touch target, respects dynamic type.
   - Accept: all variants render; a disabled button does not fire `onPress`.
   - Proof: RNTL tests with the user-event API.
 - [ ] **1.3 [sonnet] Primitives: Card, Chip, Skeleton, IconButton.** Chip has selected state and `accessibilityState`. Skeleton uses a Reanimated CSS-style animation.
