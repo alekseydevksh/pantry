@@ -169,7 +169,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [ ] **3.8 [sonnet] `search_layout` A/B and debug panel.** List vs grid layout from the flag; debug panel in Settings that shows flags, variants and lets you override them.
   - Accept: override in the panel switches the layout; exposure is logged when results render.
   - Proof: RNTL tests for both variants and the exposure event.
-- [ ] **3.9 [fable] Cart model and offline queue.** Pure logic in `features/cart/model`: cart reducer, operation queue with idempotency keys, coalescing (add then remove cancels out), replay with retry and backoff, handling of a permanently rejected operation. Queue persisted through the storage interface.
+- [x] **3.9 [fable] Cart model and offline queue.** Pure logic in `features/cart/model`: cart reducer, operation queue with idempotency keys, coalescing (add then remove cancels out), replay with retry and backoff, handling of a permanently rejected operation. Queue persisted through the storage interface.
   - Accept: replay after a failure in the middle never applies an operation twice; the queue survives a restart.
   - Proof: unit tests, including a failure-injection table.
 - [ ] **3.10 [sonnet] Cart UI and optimistic mutations.** Cart screen, add/remove/set quantity with Apollo optimistic responses, rollback on error with a toast, queue used when offline, sync on reconnect.
