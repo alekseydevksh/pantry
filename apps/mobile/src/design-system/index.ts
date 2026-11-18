@@ -8,6 +8,8 @@ export { Card } from './primitives/Card';
 export type { CardProps } from './primitives/Card';
 export { Chip } from './primitives/Chip';
 export type { ChipProps } from './primitives/Chip';
+export { ErrorBoundary } from './primitives/ErrorBoundary';
+export type { ErrorBoundaryProps } from './primitives/ErrorBoundary';
 export { ErrorState } from './primitives/ErrorState';
 export type { ErrorStateProps } from './primitives/ErrorState';
 export { IconButton } from './primitives/IconButton';

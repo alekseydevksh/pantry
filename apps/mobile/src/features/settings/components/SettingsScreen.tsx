@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native-unistyles';
 
 import { Chip, Text } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
+import { FeatureErrorBoundary } from '@/lib/error-boundary';
 import { SUPPORTED_LANGUAGES, type Language } from '@/lib/i18n/languages';
 
 import { useSettings } from '../hooks/useSettings';
@@ -12,6 +13,14 @@ import { AI_MODES, THEME_PREFERENCES } from '../model/settings';
 const LANGUAGE_NAMES: Record<Language, string> = { en: 'English', pl: 'Polski' };
 
 export function SettingsScreen() {
+  return (
+    <FeatureErrorBoundary feature="settings">
+      <SettingsContent />
+    </FeatureErrorBoundary>
+  );
+}
+
+function SettingsContent() {
   const { t } = useTranslation();
   const { language, theme, aiMode, setLanguage, setTheme, setAiMode } = useSettings((s) => s);
 

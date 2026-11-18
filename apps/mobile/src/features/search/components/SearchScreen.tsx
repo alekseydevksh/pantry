@@ -1,8 +1,17 @@
 import { Screen, Text } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
+import { FeatureErrorBoundary } from '@/lib/error-boundary';
 
 // Placeholder screen, replaced by the real feature later.
 export function SearchScreen() {
+  return (
+    <FeatureErrorBoundary feature="search">
+      <SearchContent />
+    </FeatureErrorBoundary>
+  );
+}
+
+function SearchContent() {
   const { t } = useTranslation();
 
   return (

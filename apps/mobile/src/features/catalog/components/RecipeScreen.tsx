@@ -6,6 +6,7 @@ import { RecipeDocument } from '@pantry/shared';
 
 import { ErrorState, Screen } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
+import { FeatureErrorBoundary } from '@/lib/error-boundary';
 
 import { detailsStatus } from '../model/details';
 import { BodySkeleton } from './DetailsSkeleton';
@@ -26,6 +27,14 @@ export type RecipeScreenProps = {
  * Opened by a deep link, nothing is cached, and placeholders show until the query arrives.
  */
 export function RecipeScreen({ id }: RecipeScreenProps) {
+  return (
+    <FeatureErrorBoundary feature="recipe" resetKey={id}>
+      <RecipeContent id={id} />
+    </FeatureErrorBoundary>
+  );
+}
+
+function RecipeContent({ id }: RecipeScreenProps) {
   const { t } = useTranslation();
   const { data, error, refetch } = useQuery(RecipeDocument, { variables: { id } });
   const status = detailsStatus({

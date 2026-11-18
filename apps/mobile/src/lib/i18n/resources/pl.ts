@@ -6,6 +6,12 @@ export const pl = {
     retry: 'Spróbuj ponownie',
     backToHome: 'Wróć do Startu',
   },
+  errors: {
+    feature: {
+      title: 'Coś poszło nie tak',
+      message: 'Na tym ekranie wystąpił problem. Spróbuj ponownie.',
+    },
+  },
   tabs: {
     home: 'Start',
     search: 'Szukaj',

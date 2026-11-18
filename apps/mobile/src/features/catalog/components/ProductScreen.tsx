@@ -6,6 +6,7 @@ import { ProductDocument } from '@pantry/shared';
 
 import { ErrorState, Screen } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
+import { FeatureErrorBoundary } from '@/lib/error-boundary';
 
 import { detailsStatus } from '../model/details';
 import { AddToCartButton } from './AddToCartButton';
@@ -24,6 +25,14 @@ export type ProductScreenProps = {
  * Like the recipe screen, it shows the cached header at once when opened from the feed.
  */
 export function ProductScreen({ id }: ProductScreenProps) {
+  return (
+    <FeatureErrorBoundary feature="product" resetKey={id}>
+      <ProductContent id={id} />
+    </FeatureErrorBoundary>
+  );
+}
+
+function ProductContent({ id }: ProductScreenProps) {
   const { t } = useTranslation();
   const { data, error, refetch } = useQuery(ProductDocument, { variables: { id } });
   const status = detailsStatus({
