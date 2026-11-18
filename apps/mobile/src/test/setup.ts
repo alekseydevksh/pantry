@@ -5,6 +5,7 @@
 import { act } from '@testing-library/react-native';
 
 import { resetTestMMKV } from './mmkv';
+import { server } from './msw/server';
 import { resetTestReducedMotion } from './reanimated';
 import { resetTestInsets, resetTestTheme } from './unistyles';
 import '@/design-system/unistyles';
@@ -22,7 +23,12 @@ jest.mock('react-native-reanimated', () => jest.requireActual('./reanimated').re
 // MMKV is native code; see src/test/mmkv.ts. Each id keeps its values until the end of the test.
 jest.mock('react-native-mmkv', () => jest.requireActual('./mmkv').mmkvMock);
 
+// The API is MSW (see ./msw): a request that no handler answers fails the test.
+beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
+afterAll(() => server.close());
+
 afterEach(async () => {
+  server.resetHandlers();
   // A test that switches to fake timers must not leak them into the next test.
   jest.useRealTimers();
   // Same for a test that switches the theme.
