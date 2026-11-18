@@ -2,15 +2,18 @@ import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { Text } from '@/design-system';
+import { useTranslation } from '@/lib/i18n';
 
-// Placeholder until Phase 3. English strings are temporary: i18n arrives in task 1.6.
+// Placeholder screen, replaced by the real feature later.
 export function SearchScreen() {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screen}>
       <Text variant="title" accessibilityRole="header">
-        Search
+        {t('search.title')}
       </Text>
-      <Text tone="muted">Search for groceries and recipes here.</Text>
+      <Text tone="muted">{t('search.body')}</Text>
     </View>
   );
 }

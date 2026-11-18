@@ -2,20 +2,23 @@ import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { Text } from '@/design-system';
+import { useTranslation } from '@/lib/i18n';
 
 export type RecipeScreenProps = {
   /** The recipe id from the route, for example `r1`. */
   id: string;
 };
 
-// Placeholder until task 2.6. English strings are temporary: i18n arrives in task 1.6.
+// Placeholder screen, replaced by the real feature in Phase 2.
 export function RecipeScreen({ id }: RecipeScreenProps) {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screen}>
       <Text variant="title" accessibilityRole="header">
-        Recipe
+        {t('screens.recipe')}
       </Text>
-      <Text tone="muted">{`Details for recipe ${id}`}</Text>
+      <Text tone="muted">{t('details.recipe', { id })}</Text>
     </View>
   );
 }

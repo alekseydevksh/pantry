@@ -1,5 +1,7 @@
-import { userEvent } from '@testing-library/react-native';
+import { act, userEvent } from '@testing-library/react-native';
 import { renderRouter, screen } from 'expo-router/testing-library';
+
+import { setLanguage } from '@/lib/i18n';
 
 // The real route files in `app/`, not a copy.
 // (Relative to the working directory, which is `apps/mobile` when Jest runs.)
@@ -72,5 +74,19 @@ describe('navigation shell', () => {
     await user.press(screen.getByRole('button', { name: 'Close' }));
 
     expect(screen).toHavePathname('/');
+  });
+
+  it('shows the screens in Polish, and switches language without a restart', async () => {
+    await renderRouter(APP_DIR, { initialUrl: '/cart' });
+    expect(screen.getByRole('heading', { name: 'Cart' })).toBeOnTheScreen();
+
+    await act(async () => {
+      await setLanguage('pl');
+    });
+
+    // The tab bar title, the screen and the plural form all follow the language.
+    expect(screen.getByRole('heading', { name: 'Koszyk' })).toBeOnTheScreen();
+    expect(screen.getByText('Twój koszyk jest pusty.')).toBeOnTheScreen();
+    expect(screen.getByText('0 produktów')).toBeOnTheScreen();
   });
 });
