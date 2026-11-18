@@ -202,9 +202,9 @@ importers:
 
   apps/mobile:
     dependencies:
-      '@graphql-typed-document-node/core':
-        specifier: ^3.2.0
-        version: 3.2.0(graphql@16.15.0)
+      '@apollo/client':
+        specifier: ^4.3.8
+        version: 4.3.8(graphql-ws@6.4.2(graphql@16.15.0)(ws@8.23.0))(graphql@16.15.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rxjs@7.8.2)
       '@pantry/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -271,6 +271,9 @@ importers:
       react-native-worklets:
         specifier: 0.13.0
         version: 0.13.0(@babel/core@7.29.13(supports-color@8.1.1))(@react-native/metro-config@0.88.1(@babel/core@7.29.13(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.88.1(@babel/core@7.29.13(supports-color@8.1.1))(@react-native/metro-config@0.88.1(@babel/core@7.29.13(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.0)(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1)
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
       zustand:
         specifier: ^5.1.0
         version: 5.1.0(@types/react@19.3.0)(react@19.3.0)
@@ -315,6 +318,9 @@ importers:
       '@graphql-codegen/client-preset':
         specifier: ^7.0.0
         version: 7.0.0(graphql@16.15.0)
+      '@graphql-codegen/fragment-matcher':
+        specifier: ^8.0.0
+        version: 8.0.0(graphql@16.15.0)
       '@swc/core':
         specifier: ^1.16.22
         version: 1.16.22
@@ -380,6 +386,25 @@ packages:
       typescript: '>=5.8.0'
     peerDependenciesMeta:
       typescript:
+        optional: true
+
+  '@apollo/client@4.3.8':
+    resolution: {integrity: sha512-g04oCNYjbbjpecZmcUOE0fZLt3vMFwoZJ+o4iu0N3bDDhMR95/ZVzWL9v3mM7WDSPxI0++P2348yAbSWceLoZA==}
+    peerDependencies:
+      graphql: ^16.15.0
+      graphql-ws: ^5.5.5 || ^6.0.3
+      react: ^17.0.0 || ^18.0.0 || >=19.0.0-rc
+      react-dom: ^17.0.0 || ^18.0.0 || >=19.0.0-rc
+      rxjs: ^7.3.0
+      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      subscriptions-transport-ws:
         optional: true
 
   '@ardatan/relay-compiler@13.0.3':
@@ -1398,6 +1423,12 @@ packages:
 
   '@graphql-codegen/core@7.0.0':
     resolution: {integrity: sha512-Mi+hKy8BLk0qTUDp9FiwADOfP0JJp6kusLCxo5S2Mj0yU5uqP+GvQTaJP/2Wkn0a7aMT2Ehh5KDzlfhwQORZEw==}
+    engines: {node: '>=22.18.0'}
+    peerDependencies:
+      graphql: ^16.15.0
+
+  '@graphql-codegen/fragment-matcher@8.0.0':
+    resolution: {integrity: sha512-5rNap3A9FhMFHHi5vOJkimvOtUMuXNFb6l3236xffsZ3AUJ+/flHN/caL03wloTRvYXsR+w/apntHrxICNo85w==}
     engines: {node: '>=22.18.0'}
     peerDependencies:
       graphql: ^16.15.0
@@ -2787,6 +2818,22 @@ packages:
   '@whatwg-node/server@0.13.3':
     resolution: {integrity: sha512-Q5rweDuJ+ExmykRqnAFXv+V/hC6Rk4lQUsgaiYdmxrxBJqAv6isQtq7GgQyzbcS2VL09Ab4hwHyg8yI7QYrM3Q==}
     engines: {node: '>=22.15.0'}
+
+  '@wry/caches@1.0.1':
+    resolution: {integrity: sha512-bXuaUNLVVkD20wcGBWRyo7j9N3TxePEWFZj2Y+r9OoUzfqmavM84+mFykRicNsBqatba5JLay1t48wxaXaWnlA==}
+    engines: {node: '>=8'}
+
+  '@wry/context@0.7.4':
+    resolution: {integrity: sha512-jmT7Sb4ZQWI5iyu3lobQxICu2nC/vbUhP0vIdd6tHC9PTfenmRmuIFqktc6GH9cgi+ZHnsLWPvfSvc4DrYmKiQ==}
+    engines: {node: '>=8'}
+
+  '@wry/equality@0.5.7':
+    resolution: {integrity: sha512-BRFORjsTuQv5gxcXsuDXx6oGRhuVsEGwZy6LOzRRfgu+eSfxbhUQ9L9YtSEIuIjY/o7g3iWFjrc5eSY1GXP2Dw==}
+    engines: {node: '>=8'}
+
+  '@wry/trie@0.5.0':
+    resolution: {integrity: sha512-FNoYzHawTMk/6KMQoEG5O4PuioX19UbwdQKF44yw0nLfOypfQdjtfZzo/UIJWAJ23sNIFbD1Ug9lbaDGMwbqQA==}
+    engines: {node: '>=8'}
 
   '@xmldom/xmldom@0.8.15':
     resolution: {integrity: sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA==}
@@ -5252,6 +5299,9 @@ packages:
     resolution: {integrity: sha512-7x81NCL719oNbsq/3mh+hVrAWmFuEYUqrq/Iw3kUzH8ReypT9QQ0BLoJS7/G9k6N81XjW4qHWtjWwe/9eLy1EQ==}
     engines: {node: '>=12'}
 
+  optimism@0.18.1:
+    resolution: {integrity: sha512-mLXNwWPa9dgFyDqkNi54sjDyNJ9/fTI6WGBLgnXku1vdKY/jovHfZT5r+aiVeFFLOz+foPNOm5YJ4mqgld2GBQ==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -5657,6 +5707,9 @@ packages:
 
   rtl-detect@1.1.2:
     resolution: {integrity: sha512-PGMBq03+TTG/p/cRB7HCLKJ1MgDIi07+QU1faSjiYRfmY5UsAttV9Hs08jDAHVwcOwmVLcSJkpwyfXszVjWfIQ==}
+
+  rxjs@7.8.2:
+    resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
 
   safe-array-concat@1.1.4:
     resolution: {integrity: sha512-wtZlHyOje6OZTGqAoaDKxFkgRtkF9CnHAVnCHKfuj200wAgL+bSJhdsCD2l0Qx/2ekEXjPWcyKkfGb5CPboslg==}
@@ -6396,6 +6449,22 @@ snapshots:
   2g@1.0.1(typescript@6.0.3):
     optionalDependencies:
       typescript: 6.0.3
+
+  '@apollo/client@4.3.8(graphql-ws@6.4.2(graphql@16.15.0)(ws@8.23.0))(graphql@16.15.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rxjs@7.8.2)':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.15.0)
+      '@wry/caches': 1.0.1
+      '@wry/equality': 0.5.7
+      '@wry/trie': 0.5.0
+      graphql: 16.15.0
+      graphql-tag: 2.12.7(graphql@16.15.0)
+      optimism: 0.18.1
+      rxjs: 7.8.2
+      tslib: 2.9.1
+    optionalDependencies:
+      graphql-ws: 6.4.2(graphql@16.15.0)(ws@8.23.0)
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
 
   '@ardatan/relay-compiler@13.0.3(graphql@16.15.0)':
     dependencies:
@@ -7697,6 +7766,12 @@ snapshots:
       '@graphql-codegen/plugin-helpers': 8.0.0(graphql@16.15.0)
       '@graphql-tools/schema': 11.0.9(graphql@16.15.0)
       '@graphql-tools/utils': 13.2.2(graphql@16.15.0)
+      graphql: 16.15.0
+      tslib: 2.9.1
+
+  '@graphql-codegen/fragment-matcher@8.0.0(graphql@16.15.0)':
+    dependencies:
+      '@graphql-codegen/plugin-helpers': 8.0.0(graphql@16.15.0)
       graphql: 16.15.0
       tslib: 2.9.1
 
@@ -9253,6 +9328,22 @@ snapshots:
       '@whatwg-node/disposablestack': 0.1.0
       '@whatwg-node/fetch': 0.12.1
       '@whatwg-node/promise-helpers': 2.0.2
+      tslib: 2.9.1
+
+  '@wry/caches@1.0.1':
+    dependencies:
+      tslib: 2.9.1
+
+  '@wry/context@0.7.4':
+    dependencies:
+      tslib: 2.9.1
+
+  '@wry/equality@0.5.7':
+    dependencies:
+      tslib: 2.9.1
+
+  '@wry/trie@0.5.0':
+    dependencies:
       tslib: 2.9.1
 
   '@xmldom/xmldom@0.8.15': {}
@@ -12509,6 +12600,13 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
+  optimism@0.18.1:
+    dependencies:
+      '@wry/caches': 1.0.1
+      '@wry/context': 0.7.4
+      '@wry/trie': 0.5.0
+      tslib: 2.9.1
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -12949,6 +13047,10 @@ snapshots:
   rrweb-cssom@0.8.0: {}
 
   rtl-detect@1.1.2: {}
+
+  rxjs@7.8.2:
+    dependencies:
+      tslib: 2.9.1
 
   safe-array-concat@1.1.4:
     dependencies:

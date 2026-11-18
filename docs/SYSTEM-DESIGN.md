@@ -90,7 +90,7 @@ The assistant subgraph turns text into an intent and calls the **same** search s
   | WebSocket | two-way; good for live features | connection state to manage on flaky mobile networks; harder to load-balance; overkill for request/response |
   | GraphQL `@defer` | one API surface; intent and cards could arrive as deferred fragments | streams fragments, not tokens; client and gateway support is uneven |
 
-  Lean: **SSE** for tokens, a final structured `intent` event, then a normal GraphQL `search`. The repo decides after the Phase 4 spike (ADR 0007).
+  Lean: **SSE** for tokens, a final structured `intent` event, then a normal GraphQL `search`. The repo decides after the Phase 4 spike (task 4.1, in its own ADR).
 - **Old app versions in the stores.** Schema changes are additive only; mark fields `@deprecated` and remove them only when usage from **supported** versions is zero (the gateway logs field usage per client name and version). Clients treat unknown enum values and union members as "unknown", not as a crash. A minimum supported version comes from remote config (see section 7).
 
 ## 6. AI specifics
@@ -159,14 +159,14 @@ Dashboards are sliced by release, market and platform. Alerts fire on threshold 
 | Cursor pagination, idempotent cart mutations | ✅ Built in the mock server | [server/src/pagination.ts](../server/src/pagination.ts), [server/src/cart.ts](../server/src/cart.ts) |
 | Latency and error injection | ✅ Built (`DELAY_*`, `ERROR_RATE`) | [server/src/config.ts](../server/src/config.ts) |
 | CI (typecheck, lint, test, codegen check, Expo Doctor) | ✅ Built | [.github/workflows/ci.yml](../.github/workflows/ci.yml) |
-| Normalized cache, type policies, MMKV persistence | 🟡 2.1–2.3. Today a temporary `fetch` helper | [src/lib/graphql/request.ts](../apps/mobile/src/lib/graphql/request.ts) |
+| Normalized cache, type policies, data masking | ✅ Built ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). MMKV persistence: 🟡 2.2–2.3 | [src/lib/apollo/](../apps/mobile/src/lib/apollo/) |
 | Image strategy | 🟡 `expo-image` in 2.5. CDN resizing: 📝 | — |
 | Search UI (typeahead, filters in URL, states) | 🟡 3.1–3.5 | — |
 | Search index | 📝 Mock uses in-memory token matching, English-only tokenizer | [server/src/search.ts](../server/src/search.ts) |
 | Offline cart queue | 🟡 3.9–3.10 | — |
 | Analytics events, flags, A/B (`search_layout`) | 🟡 3.6–3.8. Remote flag service, analytics pipeline: 📝 (GrowthBook adapter: stretch 7.3) | — |
 | AI router, providers, Zod intent, keyword fallback, guardrails | 🟡 4.2–4.11, designed in [ADR 0006](adr/0006-ai-provider-abstraction.md) | — |
-| Streaming transport | 🟡 4.1 spike → ADR 0007 | — |
+| Streaming transport | 🟡 4.1 spike → its own ADR | — |
 | LLM proxy (mock + one real provider) | 🟡 4.5. Full LLM gateway (registry, quotas, failover, residency): 📝 | — |
 | On-device provider | 🟡 Phase 6, Simulator only | — |
 | Federation | 🟡 Stretch 7.1–7.2 (catalog and cart subgraphs). Search, recommendations, assistant subgraphs: 📝 | — |

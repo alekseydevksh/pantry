@@ -2,20 +2,16 @@ import { act, userEvent } from '@testing-library/react-native';
 import { renderRouter, screen } from 'expo-router/testing-library';
 
 import { setLanguage } from '@/lib/i18n';
+import { mockEmptyFeedFetch } from '@/test/fetch';
 
 // The real route files in `app/`, not a copy.
 // (Relative to the working directory, which is `apps/mobile` when Jest runs.)
 const APP_DIR = './app';
 
-function mockFeedFetch() {
-  jest.spyOn(globalThis, 'fetch').mockResolvedValue({
-    status: 200,
-    json: async () => ({ data: { feed: { edges: [], pageInfo: { hasNextPage: false } } } }),
-  } as Response);
-}
-
 describe('navigation shell', () => {
-  beforeEach(mockFeedFetch);
+  beforeEach(() => {
+    mockEmptyFeedFetch();
+  });
   afterEach(() => jest.restoreAllMocks());
 
   it.each([

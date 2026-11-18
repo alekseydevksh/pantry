@@ -72,6 +72,7 @@ docs/                         PLAN, ADRs, architecture, learning log
 - **React Compiler is on.** Do not write `useMemo`, `useCallback` or `React.memo` unless profiling shows a need; then add a comment with the reason.
 - **State ownership** ([ADR 0005](docs/adr/0005-server-state-apollo-client-state-zustand.md)): server data lives only in the Apollo cache; Zustand holds settings, session and the offline queue; deep-linkable state lives in route params.
 - GraphQL: write operations in `.graphql` files under `features/<f>/api/`, run `pnpm codegen`, use the typed documents with Apollo hooks. Never write response types by hand.
+- Apollo data masking is on ([ADR 0007](docs/adr/0007-apollo-cache-pagination-masking-persistence.md)): a component that needs entity fields declares its own fragment (unique name) and reads it with `useFragment`; the parent selects the `id` and spreads the fragment. Do not use `@unmask` in new code.
 - Styling: Unistyles with theme tokens. No raw colors or spacing numbers in components.
 - All user-visible strings go through i18n, in both EN and PL.
 - Every interactive element has an accessibility role and label, and a touch target of at least 44 pt.

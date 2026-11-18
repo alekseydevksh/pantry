@@ -1,7 +1,9 @@
+import { ApolloProvider } from '@apollo/client/react';
 import { Stack } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
 
 import { ThemedStatusBar } from '@/design-system';
+import { apolloClient } from '@/lib/apollo/appClient';
 import { useTranslation } from '@/lib/i18n';
 
 // The tabs are the first screen of the stack, also when the app opens on a deep link, so a
@@ -13,7 +15,7 @@ export default function RootLayout() {
   const { t } = useTranslation();
 
   return (
-    <>
+    <ApolloProvider client={apolloClient}>
       <ThemedStatusBar />
       <Stack
         screenOptions={{
@@ -32,6 +34,6 @@ export default function RootLayout() {
           options={{ presentation: 'modal', title: t('screens.assistant') }}
         />
       </Stack>
-    </>
+    </ApolloProvider>
   );
 }
