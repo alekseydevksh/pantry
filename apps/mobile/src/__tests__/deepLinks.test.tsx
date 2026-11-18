@@ -29,7 +29,8 @@ describe('deep links', () => {
     await renderApp('/product/p7');
 
     expect(screen).toHavePathname('/product/p7');
-    expect(screen.getByText('Details for product p7')).toBeOnTheScreen();
+    expect(screen.getByLabelText('Loading the product')).toBeOnTheScreen();
+    expect(appQueries()).toContainEqual({ name: 'Product', variables: { id: 'p7' } });
   });
 
   it('keeps the tabs under the linked screen, so the user can go back', async () => {

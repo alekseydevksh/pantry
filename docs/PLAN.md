@@ -130,7 +130,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **2.6 [sonnet] Recipe screen.** Details, ingredient list linked to products, loading and not-found states.
   - Accept: opening from the feed shows cached fields at once and loads the rest.
   - Proof: RNTL + MSW test, including not-found.
-- [ ] **2.7 [sonnet] Product screen.** Details, allergens, price, add-to-cart button (wired in Phase 3).
+- [x] **2.7 [sonnet] Product screen.** Details, allergens, price, add-to-cart button (wired in Phase 3).
   - Accept: same as 2.6 for products.
   - Proof: RNTL + MSW test.
 - [ ] **2.8 [sonnet] Error boundaries.** One reusable feature error boundary with a retry button; wrap each tab and each details screen; query errors show an inline error with retry.

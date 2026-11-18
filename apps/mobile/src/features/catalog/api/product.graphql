@@ -1,0 +1,27 @@
+# The product screen. Each part owns a fragment (ADR 0007), as on the recipe screen.
+#
+# `ProductHeaderFields` selects the same fields as the card on the feed (`ProductCardFields`), so a
+# product opened from the feed shows its header at once from the cache, and the rest loads.
+query Product($id: ID!) {
+  product(id: $id) {
+    id
+    ...ProductHeaderFields
+    ...ProductDetailsFields
+  }
+}
+
+fragment ProductHeaderFields on Product {
+  id
+  name
+  imageUrl
+  priceCents
+  unit
+  inStock
+}
+
+fragment ProductDetailsFields on Product {
+  id
+  description
+  diets
+  allergens
+}
