@@ -185,6 +185,15 @@ export const en = {
       cloud: 'Cloud only',
       off: 'Off',
     },
+    flags: {
+      title: 'Feature flags',
+      hint: 'Debug panel. Pick a variant to override the one assigned to this device.',
+      current: 'Variant: {{variant}} ({{source}})',
+      source: { override: 'override', assignment: 'assigned', default: 'default' },
+      override: 'Use {{variant}} for {{flag}}',
+      reset: 'Use the assigned variant',
+      resetLabel: 'Remove the override of {{flag}}',
+    },
   },
   assistant: {
     title: 'Assistant',

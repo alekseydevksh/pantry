@@ -166,7 +166,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.7 [fable] Feature flags.** `FlagProvider` interface, local JSON provider, typed flag definitions, deterministic per-user assignment (hash of user id + flag key), exposure logged once per session per flag, local overrides.
   - Accept: the same user always gets the same variant; the split over many ids is close to the configured weights.
   - Proof: unit tests for assignment, exposure dedupe and overrides.
-- [ ] **3.8 [sonnet] `search_layout` A/B and debug panel.** List vs grid layout from the flag; debug panel in Settings that shows flags, variants and lets you override them.
+- [x] **3.8 [sonnet] `search_layout` A/B and debug panel.** List vs grid layout from the flag; debug panel in Settings that shows flags, variants and lets you override them.
   - Accept: override in the panel switches the layout; exposure is logged when results render.
   - Proof: RNTL tests for both variants and the exposure event.
 - [x] **3.9 [fable] Cart model and offline queue.** Pure logic in `features/cart/model`: cart reducer, operation queue with idempotency keys, coalescing (add then remove cancels out), replay with retry and backoff, handling of a permanently rejected operation. Queue persisted through the storage interface.

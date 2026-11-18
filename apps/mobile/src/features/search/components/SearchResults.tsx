@@ -1,16 +1,18 @@
 import { FlashList } from '@shopify/flash-list';
+import { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { track } from '@/analytics';
 import { ErrorState, Text } from '@/design-system';
+import { useFlag } from '@/flags';
 import { useTranslation } from '@/lib/i18n';
 import { CardListSkeleton, CatalogCard } from '@/features/catalog';
 
 import type { SearchInput } from '@pantry/shared';
 
 import type { SearchResultsState } from '../hooks/useSearchResults';
-import { END_REACHED_THRESHOLD, resultType } from '../model/results';
+import { END_REACHED_THRESHOLD, LAYOUT_COLUMNS, resultType } from '../model/results';
 import { searchResultClicked } from '../model/searchEvents';
 import { SearchEmptyState } from './SearchEmptyState';
 
@@ -63,20 +65,35 @@ export function SearchResults({ results, input, onSearch, onClearFilters }: Sear
 
 function ResultList({ results, input }: { results: Ready; input: SearchInput }) {
   const { t } = useTranslation();
+  // The list is only mounted once there are results to show, so this is where the user first sees
+  // the layout. The exposure is logged here and not on the screen, which mounts earlier (ADR 0012).
+  const { variant, expose } = useFlag('search_layout', { expose: 'manual' });
+  useEffect(() => {
+    expose();
+  }, [expose]);
+  const grid = variant === 'grid';
 
   return (
     <FlashList
+      // A new key rebuilds the list when the layout changes (an override in the debug panel).
+      key={variant}
       testID="search-list"
       data={results.rows}
       keyExtractor={(row) => row.key}
       getItemType={resultType}
+      numColumns={LAYOUT_COLUMNS[variant]}
       renderItem={({ item, index }) => (
-        <CatalogCard
-          node={item.node}
-          onPress={() => track('search_result_clicked', searchResultClicked(input, item, index))}
-        />
+        <View
+          testID={grid ? 'search-grid-cell' : undefined}
+          style={grid ? styles.gridCell : undefined}
+        >
+          <CatalogCard
+            node={item.node}
+            onPress={() => track('search_result_clicked', searchResultClicked(input, item, index))}
+          />
+        </View>
       )}
-      ItemSeparatorComponent={Separator}
+      ItemSeparatorComponent={grid ? undefined : Separator}
       ListHeaderComponent={
         <View
           accessible
@@ -140,6 +157,8 @@ function Separator() {
 const styles = StyleSheet.create((theme) => ({
   padded: { paddingHorizontal: theme.spacing.lg },
   listContent: { padding: theme.spacing.lg },
+  // Grid cells carry the gap themselves: half of it on each side, so two columns are one gap apart.
+  gridCell: { padding: theme.spacing.xs },
   count: { marginBottom: theme.spacing.md, gap: theme.spacing.xs },
   separator: { height: theme.spacing.md },
   footer: { padding: theme.spacing.xl, textAlign: 'center' },

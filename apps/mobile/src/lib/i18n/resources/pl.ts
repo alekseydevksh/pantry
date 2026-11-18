@@ -187,6 +187,15 @@ export const pl = {
       cloud: 'Tylko chmura',
       off: 'Wyłączony',
     },
+    flags: {
+      title: 'Flagi funkcji',
+      hint: 'Panel debugowania. Wybierz wariant, aby zastąpić ten przypisany temu urządzeniu.',
+      current: 'Wariant: {{variant}} ({{source}})',
+      source: { override: 'nadpisany', assignment: 'przypisany', default: 'domyślny' },
+      override: 'Użyj wariantu {{variant}} dla {{flag}}',
+      reset: 'Użyj przypisanego wariantu',
+      resetLabel: 'Usuń nadpisanie flagi {{flag}}',
+    },
   },
   assistant: {
     title: 'Asystent',

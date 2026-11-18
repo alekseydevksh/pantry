@@ -174,10 +174,12 @@ describe('search analytics: the envelope', () => {
     const all = events().events;
     expect(all.map((event) => event.name)).toStrictEqual([
       'search_submitted',
+      // The results rendered: the user saw the layout of the `search_layout` test (PLAN 3.8).
+      'flag_exposure',
       'search_result_clicked',
     ]);
     expect(new Set(all.map((event) => event.sessionId)).size).toBe(1);
-    expect(new Set(all.map((event) => event.eventId)).size).toBe(2);
+    expect(new Set(all.map((event) => event.eventId)).size).toBe(3);
     expect(push).toHaveBeenCalledTimes(1);
   });
 });

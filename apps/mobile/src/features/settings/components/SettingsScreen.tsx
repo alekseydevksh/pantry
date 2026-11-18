@@ -8,6 +8,7 @@ import { SUPPORTED_LANGUAGES, type Language } from '@/lib/i18n/languages';
 
 import { useSettings } from '../hooks/useSettings';
 import { AI_MODES, THEME_PREFERENCES } from '../model/settings';
+import { FlagDebugPanel } from './FlagDebugPanel';
 
 // Language names are written in their own language, so a user can find theirs.
 const LANGUAGE_NAMES: Record<Language, string> = { en: 'English', pl: 'Polski' };
@@ -80,6 +81,8 @@ function SettingsContent() {
           ))}
         </View>
       </View>
+
+      <FlagDebugPanel />
     </ScrollView>
   );
 }
