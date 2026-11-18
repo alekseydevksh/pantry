@@ -97,7 +97,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.7 [sonnet] Settings store and screen.** Zustand store for language, theme (system/light/dark) and AI mode (auto / on-device only / cloud only / off), behind a storage interface with an in-memory adapter (MMKV arrives in 2.2).
   - Accept: changing theme and language on the Settings screen applies at once.
   - Proof: store unit tests; RNTL test of the Settings screen.
-- [ ] **1.8 [sonnet] Edge-to-edge and safe areas.** Safe-area handling on all screens, status bar style per theme.
+- [x] **1.8 [sonnet] Edge-to-edge and safe areas.** Safe-area handling on all screens, status bar style per theme.
   - Accept: no content under the notch or home indicator on the iOS Simulator.
   - Proof: manual check on two simulator sizes; screenshots in the commit body are not needed, a note is.
 - [ ] **1.9 [fable] `docs/SYSTEM-DESIGN.md`, first draft.** Follow the structure in SPEC section 8.3. Mark the "how this repo maps to the design" section as pending.

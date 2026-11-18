@@ -5,7 +5,7 @@
 import { act } from '@testing-library/react-native';
 
 import { resetTestReducedMotion } from './reanimated';
-import { resetTestTheme } from './unistyles';
+import { resetTestInsets, resetTestTheme } from './unistyles';
 import '@/design-system/unistyles';
 import { currentLanguage, setLanguage } from '@/lib/i18n';
 
@@ -23,6 +23,7 @@ afterEach(async () => {
   jest.useRealTimers();
   // Same for a test that switches the theme.
   resetTestTheme();
+  resetTestInsets();
   resetTestReducedMotion();
   // ...and the language.
   // (Inside `act`: a screen from the test may still be mounted and re-render.)
