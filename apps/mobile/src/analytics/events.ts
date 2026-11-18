@@ -5,6 +5,8 @@
 // Props must not hold personal data beyond what the event needs. The search text is free text that
 // a user typed, so it can hold anything; it is cut to 100 code points (ADR 0010) and is sent because
 // search analytics are useless without it (ADR 0011).
+import type { FlagKey, FlagSource } from '@/flags/definitions';
+
 import type { SortOrder } from '@pantry/shared';
 
 /** Where the text of a submitted search came from. */
@@ -34,6 +36,15 @@ export type AnalyticsEvents = {
   search_zero_results: {
     query: string;
     filterCount: number;
+  };
+  /**
+   * The user saw a variant of a flag (ADR 0012). Once per session, flag and variant. `source` tells
+   * an experiment's analysis to leave out overrides (`override`) and the kill switch (`default`).
+   */
+  flag_exposure: {
+    flag: FlagKey;
+    variant: string;
+    source: FlagSource;
   };
 };
 

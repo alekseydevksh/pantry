@@ -3,7 +3,7 @@
 // links) and is tested without rendering.
 import { parseCampaign, type Campaign } from './attribution';
 import type { AnalyticsEvents, EventName } from './events';
-import { randomId } from './ids';
+import { randomId } from '@/lib/ids';
 
 /**
  * What a sink receives. A union over the event names, so `if (event.name === 'x')` narrows `props`.

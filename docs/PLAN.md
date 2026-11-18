@@ -163,7 +163,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.6 [fable] Analytics layer.** Typed event schema in `src/analytics/events.ts`, `track()`, pluggable sinks (console sink in dev, memory sink in tests). Wire `search_submitted`, `search_result_clicked` (position, query), `search_zero_results`.
   - Accept: an event with a wrong payload does not compile; the three search events fire once each.
   - Proof: type test; RNTL tests asserting on the memory sink.
-- [ ] **3.7 [fable] Feature flags.** `FlagProvider` interface, local JSON provider, typed flag definitions, deterministic per-user assignment (hash of user id + flag key), exposure logged once per session per flag, local overrides.
+- [x] **3.7 [fable] Feature flags.** `FlagProvider` interface, local JSON provider, typed flag definitions, deterministic per-user assignment (hash of user id + flag key), exposure logged once per session per flag, local overrides.
   - Accept: the same user always gets the same variant; the split over many ids is close to the configured weights.
   - Proof: unit tests for assignment, exposure dedupe and overrides.
 - [ ] **3.8 [sonnet] `search_layout` A/B and debug panel.** List vs grid layout from the flag; debug panel in Settings that shows flags, variants and lets you override them.

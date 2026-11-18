@@ -1,5 +1,5 @@
 import { createAnalytics, type AnalyticsSink, type TrackedEvent } from '../analytics';
-import { randomId } from '../ids';
+import { randomId } from '@/lib/ids';
 import { createMemorySink } from '../sinks';
 
 const UUID_V4 = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
