@@ -159,7 +159,7 @@ Dashboards are sliced by release, market and platform. Alerts fire on threshold 
 | Cursor pagination, idempotent cart mutations | ✅ Built in the mock server | [server/src/pagination.ts](../server/src/pagination.ts), [server/src/cart.ts](../server/src/cart.ts) |
 | Latency and error injection | ✅ Built (`DELAY_*`, `ERROR_RATE`) | [server/src/config.ts](../server/src/config.ts) |
 | CI (typecheck, lint, test, codegen check, Expo Doctor) | ✅ Built | [.github/workflows/ci.yml](../.github/workflows/ci.yml) |
-| Normalized cache, type policies, data masking | ✅ Built ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). MMKV persistence: 🟡 2.3 | [src/lib/apollo/](../apps/mobile/src/lib/apollo/) |
+| Normalized cache, type policies, data masking, MMKV persistence with size cap and schema version | ✅ Built ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). Offline banner and `cache-and-network`: 🟡 2.9 | [src/lib/apollo/](../apps/mobile/src/lib/apollo/) |
 | Image strategy | 🟡 `expo-image` in 2.5. CDN resizing: 📝 | — |
 | Search UI (typeahead, filters in URL, states) | 🟡 3.1–3.5 | — |
 | Search index | 📝 Mock uses in-memory token matching, English-only tokenizer | [server/src/search.ts](../server/src/search.ts) |
