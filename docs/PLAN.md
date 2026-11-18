@@ -85,7 +85,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.3 [sonnet] Primitives: Card, Chip, Skeleton, IconButton.** Chip has selected state and `accessibilityState`. Skeleton uses a Reanimated CSS-style animation.
   - Accept: six primitives exported from `src/design-system`.
   - Proof: RNTL tests for Chip selection and IconButton label.
-- [ ] **1.4 [sonnet] Navigation shell.** Root layout, four tabs (Home, Search, Cart, Settings), `recipe/[id]` and `product/[id]` stack screens, `assistant` as a modal.
+- [x] **1.4 [sonnet] Navigation shell.** Root layout, four tabs (Home, Search, Cart, Settings), `recipe/[id]` and `product/[id]` stack screens, `assistant` as a modal.
   - Accept: every route opens; the modal closes back to the previous screen.
   - Proof: Expo Router testing-library test that navigates to each route.
 - [ ] **1.5 [sonnet] Deep links and typed routes.** Typed routes on; `pantry://recipe/:id` and `pantry://product/:id` open the right screen, also from a cold start.
