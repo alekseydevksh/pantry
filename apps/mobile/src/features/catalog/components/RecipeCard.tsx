@@ -14,9 +14,11 @@ import { CatalogImage } from './CatalogImage';
 export type RecipeCardProps = {
   /** The feed row. It holds only the type and the id; the card reads the rest from the cache. */
   item: RecipeNode;
+  /** Called when the card is pressed, before the details open. */
+  onPress?: () => void;
 };
 
-export function RecipeCard({ item }: RecipeCardProps) {
+export function RecipeCard({ item, onPress }: RecipeCardProps) {
   const { t } = useTranslation();
   const { data, complete } = useFragment({ fragment: RecipeCardFieldsFragmentDoc, from: item });
   if (!complete) return null;
@@ -25,7 +27,10 @@ export function RecipeCard({ item }: RecipeCardProps) {
     <Card
       style={styles.card}
       accessibilityLabel={t('feed.recipeLabel', { name: data.name, minutes: data.cookTimeMin })}
-      onPress={() => router.push({ pathname: '/recipe/[id]', params: { id: data.id } })}
+      onPress={() => {
+        onPress?.();
+        router.push({ pathname: '/recipe/[id]', params: { id: data.id } });
+      }}
     >
       <CatalogImage uri={data.imageUrl} recyclingKey={data.id} size="card" />
       <View style={styles.body}>

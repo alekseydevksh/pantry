@@ -160,7 +160,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.5 [sonnet] Search states.** Empty state with suggested queries, error state with retry, offline banner.
   - Accept: each state shows for the right server response.
   - Proof: RNTL + MSW tests for zero results and server error.
-- [ ] **3.6 [fable] Analytics layer.** Typed event schema in `src/analytics/events.ts`, `track()`, pluggable sinks (console sink in dev, memory sink in tests). Wire `search_submitted`, `search_result_clicked` (position, query), `search_zero_results`.
+- [x] **3.6 [fable] Analytics layer.** Typed event schema in `src/analytics/events.ts`, `track()`, pluggable sinks (console sink in dev, memory sink in tests). Wire `search_submitted`, `search_result_clicked` (position, query), `search_zero_results`.
   - Accept: an event with a wrong payload does not compile; the three search events fire once each.
   - Proof: type test; RNTL tests asserting on the memory sink.
 - [ ] **3.7 [fable] Feature flags.** `FlagProvider` interface, local JSON provider, typed flag definitions, deterministic per-user assignment (hash of user id + flag key), exposure logged once per session per flag, local overrides.

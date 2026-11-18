@@ -48,7 +48,7 @@ Validation uses Zod with one schema per param and `.catch()`, so the parse never
 
 Checked in the Expo Router 58 source and with a router test: `router.setParams({ diet: undefined })` is a shallow merge, so the route keeps the key `diet` with the value `undefined`. `useLocalSearchParams` hides it, so the screen looks right, but the key is still in the route's state, and a URL built from that state (web, a saved navigation state) reads `diet=undefined`. A removed filter would also never leave the URL, and `q=undefined` would search for the word "undefined".
 
-**Decision:** `toRouteParams` (the same as `toSearchParams`, without the keys that are at their default) is written with `navigation.replaceParams`, which replaces all the params of the route. All writes go through `useSearchRoute().setInput`. The cost: unrelated params on the route (`utm_source`) are dropped on the first change, which is what a canonical URL should do anyway. **Alternative:** `setParams` with `null` for each removed key. It gives `diet=null` in the URL, which is no better.
+**Decision:** `toRouteParams` (the same as `toSearchParams`, without the keys that are at their default) is written with `navigation.replaceParams`, which replaces all the params of the route. All writes go through `useSearchRoute().setInput`. The cost: unrelated params on the route (`utm_source`) are dropped on the first change, which is what a canonical URL should do anyway. The campaign params (`utm_*`) are read from the link before this rewrite, for analytics ([ADR 0011](0011-analytics-layer-and-campaign-attribution.md)). **Alternative:** `setParams` with `null` for each removed key. It gives `diet=null` in the URL, which is no better.
 
 ## Consequences
 

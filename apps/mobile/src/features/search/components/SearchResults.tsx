@@ -2,6 +2,7 @@ import { FlashList } from '@shopify/flash-list';
 import { ActivityIndicator, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
+import { track } from '@/analytics';
 import { ErrorState, Text } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
 import { CardListSkeleton, CatalogCard } from '@/features/catalog';
@@ -10,6 +11,7 @@ import type { SearchInput } from '@pantry/shared';
 
 import type { SearchResultsState } from '../hooks/useSearchResults';
 import { END_REACHED_THRESHOLD, resultType } from '../model/results';
+import { searchResultClicked } from '../model/searchEvents';
 import { SearchEmptyState } from './SearchEmptyState';
 
 type Ready = Extract<SearchResultsState, { status: 'ready' }>;
@@ -54,12 +56,12 @@ export function SearchResults({ results, input, onSearch, onClearFilters }: Sear
       return results.rows.length === 0 ? (
         <SearchEmptyState input={input} onSearch={onSearch} onClearFilters={onClearFilters} />
       ) : (
-        <ResultList results={results} />
+        <ResultList results={results} input={input} />
       );
   }
 }
 
-function ResultList({ results }: { results: Ready }) {
+function ResultList({ results, input }: { results: Ready; input: SearchInput }) {
   const { t } = useTranslation();
 
   return (
@@ -68,7 +70,12 @@ function ResultList({ results }: { results: Ready }) {
       data={results.rows}
       keyExtractor={(row) => row.key}
       getItemType={resultType}
-      renderItem={({ item }) => <CatalogCard node={item.node} />}
+      renderItem={({ item, index }) => (
+        <CatalogCard
+          node={item.node}
+          onPress={() => track('search_result_clicked', searchResultClicked(input, item, index))}
+        />
+      )}
       ItemSeparatorComponent={Separator}
       ListHeaderComponent={
         <View
