@@ -2,20 +2,23 @@ import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { Text } from '@/design-system';
+import { useTranslation } from '@/lib/i18n';
 
 export type ProductScreenProps = {
   /** The product id from the route, for example `r1`. */
   id: string;
 };
 
-// Placeholder until task 2.6. English strings are temporary: i18n arrives in task 1.6.
+// Placeholder screen, replaced by the real feature in Phase 2.
 export function ProductScreen({ id }: ProductScreenProps) {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screen}>
       <Text variant="title" accessibilityRole="header">
-        Product
+        {t('screens.product')}
       </Text>
-      <Text tone="muted">{`Details for product ${id}`}</Text>
+      <Text tone="muted">{t('details.product', { id })}</Text>
     </View>
   );
 }

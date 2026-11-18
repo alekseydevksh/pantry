@@ -1,10 +1,12 @@
 import { Tabs } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
 
-// Tab titles are English for now: i18n arrives in task 1.6.
+import { useTranslation } from '@/lib/i18n';
+
 export default function TabsLayout() {
   // Navigation options are props, not styles, so the theme comes from the hook.
   const { theme } = useUnistyles();
+  const { t } = useTranslation();
 
   return (
     <Tabs
@@ -17,10 +19,10 @@ export default function TabsLayout() {
         sceneStyle: { backgroundColor: theme.colors.background },
       }}
     >
-      <Tabs.Screen name="index" options={{ title: 'Home' }} />
-      <Tabs.Screen name="search" options={{ title: 'Search' }} />
-      <Tabs.Screen name="cart" options={{ title: 'Cart' }} />
-      <Tabs.Screen name="settings" options={{ title: 'Settings' }} />
+      <Tabs.Screen name="index" options={{ title: t('tabs.home') }} />
+      <Tabs.Screen name="search" options={{ title: t('tabs.search') }} />
+      <Tabs.Screen name="cart" options={{ title: t('tabs.cart') }} />
+      <Tabs.Screen name="settings" options={{ title: t('tabs.settings') }} />
     </Tabs>
   );
 }

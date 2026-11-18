@@ -2,15 +2,19 @@ import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { Text } from '@/design-system';
+import { useTranslation } from '@/lib/i18n';
 
-// Placeholder until Phase 3. English strings are temporary: i18n arrives in task 1.6.
+// Placeholder screen, replaced by the real feature later.
 export function CartScreen() {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screen}>
       <Text variant="title" accessibilityRole="header">
-        Cart
+        {t('cart.title')}
       </Text>
-      <Text tone="muted">Your cart is empty.</Text>
+      <Text tone="muted">{t('cart.empty')}</Text>
+      <Text tone="muted">{t('cart.itemCount', { count: 0 })}</Text>
     </View>
   );
 }

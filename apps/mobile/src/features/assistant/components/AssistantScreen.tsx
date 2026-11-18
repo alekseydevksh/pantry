@@ -2,21 +2,24 @@ import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
 import { Button, Text } from '@/design-system';
+import { useTranslation } from '@/lib/i18n';
 
 export type AssistantScreenProps = {
   /** Called when the user closes the assistant. The route decides where that goes. */
   onClose: () => void;
 };
 
-// Placeholder until Phase 4. English strings are temporary: i18n arrives in task 1.6.
+// Placeholder screen, replaced by the real feature later.
 export function AssistantScreen({ onClose }: AssistantScreenProps) {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.screen}>
       <Text variant="title" accessibilityRole="header">
-        Assistant
+        {t('assistant.title')}
       </Text>
-      <Text tone="muted">Ask for recipes, products and meal ideas.</Text>
-      <Button title="Close" variant="secondary" onPress={onClose} />
+      <Text tone="muted">{t('assistant.body')}</Text>
+      <Button title={t('common.close')} variant="secondary" onPress={onClose} />
     </View>
   );
 }

@@ -2,13 +2,15 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useUnistyles } from 'react-native-unistyles';
 
+import { useTranslation } from '@/lib/i18n';
+
 // The tabs are the first screen of the stack, also when the app opens on a deep link, so a
 // modal or a detail screen always has something to go back to.
 export const unstable_settings = { anchor: '(tabs)' };
 
-// Screen titles are English for now: i18n arrives in task 1.6.
 export default function RootLayout() {
   const { theme } = useUnistyles();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -21,9 +23,12 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="recipe/[id]" options={{ title: 'Recipe' }} />
-        <Stack.Screen name="product/[id]" options={{ title: 'Product' }} />
-        <Stack.Screen name="assistant" options={{ presentation: 'modal', title: 'Assistant' }} />
+        <Stack.Screen name="recipe/[id]" options={{ title: t('screens.recipe') }} />
+        <Stack.Screen name="product/[id]" options={{ title: t('screens.product') }} />
+        <Stack.Screen
+          name="assistant"
+          options={{ presentation: 'modal', title: t('screens.assistant') }}
+        />
       </Stack>
     </>
   );

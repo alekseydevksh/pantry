@@ -91,7 +91,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.5 [sonnet] Deep links and typed routes.** Typed routes on; `pantry://recipe/:id` and `pantry://product/:id` open the right screen, also from a cold start.
   - Accept: the deep link opens the recipe screen with the id.
   - Proof: router test with an initial URL; manual `xcrun simctl openurl booted pantry://recipe/r1`.
-- [ ] **1.6 [sonnet] i18n.** `expo-localization` + i18next, EN and PL resources, typed keys, plural rules for PL.
+- [x] **1.6 [sonnet] i18n.** `expo-localization` + i18next, EN and PL resources, typed keys, plural rules for PL.
   - Accept: all visible strings come from resources; changing language updates the UI without a restart.
   - Proof: test that EN and PL have identical key sets; render test in PL.
 - [ ] **1.7 [sonnet] Settings store and screen.** Zustand store for language, theme (system/light/dark) and AI mode (auto / on-device only / cloud only / off), behind a storage interface with an in-memory adapter (MMKV arrives in 2.2).
