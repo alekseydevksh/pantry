@@ -90,7 +90,7 @@ docs/                         PLAN, ADRs, architecture, learning log
 
 ## How to add a feature
 
-1. Add or change types in `packages/shared/schema.graphql`; update the server resolver; run `pnpm codegen`.
+1. Add or change types in `packages/shared/schema.graphql`; update the server resolver; run `pnpm codegen`. Then set the new `SCHEMA_HASH` in `apps/mobile/src/lib/apollo/persistence/version.ts` (the cache version guard test fails and prints the value), so old persisted caches are dropped.
 2. Create `src/features/<name>/` with `model/` first, and unit-test it.
 3. Add `.graphql` operations in `api/`, then hooks, then components.
 4. Add the route file in `app/` that renders the feature screen.

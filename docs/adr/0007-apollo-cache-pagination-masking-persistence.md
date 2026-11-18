@@ -73,12 +73,36 @@ The link chain is `ErrorLink → RetryLink → HttpLink`, in [links.ts](../../ap
 - **Error reporting.** The error link is outside the retry link. It reports an error once, after the retries run out, to [observability](../../apps/mobile/src/lib/observability/index.ts) (`reportError`). Sentry plugs in there (PLAN 5.5). Cancelled requests are not reported.
 - **`possibleTypes`** is generated from the schema by the `fragment-matcher` codegen plugin. Without it, the cache cannot tell whether `... on Product` matches an item of the `CatalogItem` union.
 
-## Decision 4: persistence
+## Decision 4: our own cache persistor
 
-Added in PLAN 2.3.
+The persistor is in [cachePersistor.ts](../../apps/mobile/src/lib/apollo/persistence/cachePersistor.ts) and is wired in [appClient.ts](../../apps/mobile/src/lib/apollo/appClient.ts). `apollo3-cache-persist` is unmaintained and targets Apollo Client 3. The persistor is about 150 lines of tested code and does exactly what we need.
+
+- **Restore before the first render, with no gate.** MMKV reads and `cache.restore()` are synchronous, so the cache is restored while the app client module loads, before `ApolloProvider` renders. The first screen shows cached data at once, also offline, with no splash-screen wait and no "restoring" state.
+- **Separate storage.** The cache goes in its own MMKV instance (`pantry.apollo-cache`, from task 2.2). A purge can never touch settings or the offline queue (ADR 0005).
+- **Debounced save.** The persistor wraps the cache's write methods (`write`, `modify`, `evict`, `reset`). `writeQuery`, `writeFragment` and query results all go through `write`.
+  - A save runs 1 s after the last write, and at most 5 s after the first unsaved one. With constant writes, such as scrolling through feed pages, a plain debounce would never save.
+  - The save writes `cache.extract(false)`, so only confirmed data is saved, never optimistic changes of in-flight mutations. Queued offline operations live in Zustand.
+- **Flush when the app leaves the foreground**, on both `inactive` and `background` ([flushOnAppStateChange.ts](../../apps/mobile/src/lib/apollo/persistence/flushOnAppStateChange.ts)). iOS goes through `inactive` when the user opens the app switcher, and a kill from there may never reach `background`. Android goes straight to `background`.
+- **Size limit: 5 MB, all or nothing.** The persistor measures the UTF-8 byte length of the JSON, which is what MMKV stores. A cache over the limit is **purged from storage**, never saved in part: a part of a normalized cache would have dangling references. The in-memory cache is not touched, and the purge is reported once per session. Saving resumes when the cache fits again.
+- **Version.** `CACHE_VERSION = "<format>:<schema hash>"` ([version.ts](../../apps/mobile/src/lib/apollo/persistence/version.ts)). A stored cache with another version, or with no version, is dropped rather than restored.
+  - The schema hash is FNV-1a of `schema.graphql`. A guard test fails when the schema changes and the hash was not updated, so every schema change drops old caches after an app update. Nothing is generated at runtime.
+  - The format number is bumped by hand for changes the schema does not show, such as `keyFields`, merge functions or new type policies.
+  - An OTA update that only changes queries keeps the cache. Apollo treats a missing field as a cache miss and fetches it.
+- **Damaged data never crashes the app.** Invalid JSON, a non-object, or a `cache.restore` that throws: the persistor starts with an empty cache, purges the stored copy and reports the error.
+
+**Alternatives.**
+- `apollo3-cache-persist`: unmaintained, and built for Apollo Client 3.
+- An async restore behind a splash screen: needed with AsyncStorage, but not with MMKV.
+- Trimming the cache to fit, for example dropping old search results first: this keeps more data offline but needs knowledge of which roots matter. It is the next step if the 5 MB purge shows up in production metrics.
+- A shorter debounce: more writes of a multi-MB string. One second plus the foreground flush loses at most the last second of data on a crash.
+
+**Costs.**
+- Restoring a large cache runs `JSON.parse` on the JS thread at startup. For 5 MB we assume tens of ms on a mid-range phone; this is an assumption until PLAN 5.6 measures it. The 5 MB cap bounds the cost.
+- Each save serializes the whole cache, not a diff. This is fine at this size, and the debounce keeps saves rare.
 
 ## Consequences
 
-- Pagination and retry rules are pure functions with unit tests ([tests](../../apps/mobile/src/lib/apollo/__tests__/)).
+- Pagination, retry and persistence rules have unit tests ([tests](../../apps/mobile/src/lib/apollo/__tests__/)).
 - Feature components from PLAN 2.5 on use fragments and `useFragment`. Screens pass entity references down, not field values.
 - The search params model (PLAN 3.1) must build a canonical `SearchInput`.
+- A schema change also needs a new `SCHEMA_HASH` in `version.ts`; the guard test says so and gives the value.

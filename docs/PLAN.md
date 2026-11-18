@@ -39,6 +39,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | Safe areas with Unistyles (Phase 1) | Themed styles go on React Native's own components. Unistyles cannot restyle a third-party view (for example `SafeAreaView`) on a theme change unless it is wrapped with `withUnistyles`, so insets come from `rt.insets` in the StyleSheet |
 | Apollo cache (Phase 2) | Own cursor pagination policy (drops duplicates by node id), and Apollo data masking on: components read their fragment's fields with `useFragment` ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). Retries only for network errors and 5xx, and for mutations only with an `idempotencyKey` |
 | MMKV (Phase 2) | `react-native-mmkv` 4 (Nitro), two instances: `pantry` (settings, later session and offline queue) and `pantry.apollo-cache` (only the persisted cache, so a purge never touches settings). Failed writes are reported, not thrown. Own Jest mock in `src/test/mmkv.ts` that keeps one store per id, so tests can simulate a restart |
+| Cache persistence (Phase 2) | Own persistor ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)): synchronous restore before the first render, 1 s debounce with a 5 s max wait, flush on `inactive` and `background`, 5 MB cap with an all-or-nothing purge, version = format number + schema hash with a guard test |
 
 ## Android status
 
@@ -116,7 +117,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **2.2 [sonnet] MMKV storage.** `src/lib/storage` wrapper over `react-native-mmkv` (+ `react-native-nitro-modules`), Jest mock, and the MMKV adapter for the settings store from 1.7.
   - Accept: settings survive an app restart.
   - Proof: adapter unit tests against the mock; manual restart check.
-- [ ] **2.3 [fable] Apollo cache persistor.** Own persistor: restore before first render, debounced write of `cache.extract()` to MMKV, size limit with purge, schema version key that drops an old cache.
+- [x] **2.3 [fable] Apollo cache persistor.** Own persistor: restore before first render, debounced write of `cache.extract()` to MMKV, size limit with purge, schema version key that drops an old cache.
   - Accept: restore, debounce, size limit and version mismatch all behave as designed.
   - Proof: unit tests with fake timers and the storage mock.
 - [ ] **2.4 [sonnet] MSW test harness.** MSW server for Jest with typed GraphQL handlers built from the generated documents, a `renderWithProviders` helper (Apollo, theme, i18n, router).

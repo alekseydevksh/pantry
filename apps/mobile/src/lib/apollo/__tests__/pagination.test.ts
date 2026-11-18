@@ -1,9 +1,10 @@
-import { gql, type Reference, type TypedDocumentNode } from '@apollo/client';
+import { gql, type Reference } from '@apollo/client';
 
 import type { FeedPreviewQuery } from '@pantry/shared';
 
 import { createCache } from '../client';
 import { mergeConnection } from '../pagination';
+import { FEED, feedPage, product, recipe } from './fixtures';
 
 // ---------------------------------------------------------------------------------------------
 // mergeConnection: the merge rules on their own, with cached (normalized) edges.
@@ -87,59 +88,6 @@ describe('mergeConnection', () => {
 // ---------------------------------------------------------------------------------------------
 // Through a real InMemoryCache with the app's type policies: writes, reads and key arguments.
 // ---------------------------------------------------------------------------------------------
-
-type FeedNode = FeedPreviewQuery['feed']['edges'][number]['node'];
-
-// The sample feed query from Phase 0 with an `$after` variable. The real paginated feed query
-// arrives in task 2.5; its result has the same shape, so it reuses the generated result type.
-const FEED: TypedDocumentNode<FeedPreviewQuery, { first: number; after?: string }> = gql`
-  query TestFeed($first: Int!, $after: String) {
-    feed(first: $first, after: $after) {
-      edges {
-        cursor
-        node {
-          __typename
-          ... on Product {
-            id
-            name
-            priceCents
-          }
-          ... on Recipe {
-            id
-            name
-            cookTimeMin
-          }
-        }
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-    }
-  }
-`;
-
-const product = (id: string): FeedNode => ({
-  __typename: 'Product',
-  id,
-  name: `Product ${id}`,
-  priceCents: 100,
-});
-const recipe = (id: string): FeedNode => ({
-  __typename: 'Recipe',
-  id,
-  name: `Recipe ${id}`,
-  cookTimeMin: 20,
-});
-
-function feedPage(nodes: FeedNode[], hasNextPage = true): FeedPreviewQuery {
-  return {
-    feed: {
-      edges: nodes.map((node) => ({ cursor: `c-${node.id}`, node })),
-      pageInfo: { hasNextPage, endCursor: nodes.length ? `c-${nodes.at(-1)?.id}` : null },
-    },
-  };
-}
 
 describe('feed type policy', () => {
   it('appends pages from fetchMore and reads them as one list, with both union members', () => {
