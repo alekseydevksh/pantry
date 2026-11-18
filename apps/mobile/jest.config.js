@@ -1,8 +1,10 @@
 // jest-expo's own list of packages that are published as ES modules or untranspiled and must go
-// through Babel. MSW 3 and its dependencies are ES modules only, and Jest runs CommonJS.
+// through Babel. Jest runs CommonJS, so the packages below, which ship ES modules only, are added:
+// FlashList and MSW 3 with its dependencies.
 const expoPreset = require('jest-expo/jest-preset');
 
-const MSW_PACKAGES = [
+const ES_MODULE_PACKAGES = [
+  '@shopify/flash-list',
   ...['msw', '@msw', '@mswjs', '@open-draft', 'rettime', 'until-async', 'outvariant'],
   ...['cookie', 'tough-cookie', 'tldts', 'headers-polyfill', 'is-node-process'],
 ];
@@ -26,7 +28,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/src/test/setup.ts'],
   testMatch: ['<rootDir>/src/**/__tests__/**/*.test.{ts,tsx}'],
   transform: { ...expoPreset.transform, '\\.mjs$': babelTransform },
-  transformIgnorePatterns: transformAlso(expoPreset.transformIgnorePatterns, MSW_PACKAGES),
+  transformIgnorePatterns: transformAlso(expoPreset.transformIgnorePatterns, ES_MODULE_PACKAGES),
   moduleNameMapper: {
     // Same alias as "paths" in tsconfig.json.
     '^@/(.*)$': '<rootDir>/src/$1',

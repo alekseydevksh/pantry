@@ -6,6 +6,7 @@
 export const en = {
   common: {
     close: 'Close',
+    retry: 'Try again',
   },
   tabs: {
     home: 'Home',
@@ -21,14 +22,27 @@ export const en = {
   home: {
     title: 'Pantry',
     subtitle: 'Groceries and recipes, with an assistant that helps you shop.',
-    loading: 'Loading from the mock API…',
-    error: 'The mock API is not reachable. Start it with “pnpm dev:server” and reload.',
-    fromApi: 'From the mock API:',
-    recipeMeta: '{{name}} · {{minutes}} min',
-    productMeta: '{{name}} · {{price}}',
-    openRecipe: 'Open a sample recipe',
-    openProduct: 'Open a sample product',
     askAssistant: 'Ask the assistant',
+  },
+  feed: {
+    kind: { product: 'Product', recipe: 'Recipe' },
+    // Accessibility labels of a whole card: what it is, then the facts a user would want to hear.
+    productLabel: '{{name}}, product, {{unit}}, {{price}}',
+    recipeLabel: '{{name}}, recipe, {{minutes}} minutes',
+    cookTime: '{{minutes}} min',
+    servings_one: '{{count}} serving',
+    servings_other: '{{count}} servings',
+    outOfStock: 'Out of stock',
+    loading: 'Loading the feed',
+    loadingMore: 'Loading more…',
+    endOfFeed: 'You have seen everything.',
+    error: {
+      title: 'Could not load the feed',
+      message: 'Check your connection and try again.',
+    },
+    loadMoreFailed: 'Could not load more items.',
+    refreshFailed: 'Could not refresh. Pull down to try again.',
+    empty: 'There is nothing here yet.',
   },
   search: {
     title: 'Search',

@@ -16,6 +16,7 @@ function keysOf(resource: object, prefix = ''): string[] {
 }
 
 /** Plural forms of one word collapse into one key: `itemCount_one` and `itemCount_few` → `itemCount`. */
+const withoutSuffix = (key: string) => key.replace(PLURAL_SUFFIX, '');
 const baseKeys = (resource: object) => [
   ...new Set(keysOf(resource).map((key) => key.replace(PLURAL_SUFFIX, ''))),
 ];
@@ -28,13 +29,19 @@ describe('translation resources', () => {
   it.each([
     ['en', en],
     ['pl', pl],
-  ])('have every plural form that %s needs', (language, resource) => {
+  ])('have every plural form that %s needs, for every plural word', (language, resource) => {
     const needed = new Intl.PluralRules(language).resolvedOptions().pluralCategories;
-    const present = keysOf(resource)
-      .filter((key) => key.startsWith('cart.itemCount_'))
-      .map((key) => key.slice(key.lastIndexOf('_') + 1));
+    const keys = keysOf(resource);
+    // A word is plural when one of its keys ends in a plural suffix (`cart.itemCount_one`).
+    const words = [...new Set(keys.filter((key) => PLURAL_SUFFIX.test(key)).map(withoutSuffix))];
 
-    expect(present.sort()).toEqual([...needed].sort());
+    expect(words).toEqual(expect.arrayContaining(['cart.itemCount', 'feed.servings']));
+    for (const word of words) {
+      const present = keys
+        .filter((key) => PLURAL_SUFFIX.test(key) && withoutSuffix(key) === word)
+        .map((key) => key.slice(key.lastIndexOf('_') + 1));
+      expect({ word, forms: present.sort() }).toEqual({ word, forms: [...needed].sort() });
+    }
   });
 
   it('have no empty strings', () => {

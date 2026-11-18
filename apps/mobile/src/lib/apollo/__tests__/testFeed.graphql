@@ -1,7 +1,7 @@
-# Phase 0 sample operation: proves the path schema -> codegen -> typed data in a component.
-# The real feed query (pagination, full cards) replaces it in task 2.5.
-query FeedPreview($first: Int!) {
-  feed(first: $first) {
+# Test-only operation for the Apollo cache tests: the feed with every field selected inline, so a test
+# can read the items directly. The app's own feed query, with fragments, is features/catalog/api/feed.graphql.
+query TestFeed($first: Int!, $after: String) {
+  feed(first: $first, after: $after) {
     edges {
       cursor
       node {

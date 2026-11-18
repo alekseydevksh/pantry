@@ -1,0 +1,10 @@
+# The fields the product card on the feed shows. The `ProductCard` component reads them with
+# `useFragment` (ADR 0007); a query that shows a card only spreads this and selects the `id`.
+fragment ProductCardFields on Product {
+  id
+  name
+  imageUrl
+  priceCents
+  unit
+  inStock
+}

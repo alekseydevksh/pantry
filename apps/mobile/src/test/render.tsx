@@ -9,6 +9,11 @@
 //   navigator, which is enough for components that do not navigate.
 //
 // To test the real route files in `app/` use `renderApp` instead.
+//
+// Timers: Expo Router's `renderRouter` (used by `route` and by `renderApp`) turns on Jest's fake
+// timers. Real network I/O does not finish while time is faked, so a test that needs data from
+// MSW does not use the router: it renders the component without `route` and checks navigation by
+// spying on `router.push`.
 import { ApolloProvider } from '@apollo/client/react';
 import { act, render, type RenderResult } from '@testing-library/react-native';
 import { renderRouter, type RenderRouterResult } from 'expo-router/testing-library';

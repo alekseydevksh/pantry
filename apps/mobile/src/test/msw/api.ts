@@ -3,9 +3,11 @@
 //
 //   server.use(api.query(ProductDocument, ({ variables }) => ({ product: makeProduct(variables.id) })));
 //
-// A resolver returns the `data` of the response. To fail instead, use `api.networkError()`,
-// `api.httpError(status)` or `api.graphqlError(message)` (see below).
+// A resolver returns the `data` of the response: what the server sends, with the fields of every
+// fragment (`Unmasked`). The app's own result types hide those fields (data masking, ADR 0007).
+// To fail instead, use `api.networkError()`, `api.httpError(status)` or `api.graphqlError(message)`.
 import type { TypedDocumentNode } from '@apollo/client';
+import type { Unmasked } from '@apollo/client/masking';
 import { HttpResponse } from 'msw';
 import { graphql } from 'msw/graphql';
 
@@ -15,8 +17,10 @@ type Resolver<TData, TVariables> = (info: {
   variables: TVariables;
   /** How many times this handler has been called, starting at 1. Useful for "fail once, then succeed". */
   callCount: number;
-}) => TData | Promise<TData> | Response | Promise<Response>;
+}) => Unmasked<TData> | Promise<Unmasked<TData>> | Response | Promise<Response>;
 
+// (`result as TData`: the unmasked and the masked type describe the same JSON; MSW only knows the
+// document's own, masked, type.)
 // Only requests to the app's GraphQL endpoint match, so an unrelated request is still reported.
 const endpoint = graphql.link(API_URL);
 
@@ -29,7 +33,7 @@ export function query<
   return endpoint.query(document, async ({ variables }) => {
     callCount += 1;
     const result = await resolver({ variables: variables as TVariables, callCount });
-    return result instanceof Response ? result : HttpResponse.json({ data: result });
+    return result instanceof Response ? result : HttpResponse.json({ data: result as TData });
   });
 }
 
@@ -42,7 +46,7 @@ export function mutation<
   return endpoint.mutation(document, async ({ variables }) => {
     callCount += 1;
     const result = await resolver({ variables: variables as TVariables, callCount });
-    return result instanceof Response ? result : HttpResponse.json({ data: result });
+    return result instanceof Response ? result : HttpResponse.json({ data: result as TData });
   });
 }
 

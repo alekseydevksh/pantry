@@ -1,0 +1,8 @@
+# The fields the recipe card on the feed shows. See productCard.graphql.
+fragment RecipeCardFields on Recipe {
+  id
+  name
+  imageUrl
+  cookTimeMin
+  servings
+}
