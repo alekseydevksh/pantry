@@ -21,6 +21,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^8.0.0",
     "@graphql-codegen/client-preset": "^7.0.0",
+    "@graphql-codegen/fragment-matcher": "^8.0.0",
     "@swc/core": "^1.16.22",
     "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",

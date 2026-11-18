@@ -1,8 +1,11 @@
+import { ApolloProvider } from '@apollo/client/react';
 import { render, screen } from '@testing-library/react-native';
 
 import type { FeedPreviewQuery } from '@pantry/shared';
 
 import { darkTheme } from '@/design-system';
+import { createApolloClient, createLink } from '@/lib/apollo';
+import { jsonResponse, mockFetch } from '@/test/fetch';
 import { setTestTheme } from '@/test/unistyles';
 
 import { HomeScreen } from '../components/HomeScreen';
@@ -23,10 +26,23 @@ const feed: FeedPreviewQuery = {
   },
 };
 
-// MSW replaces this hand-made fetch mock in task 2.4.
-function mockFetch(implementation: () => Promise<unknown>) {
-  return jest.spyOn(globalThis, 'fetch').mockImplementation(implementation as typeof fetch);
+// A new client for every test, so no cached data leaks between tests, and retries that do not wait.
+// `renderWithProviders` (task 2.4) replaces this.
+async function renderHome() {
+  const client = createApolloClient({
+    link: createLink({
+      uri: 'https://api.test/graphql',
+      retryDelay: { initial: 0, max: 0, jitter: false },
+    }),
+  });
+  return render(
+    <ApolloProvider client={client}>
+      <HomeScreen />
+    </ApolloProvider>,
+  );
 }
+
+const feedResponse = async () => jsonResponse({ data: feed });
 
 describe('HomeScreen (Phase 0 placeholder)', () => {
   afterEach(() => {
@@ -34,9 +50,9 @@ describe('HomeScreen (Phase 0 placeholder)', () => {
   });
 
   it('shows the app name as a header and items loaded from the API', async () => {
-    const fetchSpy = mockFetch(async () => ({ status: 200, json: async () => ({ data: feed }) }));
+    const fetchSpy = mockFetch(feedResponse);
 
-    await render(<HomeScreen />);
+    await renderHome();
 
     expect(screen.getByRole('header', { name: 'Pantry' })).toBeOnTheScreen();
     expect(await screen.findByText('Tomato Basil Spaghetti · 20 min')).toBeOnTheScreen();
@@ -49,10 +65,10 @@ describe('HomeScreen (Phase 0 placeholder)', () => {
   });
 
   it('uses the colors of the active theme', async () => {
-    mockFetch(async () => ({ status: 200, json: async () => ({ data: feed }) }));
+    mockFetch(feedResponse);
     setTestTheme('dark');
 
-    await render(<HomeScreen />);
+    await renderHome();
 
     expect(screen.getByRole('header', { name: 'Pantry' })).toHaveStyle({
       color: darkTheme.colors.text,
@@ -67,7 +83,7 @@ describe('HomeScreen (Phase 0 placeholder)', () => {
       throw new TypeError('Network request failed');
     });
 
-    await render(<HomeScreen />);
+    await renderHome();
 
     expect(await screen.findByText(/mock API is not reachable/)).toBeOnTheScreen();
   });

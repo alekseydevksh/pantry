@@ -31,12 +31,13 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | Lint version (Phase 0) | ESLint 9.39, not 10: `eslint-plugin-react` inside the Expo preset crashes on ESLint 10. Move to 10 when `eslint-config-expo` supports it |
 | Routes folder (Phase 0) | `apps/mobile/app/`, as in CLAUDE.md. The SDK 58 template uses `src/app/`; both work |
 | App id (Phase 0) | `dev.pantry.app` for iOS and Android, scheme `pantry`. Placeholder; change in `app.config.ts` before any store build |
-| Codegen output (Phase 0) | Client preset with fragment masking off and enums as string unions. Revisit masking in task 2.1 |
+| Codegen output (Phase 0) | Client preset with enums as string unions. Fragment masking: Apollo's runtime masking since task 2.1 (Codegen's own is off) |
 | Prices (Phase 0) | Integer cents everywhere, so the price filter is `maxPriceCents` (the plan called it `maxPrice`) |
 | Unistyles setup (Phase 1) | Babel plugin with `root: 'src'` (the Metro-only setup is still experimental). The app entry is `apps/mobile/index.ts`, which registers the themes before Expo Router loads the routes. Adaptive themes are on (the app follows the system) until task 1.7 adds the user's choice |
 | Unistyles in Jest (Phase 1) | The library's own mock plus `src/test/unistyles.ts`, which adds theme switching (`setTestTheme`). After a switch, a test re-renders to see new StyleSheet values; on a device, native code updates them without a re-render |
 | Typed routes on a fresh clone (Phase 1) | `.expo/types/router.d.ts` and `expo-env.d.ts` are generated and git-ignored, and `tsc` fails without them (CI uses a fresh clone). The mobile `typecheck` script runs `expo customize tsconfig.json` first, which writes both files without changing `tsconfig.json`; this is the command the Expo docs give for CI |
 | Safe areas with Unistyles (Phase 1) | Themed styles go on React Native's own components. Unistyles cannot restyle a third-party view (for example `SafeAreaView`) on a theme change unless it is wrapped with `withUnistyles`, so insets come from `rt.insets` in the StyleSheet |
+| Apollo cache (Phase 2) | Own cursor pagination policy (drops duplicates by node id), and Apollo data masking on: components read their fragment's fields with `useFragment` ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). Retries only for network errors and 5xx, and for mutations only with an `idempotencyKey` |
 
 ## Android status
 
@@ -108,7 +109,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 
 ## Phase 2 — Data layer
 
-- [ ] **2.1 [fable] Apollo Client.** Client in `src/lib/apollo`, HTTP link, retry link for network errors, error link that reports to the (future) observability layer, type policies for cursor pagination (`feed`, `search`) keyed by their arguments.
+- [x] **2.1 [fable] Apollo Client.** Client in `src/lib/apollo`, HTTP link, retry link for network errors, error link that reports to the (future) observability layer, type policies for cursor pagination (`feed`, `search`) keyed by their arguments.
   - Accept: `fetchMore` appends pages without duplicates; a refetch replaces them.
   - Proof: unit tests of the type policies' merge and read functions.
 - [ ] **2.2 [sonnet] MMKV storage.** `src/lib/storage` wrapper over `react-native-mmkv` (+ `react-native-nitro-modules`), Jest mock, and the MMKV adapter for the settings store from 1.7.
@@ -179,7 +180,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 
 ## Phase 4 — AI assistant
 
-- [ ] **4.1 [fable] Streaming spike.** Prove that a streamed response from the server reaches the app token by token on the iOS Simulator (AI SDK transport or plain streaming `fetch`), and that `AbortController` stops it. Write the result as ADR 0007 (transport: SSE vs WebSocket vs `@defer`).
+- [ ] **4.1 [fable] Streaming spike.** Prove that a streamed response from the server reaches the app token by token on the iOS Simulator (AI SDK transport or plain streaming `fetch`), and that `AbortController` stops it. Write the result as an ADR with the next free number (transport: SSE vs WebSocket vs `@defer`).
   - Accept: a throwaway screen shows tokens arriving one by one and stops on cancel.
   - Proof: manual check + the ADR. Delete the throwaway screen in this commit.
 - [ ] **4.2 [fable] Contracts.** `src/ai/types.ts`: `AIProvider`, `AIRequest`, `Chunk` (text delta, intent, refusal, usage, done). `packages/shared`: Zod schema for the intent (`query`, `filters`, `servings`, `maxTime`) and a parser that returns a typed result or a typed error.

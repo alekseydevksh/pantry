@@ -73,5 +73,5 @@ The app calls a proxy route in `server/`. The proxy has `LLM_MODE=mock` (scripte
 
 - Two steps per request (model → intent, then search) add one network call. Accepted: search is fast, and the result is always real.
 - If a provider fails after it has already streamed some text, the router starts the next provider and the UI replaces the partial text. The state machine must handle this without mixing two answers ([PLAN 4.3, 4.7](../PLAN.md)).
-- The streaming transport between app and proxy is decided in ADR 0007 after the Phase 4 spike.
+- The streaming transport between app and proxy is decided in its own ADR after the Phase 4 spike (task 4.1).
 - Timeouts, history length and max tokens are flag values, so they can be tuned or used as a kill switch without a release.

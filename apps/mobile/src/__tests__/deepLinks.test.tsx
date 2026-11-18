@@ -1,6 +1,8 @@
 import { router } from 'expo-router';
 import { renderRouter, screen } from 'expo-router/testing-library';
 
+import { mockEmptyFeedFetch } from '@/test/fetch';
+
 // A deep link `pantry://recipe/r1` (scheme in app.config.ts) reaches the router as the path
 // `/recipe/r1`. The step from URL to path runs on the device, because Jest's `URL` does not
 // parse custom schemes like the native one. So these tests start at the path, and the full URL
@@ -12,10 +14,7 @@ const APP_DIR = './app';
 
 describe('deep links', () => {
   beforeEach(() => {
-    jest.spyOn(globalThis, 'fetch').mockResolvedValue({
-      status: 200,
-      json: async () => ({ data: { feed: { edges: [], pageInfo: { hasNextPage: false } } } }),
-    } as Response);
+    mockEmptyFeedFetch();
   });
   afterEach(() => jest.restoreAllMocks());
 
