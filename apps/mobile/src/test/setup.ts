@@ -5,6 +5,7 @@
 import { act } from '@testing-library/react-native';
 
 import { startTestAnalytics } from './analytics';
+import { configureFlags } from '@/flags';
 import { resetTestMMKV } from './mmkv';
 import { resetTestNetwork } from './network';
 import { server } from './msw/server';
@@ -44,7 +45,16 @@ afterAll(() => server.close());
 // Each test starts a new analytics session with a memory sink; see ./analytics.ts.
 beforeEach(() => startTestAnalytics());
 
+// The app's flags give each test run another random user, so a test would sometimes see the grid.
+// Every test starts on the default rollout for a fixed user that is in `list`; a test that needs
+// another variant calls `configureFlags` itself (and restores it).
+let restoreFlags = () => {};
+beforeEach(() => {
+  restoreFlags = configureFlags({ config: { search_layout: { weights: { list: 1, grid: 0 } } } });
+});
+
 afterEach(async () => {
+  restoreFlags();
   server.resetHandlers();
   // A test that switches to fake timers must not leak them into the next test.
   jest.useRealTimers();

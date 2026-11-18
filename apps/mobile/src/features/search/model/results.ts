@@ -9,6 +9,9 @@ export const END_REACHED_THRESHOLD = 1.5;
 
 export type ResultNode = SearchResultsQuery['search']['edges'][number]['node'];
 
+/** Columns of the results list per `search_layout` variant (PLAN 3.8). */
+export const LAYOUT_COLUMNS = { list: 1, grid: 2 } as const;
+
 /** One row of the list. `key` is stable and unique, so rows keep their identity across pages. */
 export type ResultRow = { key: string; node: ResultNode };
 
