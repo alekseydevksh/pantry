@@ -4,6 +4,7 @@ export const pl = {
   common: {
     close: 'Zamknij',
     retry: 'Spróbuj ponownie',
+    backToHome: 'Wróć do Startu',
   },
   tabs: {
     home: 'Start',
@@ -42,6 +43,44 @@ export const pl = {
     refreshFailed: 'Nie udało się odświeżyć. Pociągnij w dół, aby spróbować ponownie.',
     empty: 'Na razie nic tu nie ma.',
   },
+  catalog: {
+    diet: {
+      VEGETARIAN: 'Wegetariańskie',
+      VEGAN: 'Wegańskie',
+      GLUTEN_FREE: 'Bez glutenu',
+      DAIRY_FREE: 'Bez nabiału',
+    },
+    allergen: {
+      GLUTEN: 'Gluten',
+      DAIRY: 'Nabiał',
+      EGGS: 'Jaja',
+      NUTS: 'Orzechy',
+      PEANUTS: 'Orzeszki ziemne',
+      SOY: 'Soja',
+      FISH: 'Ryby',
+      SHELLFISH: 'Skorupiaki',
+      SESAME: 'Sezam',
+    },
+    suitableFor: 'Odpowiednie dla: {{list}}',
+    contains: 'Zawiera: {{list}}',
+    noAllergens: 'Brak wymienionych alergenów',
+  },
+  recipe: {
+    loading: 'Wczytuję przepis',
+    ingredients: 'Składniki',
+    steps: 'Sposób przygotowania',
+    step: 'Krok {{number}}',
+    ingredientLabel: '{{quantity}} {{name}}',
+    totalPrice: 'Koszt składników: {{price}}',
+    notFound: {
+      title: 'Nie znaleziono przepisu',
+      message: 'Ten przepis nie jest już dostępny.',
+    },
+    error: {
+      title: 'Nie udało się wczytać przepisu',
+      message: 'Sprawdź połączenie i spróbuj ponownie.',
+    },
+  },
   search: {
     title: 'Szukaj',
     body: 'Tutaj wyszukasz produkty i przepisy.',
@@ -71,8 +110,8 @@ export const pl = {
     title: 'Asystent',
     body: 'Zapytaj o przepisy, produkty i pomysły na posiłki.',
   },
+  // The product screen is still a placeholder (task 2.7).
   details: {
-    recipe: 'Szczegóły przepisu {{id}}',
     product: 'Szczegóły produktu {{id}}',
   },
 };

@@ -3,7 +3,7 @@ import { screen } from 'expo-router/testing-library';
 
 import { emptyFeed } from '@/test/msw/handlers';
 import { server } from '@/test/msw/server';
-import { renderApp } from '@/test/render';
+import { appQueries, renderApp } from '@/test/render';
 
 // A deep link `pantry://recipe/r1` (scheme in app.config.ts) reaches the router as the path
 // `/recipe/r1`. The step from URL to path runs on the device, because Jest's `URL` does not
@@ -21,7 +21,8 @@ describe('deep links', () => {
     await renderApp('/recipe/r1');
 
     expect(screen).toHavePathname('/recipe/r1');
-    expect(screen.getByText('Details for recipe r1')).toBeOnTheScreen();
+    expect(screen.getByLabelText('Loading the recipe')).toBeOnTheScreen();
+    expect(appQueries()).toContainEqual({ name: 'Recipe', variables: { id: 'r1' } });
   });
 
   it('opens the product screen with the id from the link on a cold start', async () => {
