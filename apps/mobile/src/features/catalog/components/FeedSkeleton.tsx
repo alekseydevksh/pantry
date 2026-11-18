@@ -6,12 +6,19 @@ import { useTranslation } from '@/lib/i18n';
 
 const PLACEHOLDER_CARDS = 4;
 
-/** Card-shaped placeholders for the first load. One label tells a screen reader that the feed is loading. */
-export function FeedSkeleton() {
+/**
+ * Card-shaped placeholders for the first load of a list of catalog items. One label tells a screen
+ * reader what is loading: the feed's by default, or the `label` of another list (the search results).
+ */
+export function FeedSkeleton({ label }: { label?: string }) {
   const { t } = useTranslation();
 
   return (
-    <View accessible accessibilityLabel={t('feed.loading')} accessibilityRole="progressbar">
+    <View
+      accessible
+      accessibilityLabel={label ?? t('feed.loading')}
+      accessibilityRole="progressbar"
+    >
       {Array.from({ length: PLACEHOLDER_CARDS }, (_, index) => (
         <Card key={index} style={styles.card}>
           <Skeleton style={styles.image} radius={0} />

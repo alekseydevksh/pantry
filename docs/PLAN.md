@@ -151,7 +151,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.2 [sonnet] Typeahead.** Search field, `suggestions` query with a 250 ms debounce, stale requests cancelled, last good suggestions kept while loading.
   - Accept: typing fast sends one request; an old response never replaces a newer one.
   - Proof: RNTL + MSW test with fake timers and out-of-order responses.
-- [ ] **3.3 [sonnet] Results list.** FlashList, cursor pagination, pull-to-refresh, skeletons, previous results kept while a new query loads.
+- [x] **3.3 [sonnet] Results list.** FlashList, cursor pagination, pull-to-refresh, skeletons, previous results kept while a new query loads.
   - Accept: submit shows results; scrolling loads more.
   - Proof: RNTL + MSW test.
 - [ ] **3.4 [sonnet] Filters and sort.** Filter chips (diet, time, price, allergens) and sort, synced to route params via 3.1.

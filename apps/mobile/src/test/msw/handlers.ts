@@ -1,5 +1,11 @@
 // Ready-made handlers for the cases many tests share. A test adds them with `server.use(...)`.
-import { FeedDocument, ProductDocument, RecipeDocument } from '@pantry/shared';
+import {
+  FeedDocument,
+  ProductDocument,
+  RecipeDocument,
+  SearchResultsDocument,
+  SuggestionsDocument,
+} from '@pantry/shared';
 
 import type { CatalogFixture, ProductDetailsFixture, RecipeDetailsFixture } from '../fixtures';
 import { api } from './api';
@@ -44,3 +50,12 @@ export const productsOf = (products: ProductDetailsFixture[]) =>
   api.query(ProductDocument, ({ variables }) => ({
     product: products.find((product) => product.id === variables.id) ?? null,
   }));
+
+/** `search` serves `items` for every input, page by page. A test that filters writes its own handler. */
+export const searchOf = (items: CatalogFixture[]) =>
+  api.query(SearchResultsDocument, ({ variables }) => ({
+    search: { ...pageOf(items, variables.first, variables.after), totalCount: items.length },
+  }));
+
+/** `suggestions` has nothing to suggest. For tests that type in the search field but do not check it. */
+export const noSuggestions = () => api.query(SuggestionsDocument, () => ({ suggestions: [] }));
