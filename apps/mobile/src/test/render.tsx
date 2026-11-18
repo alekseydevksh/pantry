@@ -103,3 +103,16 @@ export async function renderApp(initialUrl: string, options: ProviderOptions = {
   // (Relative to the working directory, which is `apps/mobile` when Jest runs.)
   return renderRouter('./app', { initialUrl });
 }
+
+/**
+ * The queries the real app (see `renderApp`) is running right now, by operation name, with their
+ * variables. For checking that a route sent its id to the screen's query without waiting for the
+ * response (Expo Router's fake timers do not let a request finish, see the note at the top).
+ */
+export function appQueries(): { name: string | undefined; variables: unknown }[] {
+  const { apolloClient } = jest.requireActual<typeof AppClientModule>('@/lib/apollo/appClient');
+  return [...apolloClient.getObservableQueries()].map((query) => ({
+    name: query.queryName,
+    variables: query.variables,
+  }));
+}

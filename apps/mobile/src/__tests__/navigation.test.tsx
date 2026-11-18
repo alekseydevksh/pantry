@@ -4,7 +4,7 @@ import { screen } from 'expo-router/testing-library';
 import { setLanguage } from '@/lib/i18n';
 import { emptyFeed } from '@/test/msw/handlers';
 import { server } from '@/test/msw/server';
-import { renderApp } from '@/test/render';
+import { appQueries, renderApp } from '@/test/render';
 
 // `renderApp` renders the real route files in `app/`, not a copy.
 
@@ -42,7 +42,8 @@ describe('navigation shell', () => {
   it('opens the recipe screen with the id from the route', async () => {
     await renderApp('/recipe/r1');
 
-    expect(screen.getByText('Details for recipe r1')).toBeOnTheScreen();
+    expect(screen.getByLabelText('Loading the recipe')).toBeOnTheScreen();
+    expect(appQueries()).toContainEqual({ name: 'Recipe', variables: { id: 'r1' } });
   });
 
   it('opens the product screen with the id from the route', async () => {

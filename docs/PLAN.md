@@ -127,7 +127,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **2.5 [sonnet] Home feed.** FlashList v2 with product and recipe cards, cursor pagination, pull-to-refresh, skeletons, `expo-image` with placeholders.
   - Accept: scrolls through all 200+ items; loads the next page near the end.
   - Proof: RNTL + MSW test (first page, next page, refresh).
-- [ ] **2.6 [sonnet] Recipe screen.** Details, ingredient list linked to products, loading and not-found states.
+- [x] **2.6 [sonnet] Recipe screen.** Details, ingredient list linked to products, loading and not-found states.
   - Accept: opening from the feed shows cached fields at once and loads the rest.
   - Proof: RNTL + MSW test, including not-found.
 - [ ] **2.7 [sonnet] Product screen.** Details, allergens, price, add-to-cart button (wired in Phase 3).

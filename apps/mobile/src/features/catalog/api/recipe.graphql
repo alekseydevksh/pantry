@@ -1,0 +1,49 @@
+# The recipe screen. Each part of the screen owns a fragment (ADR 0007) and reads it with `useFragment`.
+#
+# `RecipeHeaderFields` selects the same fields as the card on the feed (`RecipeCardFields`), so a
+# recipe opened from the feed is already complete in the cache for the header: the screen shows it
+# at once, and loads the rest.
+query Recipe($id: ID!) {
+  recipe(id: $id) {
+    id
+    ...RecipeHeaderFields
+    ...RecipeDetailsFields
+    ...RecipeIngredientsFields
+  }
+}
+
+fragment RecipeHeaderFields on Recipe {
+  id
+  name
+  imageUrl
+  cookTimeMin
+  servings
+}
+
+fragment RecipeDetailsFields on Recipe {
+  id
+  description
+  diets
+  allergens
+  priceCents
+  steps
+}
+
+fragment RecipeIngredientsFields on Recipe {
+  id
+  ingredients {
+    quantity
+    product {
+      id
+      ...IngredientProductFields
+    }
+  }
+}
+
+fragment IngredientProductFields on Product {
+  id
+  name
+  unit
+  priceCents
+  inStock
+}

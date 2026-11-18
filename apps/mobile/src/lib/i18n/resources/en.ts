@@ -7,6 +7,7 @@ export const en = {
   common: {
     close: 'Close',
     retry: 'Try again',
+    backToHome: 'Back to Home',
   },
   tabs: {
     home: 'Home',
@@ -44,6 +45,44 @@ export const en = {
     refreshFailed: 'Could not refresh. Pull down to try again.',
     empty: 'There is nothing here yet.',
   },
+  catalog: {
+    diet: {
+      VEGETARIAN: 'Vegetarian',
+      VEGAN: 'Vegan',
+      GLUTEN_FREE: 'Gluten-free',
+      DAIRY_FREE: 'Dairy-free',
+    },
+    allergen: {
+      GLUTEN: 'Gluten',
+      DAIRY: 'Dairy',
+      EGGS: 'Eggs',
+      NUTS: 'Nuts',
+      PEANUTS: 'Peanuts',
+      SOY: 'Soy',
+      FISH: 'Fish',
+      SHELLFISH: 'Shellfish',
+      SESAME: 'Sesame',
+    },
+    suitableFor: 'Suitable for: {{list}}',
+    contains: 'Contains: {{list}}',
+    noAllergens: 'No listed allergens',
+  },
+  recipe: {
+    loading: 'Loading the recipe',
+    ingredients: 'Ingredients',
+    steps: 'Method',
+    step: 'Step {{number}}',
+    ingredientLabel: '{{quantity}} {{name}}',
+    totalPrice: 'Ingredients cost {{price}}',
+    notFound: {
+      title: 'Recipe not found',
+      message: 'This recipe is not available any more.',
+    },
+    error: {
+      title: 'Could not load the recipe',
+      message: 'Check your connection and try again.',
+    },
+  },
   search: {
     title: 'Search',
     body: 'Search for groceries and recipes here.',
@@ -71,8 +110,8 @@ export const en = {
     title: 'Assistant',
     body: 'Ask for recipes, products and meal ideas.',
   },
+  // The product screen is still a placeholder (task 2.7).
   details: {
-    recipe: 'Details for recipe {{id}}',
     product: 'Details for product {{id}}',
   },
 };
