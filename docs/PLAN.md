@@ -82,7 +82,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.2 [sonnet] Primitives: Text, Button.** Variants, disabled and loading states, accessibility role and label, 44 pt minimum touch target, respects dynamic type.
   - Accept: all variants render; a disabled button does not fire `onPress`.
   - Proof: RNTL tests with the user-event API.
-- [ ] **1.3 [sonnet] Primitives: Card, Chip, Skeleton, IconButton.** Chip has selected state and `accessibilityState`. Skeleton uses a Reanimated CSS-style animation.
+- [x] **1.3 [sonnet] Primitives: Card, Chip, Skeleton, IconButton.** Chip has selected state and `accessibilityState`. Skeleton uses a Reanimated CSS-style animation.
   - Accept: six primitives exported from `src/design-system`.
   - Proof: RNTL tests for Chip selection and IconButton label.
 - [ ] **1.4 [sonnet] Navigation shell.** Root layout, four tabs (Home, Search, Cart, Settings), `recipe/[id]` and `product/[id]` stack screens, `assistant` as a modal.
