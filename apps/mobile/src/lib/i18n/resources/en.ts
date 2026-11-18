@@ -150,6 +150,21 @@ export const en = {
         TIME_ASC: 'Quickest first',
       },
     },
+    empty: {
+      idleTitle: 'Find groceries and recipes',
+      idleMessage: 'Type in the field above, or start with one of these.',
+      title: 'No results for "{{query}}"',
+      titleNoQuery: 'No results',
+      reason: {
+        text: 'Check the spelling, or try a shorter or different word.',
+        filters: 'Nothing matches all of these filters. Try removing some.',
+        productsHaveNoTime:
+          'Products have no cooking time, so a time limit finds only recipes. Remove the filters, or search for recipes.',
+      },
+      clearFilters: 'Clear filters',
+      try: 'Try searching for',
+      searchFor: 'Search for {{query}}',
+    },
     suggestions: { label: 'Suggestions' },
   },
   cart: {

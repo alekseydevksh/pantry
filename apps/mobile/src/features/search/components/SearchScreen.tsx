@@ -5,10 +5,12 @@ import { View } from 'react-native';
 
 import { Screen } from '@/design-system';
 import { FeatureErrorBoundary } from '@/lib/error-boundary';
+import { OfflineBanner } from '@/lib/network';
 
 import { useSearchRoute } from '../hooks/useSearchRoute';
 import { useSearchResults } from '../hooks/useSearchResults';
 import { useSuggestions } from '../hooks/useSuggestions';
+import { clearFilters } from '../model/filters';
 import { suggestionPrefix } from '../model/typeahead';
 import { FilterPanel } from './FilterPanel';
 import { SearchField } from './SearchField';
@@ -54,6 +56,7 @@ function SearchContent() {
 
   return (
     <Screen bottomInset={false} style={styles.screen}>
+      <OfflineBanner />
       <View style={styles.field}>
         <SearchField value={draft} onChangeText={setDraft} onSubmit={submit} />
       </View>
@@ -61,7 +64,12 @@ function SearchContent() {
       {showSuggestions ? (
         <SuggestionList suggestions={suggestions} onSelect={select} />
       ) : (
-        <SearchResults results={results} />
+        <SearchResults
+          results={results}
+          input={input}
+          onSearch={select}
+          onClearFilters={() => setInput(clearFilters(input))}
+        />
       )}
     </Screen>
   );

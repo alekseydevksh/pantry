@@ -150,6 +150,21 @@ export const pl = {
         TIME_ASC: 'Najszybsze najpierw',
       },
     },
+    empty: {
+      idleTitle: 'Znajdź produkty i przepisy',
+      idleMessage: 'Wpisz coś w polu powyżej albo zacznij od jednej z tych propozycji.',
+      title: 'Brak wyników dla „{{query}}”',
+      titleNoQuery: 'Brak wyników',
+      reason: {
+        text: 'Sprawdź pisownię albo spróbuj krótszego lub innego słowa.',
+        filters: 'Nic nie pasuje do wszystkich tych filtrów. Spróbuj kilka usunąć.',
+        productsHaveNoTime:
+          'Produkty nie mają czasu przygotowania, więc limit czasu znajduje tylko przepisy. Usuń filtry albo szukaj przepisów.',
+      },
+      clearFilters: 'Wyczyść filtry',
+      try: 'Spróbuj wyszukać',
+      searchFor: 'Szukaj: {{query}}',
+    },
     suggestions: { label: 'Podpowiedzi' },
   },
   cart: {

@@ -59,3 +59,7 @@ export function activeFilterCount(input: SearchInput): number {
     (filters.kind ? 1 : 0)
   );
 }
+
+/** The same search with every filter off. The text and the sort stay. */
+export const clearFilters = (input: SearchInput): SearchInput =>
+  canonicalSearchInput({ query: input.query, sort: input.sort });

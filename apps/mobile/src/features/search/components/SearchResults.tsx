@@ -6,18 +6,33 @@ import { ErrorState, Text } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
 import { CardListSkeleton, CatalogCard } from '@/features/catalog';
 
+import type { SearchInput } from '@pantry/shared';
+
 import type { SearchResultsState } from '../hooks/useSearchResults';
 import { END_REACHED_THRESHOLD, resultType } from '../model/results';
+import { SearchEmptyState } from './SearchEmptyState';
 
 type Ready = Extract<SearchResultsState, { status: 'ready' }>;
 
-/** The results of the search on the route: placeholders, the list, or an inline error with a retry. */
-export function SearchResults({ results }: { results: SearchResultsState }) {
+export type SearchResultsProps = {
+  results: SearchResultsState;
+  /** The search the results are for. */
+  input: SearchInput;
+  /** A suggested query from an empty state was tapped. */
+  onSearch: (query: string) => void;
+  onClearFilters: () => void;
+};
+
+/**
+ * The results of the search on the route: a prompt when nothing is searched yet, placeholders, the
+ * list, "no results" with a way on, or an inline error with a retry.
+ */
+export function SearchResults({ results, input, onSearch, onClearFilters }: SearchResultsProps) {
   const { t } = useTranslation();
 
   switch (results.status) {
     case 'idle':
-      return null;
+      return <SearchEmptyState input={null} onSearch={onSearch} onClearFilters={onClearFilters} />;
     case 'loading':
       return (
         <View style={styles.padded}>
@@ -36,7 +51,11 @@ export function SearchResults({ results }: { results: SearchResultsState }) {
         </View>
       );
     case 'ready':
-      return <ResultList results={results} />;
+      return results.rows.length === 0 ? (
+        <SearchEmptyState input={input} onSearch={onSearch} onClearFilters={onClearFilters} />
+      ) : (
+        <ResultList results={results} />
+      );
   }
 }
 
