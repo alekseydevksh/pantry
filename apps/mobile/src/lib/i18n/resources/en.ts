@@ -112,6 +112,16 @@ export const en = {
       placeholder: 'Search groceries and recipes',
       clear: 'Clear the search',
     },
+    results: {
+      loading: 'Loading the results',
+      count_one: '{{count}} result',
+      count_other: '{{count}} results',
+      end: 'That is everything.',
+    },
+    error: {
+      title: 'Could not load the results',
+      message: 'Check your connection and try again.',
+    },
     suggestions: { label: 'Suggestions' },
   },
   cart: {

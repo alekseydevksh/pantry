@@ -110,6 +110,18 @@ export const pl = {
       placeholder: 'Szukaj produktów i przepisów',
       clear: 'Wyczyść wyszukiwanie',
     },
+    results: {
+      loading: 'Wczytywanie wyników',
+      count_one: '{{count}} wynik',
+      count_few: '{{count}} wyniki',
+      count_many: '{{count}} wyników',
+      count_other: '{{count}} wyniku',
+      end: 'To wszystko.',
+    },
+    error: {
+      title: 'Nie udało się wczytać wyników',
+      message: 'Sprawdź połączenie i spróbuj ponownie.',
+    },
     suggestions: { label: 'Podpowiedzi' },
   },
   cart: {

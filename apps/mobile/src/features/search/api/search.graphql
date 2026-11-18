@@ -2,7 +2,10 @@
 # one cached list per input via the `search` field policy in lib/apollo/typePolicies.ts). Build `input`
 # only with `canonicalSearchInput` or `parseSearchParams` (features/search/model/searchParams.ts), so
 # the same search always has the same cache key (ADR 0010).
-# Task 3.3 adds the card fragments to the nodes.
+#
+# The cards own their fields as fragments (ADR 0007), the same ones as on the home feed, so an item
+# that is in both lists is one entry in the cache. This query selects the type and the id of each
+# row, and what the list itself needs.
 query SearchResults($input: SearchInput!, $first: Int!, $after: String) {
   search(input: $input, first: $first, after: $after) {
     edges {
@@ -11,9 +14,11 @@ query SearchResults($input: SearchInput!, $first: Int!, $after: String) {
         __typename
         ... on Product {
           id
+          ...ProductCardFields
         }
         ... on Recipe {
           id
+          ...RecipeCardFields
         }
       }
     }
