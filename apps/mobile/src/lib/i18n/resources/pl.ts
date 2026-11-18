@@ -41,7 +41,16 @@ export const pl = {
   },
   settings: {
     title: 'Ustawienia',
-    body: 'Język, motyw i tryb AI.',
+    language: { title: 'Język' },
+    theme: { title: 'Motyw', system: 'Systemowy', light: 'Jasny', dark: 'Ciemny' },
+    aiMode: {
+      title: 'Tryb asystenta',
+      hint: 'Gdzie asystent może działać. Chmura wysyła Twoje wiadomości na nasz serwer.',
+      auto: 'Automatyczny',
+      'on-device': 'Tylko na urządzeniu',
+      cloud: 'Tylko chmura',
+      off: 'Wyłączony',
+    },
   },
   assistant: {
     title: 'Asystent',

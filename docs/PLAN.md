@@ -94,7 +94,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **1.6 [sonnet] i18n.** `expo-localization` + i18next, EN and PL resources, typed keys, plural rules for PL.
   - Accept: all visible strings come from resources; changing language updates the UI without a restart.
   - Proof: test that EN and PL have identical key sets; render test in PL.
-- [ ] **1.7 [sonnet] Settings store and screen.** Zustand store for language, theme (system/light/dark) and AI mode (auto / on-device only / cloud only / off), behind a storage interface with an in-memory adapter (MMKV arrives in 2.2).
+- [x] **1.7 [sonnet] Settings store and screen.** Zustand store for language, theme (system/light/dark) and AI mode (auto / on-device only / cloud only / off), behind a storage interface with an in-memory adapter (MMKV arrives in 2.2).
   - Accept: changing theme and language on the Settings screen applies at once.
   - Proof: store unit tests; RNTL test of the Settings screen.
 - [ ] **1.8 [sonnet] Edge-to-edge and safe areas.** Safe-area handling on all screens, status bar style per theme.
