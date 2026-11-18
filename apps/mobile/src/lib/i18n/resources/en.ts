@@ -107,7 +107,12 @@ export const en = {
   },
   search: {
     title: 'Search',
-    body: 'Search for groceries and recipes here.',
+    field: {
+      label: 'Search groceries and recipes',
+      placeholder: 'Search groceries and recipes',
+      clear: 'Clear the search',
+    },
+    suggestions: { label: 'Suggestions' },
   },
   cart: {
     title: 'Cart',

@@ -20,6 +20,7 @@ type Documents = {
     "query Recipe($id: ID!) {\n  recipe(id: $id) {\n    id\n    ...RecipeHeaderFields\n    ...RecipeDetailsFields\n    ...RecipeIngredientsFields\n    ...RecipeStepsFields\n  }\n}\n\nfragment RecipeHeaderFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}\n\nfragment RecipeDetailsFields on Recipe {\n  id\n  description\n  diets\n  allergens\n  priceCents\n}\n\nfragment RecipeIngredientsFields on Recipe {\n  id\n  ingredients {\n    quantity\n    product {\n      id\n      ...IngredientProductFields\n    }\n  }\n}\n\nfragment RecipeStepsFields on Recipe {\n  id\n  steps\n}\n\nfragment IngredientProductFields on Product {\n  id\n  name\n  unit\n  priceCents\n  inStock\n}": typeof types.RecipeDocument,
     "fragment RecipeCardFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}": typeof types.RecipeCardFieldsFragmentDoc,
     "query SearchResults($input: SearchInput!, $first: Int!, $after: String) {\n  search(input: $input, first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n        }\n        ... on Recipe {\n          id\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n    totalCount\n  }\n}": typeof types.SearchResultsDocument,
+    "query Suggestions($prefix: String!) {\n  suggestions(prefix: $prefix)\n}": typeof types.SuggestionsDocument,
     "query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": typeof types.TestFeedDocument,
 };
 const documents: Documents = {
@@ -29,6 +30,7 @@ const documents: Documents = {
     "query Recipe($id: ID!) {\n  recipe(id: $id) {\n    id\n    ...RecipeHeaderFields\n    ...RecipeDetailsFields\n    ...RecipeIngredientsFields\n    ...RecipeStepsFields\n  }\n}\n\nfragment RecipeHeaderFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}\n\nfragment RecipeDetailsFields on Recipe {\n  id\n  description\n  diets\n  allergens\n  priceCents\n}\n\nfragment RecipeIngredientsFields on Recipe {\n  id\n  ingredients {\n    quantity\n    product {\n      id\n      ...IngredientProductFields\n    }\n  }\n}\n\nfragment RecipeStepsFields on Recipe {\n  id\n  steps\n}\n\nfragment IngredientProductFields on Product {\n  id\n  name\n  unit\n  priceCents\n  inStock\n}": types.RecipeDocument,
     "fragment RecipeCardFields on Recipe {\n  id\n  name\n  imageUrl\n  cookTimeMin\n  servings\n}": types.RecipeCardFieldsFragmentDoc,
     "query SearchResults($input: SearchInput!, $first: Int!, $after: String) {\n  search(input: $input, first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n        }\n        ... on Recipe {\n          id\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n    totalCount\n  }\n}": types.SearchResultsDocument,
+    "query Suggestions($prefix: String!) {\n  suggestions(prefix: $prefix)\n}": types.SuggestionsDocument,
     "query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": types.TestFeedDocument,
 };
 
@@ -70,6 +72,10 @@ export function graphql(source: "fragment RecipeCardFields on Recipe {\n  id\n  
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "query SearchResults($input: SearchInput!, $first: Int!, $after: String) {\n  search(input: $input, first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n        }\n        ... on Recipe {\n          id\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n    totalCount\n  }\n}"): (typeof documents)["query SearchResults($input: SearchInput!, $first: Int!, $after: String) {\n  search(input: $input, first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n        }\n        ... on Recipe {\n          id\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n    totalCount\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query Suggestions($prefix: String!) {\n  suggestions(prefix: $prefix)\n}"): (typeof documents)["query Suggestions($prefix: String!) {\n  suggestions(prefix: $prefix)\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
