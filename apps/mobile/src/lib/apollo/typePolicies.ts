@@ -15,8 +15,8 @@ export const typePolicies: TypePolicies = {
       // One feed for everybody: no key arguments.
       feed: cursorPagination(false),
       // One list per search input. Apollo serializes `input` with sorted keys, so key order does not
-      // matter, but `{ filters: null }` and no `filters` are two lists: the search params model
-      // (task 3.1) must build one canonical input.
+      // matter, but `{ filters: null }` and no `filters` are two lists: every input is built by
+      // `canonicalSearchInput` in features/search/model/searchParams.ts (ADR 0010).
       search: cursorPagination(['input']),
     },
   },

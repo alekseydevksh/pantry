@@ -42,6 +42,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | Cache persistence (Phase 2) | Own persistor ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)): synchronous restore before the first render, 1 s debounce with a 5 s max wait, flush on `inactive` and `background`, 5 MB cap with an all-or-nothing purge, version = format number + schema hash with a guard test |
 | Offline start (Phase 2) | `expo-network` for the status; the feed uses `cache-and-network` then `cache-first` ([ADR 0009](adr/0009-offline-start-network-status-and-feed-policy.md)) |
 | Test harness (Phase 2) | MSW 3 on Node's `fetch` inside jest-expo, typed handlers from the generated documents, unhandled requests fail the test ([ADR 0008](adr/0008-test-harness-msw-in-jest-expo.md)) |
+| Search params (Phase 3) | One canonical `SearchInput` (defaults left out, lists in schema order, text case kept) built only by `canonicalSearchInput`; URL params read leniently, written in one form, `maxPriceCents` in cents; Zod added to the app at the server's version ([ADR 0010](adr/0010-search-url-params-and-canonical-search-input.md)) |
 
 ## Android status
 
@@ -144,7 +145,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 
 ## Phase 3 — Search and cart
 
-- [ ] **3.1 [fable] Search params model.** Pure functions in `features/search/model`: URL params ↔ `SearchInput`, Zod-validated, with defaults and unknown-value handling.
+- [x] **3.1 [fable] Search params model.** Pure functions in `features/search/model`: URL params ↔ `SearchInput`, Zod-validated, with defaults and unknown-value handling.
   - Accept: round trip is lossless; bad params fall back to defaults.
   - Proof: unit tests, including a table of malformed inputs.
 - [ ] **3.2 [sonnet] Typeahead.** Search field, `suggestions` query with a 250 ms debounce, stale requests cancelled, last good suggestions kept while loading.
