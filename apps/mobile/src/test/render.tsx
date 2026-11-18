@@ -14,6 +14,7 @@
 // timers. Real network I/O does not finish while time is faked, so a test that needs data from
 // MSW does not use the router: it renders the component without `route` and checks navigation by
 // spying on `router.push`.
+import type { InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
 import { act, render, type RenderResult } from '@testing-library/react-native';
 import { renderRouter, type RenderRouterResult } from 'expo-router/testing-library';
@@ -36,9 +37,15 @@ export type ProviderOptions = {
   language?: Language;
 };
 
-/** A client for tests: the real link chain, but retries do not wait. */
-export function createTestClient(): ReturnType<typeof createApolloClient> {
+/**
+ * A client for tests: the real link chain, but retries do not wait. Pass a `cache` that a
+ * persistor has restored, to start the app "with what was saved last time".
+ */
+export function createTestClient({ cache }: { cache?: InMemoryCache } = {}): ReturnType<
+  typeof createApolloClient
+> {
   return createApolloClient({
+    cache,
     link: createLink({ uri: API_URL, retryDelay: { initial: 0, max: 0, jitter: false } }),
   });
 }

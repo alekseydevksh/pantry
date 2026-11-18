@@ -12,6 +12,9 @@ export const pl = {
       message: 'Na tym ekranie wystąpił problem. Spróbuj ponownie.',
     },
   },
+  offline: {
+    banner: 'Jesteś offline. To, co widzisz, może być nieaktualne.',
+  },
   tabs: {
     home: 'Start',
     search: 'Szukaj',

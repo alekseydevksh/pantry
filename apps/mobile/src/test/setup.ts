@@ -5,6 +5,7 @@
 import { act } from '@testing-library/react-native';
 
 import { resetTestMMKV } from './mmkv';
+import { resetTestNetwork } from './network';
 import { server } from './msw/server';
 import { resetTestReducedMotion } from './reanimated';
 import { resetTestInsets, resetTestTheme } from './unistyles';
@@ -29,6 +30,9 @@ jest.mock('@shopify/flash-list/dist/recyclerview/utils/measureLayout', () =>
   jest.requireActual('./flashlist').measureLayoutMock(),
 );
 
+// The network state is native code; see src/test/network.ts.
+jest.mock('expo-network', () => jest.requireActual('./network').expoNetworkMock);
+
 // MMKV is native code; see src/test/mmkv.ts. Each id keeps its values until the end of the test.
 jest.mock('react-native-mmkv', () => jest.requireActual('./mmkv').mmkvMock);
 
@@ -45,6 +49,7 @@ afterEach(async () => {
   resetTestInsets();
   resetTestReducedMotion();
   resetTestMMKV();
+  resetTestNetwork();
   // ...and the language.
   // (Inside `act`: a screen from the test may still be mounted and re-render.)
   if (currentLanguage() !== 'en') {

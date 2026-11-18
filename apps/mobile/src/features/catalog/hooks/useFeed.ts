@@ -36,6 +36,12 @@ export type FeedState =
 export function useFeed(): FeedState {
   const { data, error, networkStatus, fetchMore, refetch } = useQuery(FeedDocument, {
     variables: { first: FEED_PAGE_SIZE },
+    // Show what the persisted cache has at once (also with no network), and ask the server for the
+    // first page in the background. After that first answer the query reads from the cache only:
+    // with `cache-and-network` for good, every cache write (a `fetchMore` page) would start another
+    // request for page one, which replaces the list and throws away the pages the user scrolled to.
+    fetchPolicy: 'cache-and-network',
+    nextFetchPolicy: 'cache-first',
     // Without it `networkStatus` would not report `fetchMore`, and the list could not show a footer.
     notifyOnNetworkStatusChange: true,
   });
@@ -50,7 +56,15 @@ export function useFeed(): FeedState {
 
   const { endCursor, hasNextPage } = data.feed.pageInfo;
   const loadingMore = networkStatus === NetworkStatus.fetchMore;
-  const busy = loadingMore || refreshing || networkStatus === NetworkStatus.refetch;
+  // `loading` with data on screen is the first request for page one, which `cache-and-network` sends
+  // while the cached list is already shown. A page appended before it finishes would be replaced by it.
+  const busy =
+    loadingMore ||
+    refreshing ||
+    networkStatus === NetworkStatus.refetch ||
+    networkStatus === NetworkStatus.loading;
+  // The background request failed (no network, server down) and the screen shows what was cached.
+  const revalidationFailed = networkStatus === NetworkStatus.error;
 
   function requestNextPage() {
     setLoadMoreFailed(false);
@@ -80,7 +94,7 @@ export function useFeed(): FeedState {
     loadingMore,
     loadMoreFailed,
     refreshing,
-    refreshFailed,
+    refreshFailed: refreshFailed || revalidationFailed,
     loadMore,
     retryLoadMore: requestNextPage,
     refresh,

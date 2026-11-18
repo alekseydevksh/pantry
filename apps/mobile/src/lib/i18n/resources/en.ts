@@ -15,6 +15,9 @@ export const en = {
       message: 'This screen ran into a problem. Try again.',
     },
   },
+  offline: {
+    banner: 'You are offline. What you see may be out of date.',
+  },
   tabs: {
     home: 'Home',
     search: 'Search',

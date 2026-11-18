@@ -6,6 +6,7 @@ import { StyleSheet } from 'react-native-unistyles';
 import { Button, ErrorState, Screen, Text } from '@/design-system';
 import { useTranslation } from '@/lib/i18n';
 import { FeatureErrorBoundary } from '@/lib/error-boundary';
+import { OfflineBanner, useNetworkStatus } from '@/lib/network';
 
 import { useFeed, type FeedState } from '../hooks/useFeed';
 import { END_REACHED_THRESHOLD, rowType } from '../model/feed';
@@ -26,6 +27,7 @@ function HomeContent() {
 
   return (
     <Screen bottomInset={false} style={styles.screen}>
+      <OfflineBanner />
       {feed.status === 'ready' ? (
         <FeedList feed={feed} />
       ) : (
@@ -97,6 +99,8 @@ function FeedFooter({ feed }: { feed: Extract<FeedState, { status: 'ready' }> })
 
 function FeedList({ feed }: { feed: Extract<FeedState, { status: 'ready' }> }) {
   const { t } = useTranslation();
+  // The banner already says why the refresh failed, so the notice would only repeat it.
+  const offline = useNetworkStatus() === 'offline';
 
   return (
     <FlashList
@@ -108,7 +112,7 @@ function FeedList({ feed }: { feed: Extract<FeedState, { status: 'ready' }> }) {
       renderItem={({ item }) => <FeedRowView row={item} />}
       ItemSeparatorComponent={Separator}
       ListHeaderComponent={
-        <FeedHeader notice={feed.refreshFailed ? t('feed.refreshFailed') : undefined} />
+        <FeedHeader notice={feed.refreshFailed && !offline ? t('feed.refreshFailed') : undefined} />
       }
       ListEmptyComponent={<Text tone="muted">{t('feed.empty')}</Text>}
       ListFooterComponent={<FeedFooter feed={feed} />}
