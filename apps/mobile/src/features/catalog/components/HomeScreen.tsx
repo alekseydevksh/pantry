@@ -1,5 +1,8 @@
+import { router } from 'expo-router';
 import { Text, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
+
+import { Button } from '@/design-system';
 
 import { useFeedPreview, type FeedPreviewItem } from '../hooks/useFeedPreview';
 
@@ -51,25 +54,37 @@ export function HomeScreen() {
           </>
         )}
       </View>
+
+      {/* Temporary links, so every route can be opened by hand. The real feed replaces them in 2.5. */}
+      <View style={styles.links}>
+        <Button
+          title="Open a sample recipe"
+          variant="secondary"
+          onPress={() => router.push({ pathname: '/recipe/[id]', params: { id: 'r1' } })}
+        />
+        <Button
+          title="Open a sample product"
+          variant="secondary"
+          onPress={() => router.push({ pathname: '/product/[id]', params: { id: 'p1' } })}
+        />
+        <Button title="Ask the assistant" onPress={() => router.push('/assistant')} />
+      </View>
     </View>
   );
 }
 
-// Unistyles can only restyle React Native's own components on a theme change, so the safe
-// area comes from its runtime (`rt.insets`) and not from a third-party SafeAreaView.
-const styles = StyleSheet.create((theme, rt) => ({
+const styles = StyleSheet.create((theme) => ({
   screen: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: rt.insets.top + theme.spacing.xl,
-    paddingBottom: rt.insets.bottom + theme.spacing.xl,
-    paddingHorizontal: theme.spacing.xl,
+    padding: theme.spacing.xl,
     gap: theme.spacing.sm,
     backgroundColor: theme.colors.background,
   },
   title: { ...theme.typography.display, color: theme.colors.text },
   subtitle: { ...theme.typography.body, color: theme.colors.textMuted, textAlign: 'center' },
+  links: { marginTop: theme.spacing.xl, alignSelf: 'stretch', gap: theme.spacing.sm },
   preview: { marginTop: theme.spacing.xl, alignItems: 'center', gap: theme.spacing.xs },
   status: { ...theme.typography.callout, color: theme.colors.textMuted, textAlign: 'center' },
   item: { ...theme.typography.callout, color: theme.colors.text },
