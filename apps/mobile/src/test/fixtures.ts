@@ -7,6 +7,7 @@ import type { Unmasked } from '@apollo/client/masking';
 
 import type {
   ProductCardFieldsFragment,
+  ProductQuery,
   RecipeCardFieldsFragment,
   RecipeQuery,
 } from '@pantry/shared';
@@ -14,6 +15,8 @@ import type {
 export type ProductFixture = ProductCardFieldsFragment & { __typename: 'Product' };
 export type RecipeFixture = RecipeCardFieldsFragment & { __typename: 'Recipe' };
 export type CatalogFixture = ProductFixture | RecipeFixture;
+/** What the `product(id)` query returns for a product that exists, with every field (unmasked). */
+export type ProductDetailsFixture = NonNullable<Unmasked<ProductQuery>['product']>;
 /** What the `recipe(id)` query returns for a recipe that exists, with every field (unmasked). */
 export type RecipeDetailsFixture = NonNullable<Unmasked<RecipeQuery>['recipe']>;
 
@@ -69,6 +72,20 @@ export function makeRecipeDetails(
       { quantity: '200 g', product: makeProduct(101) },
       { quantity: '2 pcs', product: makeProduct(102) },
     ],
+    ...overrides,
+  };
+}
+
+/** A product as the product screen loads it. It has the fields of `makeProduct(n)`, so the feed and the screen agree. */
+export function makeProductDetails(
+  n: number,
+  overrides: Partial<ProductDetailsFixture> = {},
+): ProductDetailsFixture {
+  return {
+    ...makeProduct(n),
+    description: `Description of product ${n}.`,
+    diets: ['VEGETARIAN', 'VEGAN'],
+    allergens: [],
     ...overrides,
   };
 }

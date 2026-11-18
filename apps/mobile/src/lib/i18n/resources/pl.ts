@@ -81,6 +81,19 @@ export const pl = {
       message: 'Sprawdź połączenie i spróbuj ponownie.',
     },
   },
+  product: {
+    loading: 'Wczytuję produkt',
+    inStock: 'Dostępny',
+    addToCart: 'Dodaj do koszyka',
+    notFound: {
+      title: 'Nie znaleziono produktu',
+      message: 'Ten produkt nie jest już dostępny.',
+    },
+    error: {
+      title: 'Nie udało się wczytać produktu',
+      message: 'Sprawdź połączenie i spróbuj ponownie.',
+    },
+  },
   search: {
     title: 'Szukaj',
     body: 'Tutaj wyszukasz produkty i przepisy.',
@@ -109,9 +122,5 @@ export const pl = {
   assistant: {
     title: 'Asystent',
     body: 'Zapytaj o przepisy, produkty i pomysły na posiłki.',
-  },
-  // The product screen is still a placeholder (task 2.7).
-  details: {
-    product: 'Szczegóły produktu {{id}}',
   },
 };

@@ -83,6 +83,19 @@ export const en = {
       message: 'Check your connection and try again.',
     },
   },
+  product: {
+    loading: 'Loading the product',
+    inStock: 'In stock',
+    addToCart: 'Add to cart',
+    notFound: {
+      title: 'Product not found',
+      message: 'This product is not available any more.',
+    },
+    error: {
+      title: 'Could not load the product',
+      message: 'Check your connection and try again.',
+    },
+  },
   search: {
     title: 'Search',
     body: 'Search for groceries and recipes here.',
@@ -109,10 +122,6 @@ export const en = {
   assistant: {
     title: 'Assistant',
     body: 'Ask for recipes, products and meal ideas.',
-  },
-  // The product screen is still a placeholder (task 2.7).
-  details: {
-    product: 'Details for product {{id}}',
   },
 };
 

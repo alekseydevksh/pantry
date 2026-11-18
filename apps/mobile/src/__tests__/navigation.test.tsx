@@ -49,7 +49,8 @@ describe('navigation shell', () => {
   it('opens the product screen with the id from the route', async () => {
     await renderApp('/product/p9');
 
-    expect(screen.getByText('Details for product p9')).toBeOnTheScreen();
+    expect(screen.getByLabelText('Loading the product')).toBeOnTheScreen();
+    expect(appQueries()).toContainEqual({ name: 'Product', variables: { id: 'p9' } });
   });
 
   it('opens the assistant as a modal and closes back to the previous screen', async () => {

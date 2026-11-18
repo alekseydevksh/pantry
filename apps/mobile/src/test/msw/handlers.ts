@@ -1,7 +1,7 @@
 // Ready-made handlers for the cases many tests share. A test adds them with `server.use(...)`.
-import { FeedDocument, RecipeDocument } from '@pantry/shared';
+import { FeedDocument, ProductDocument, RecipeDocument } from '@pantry/shared';
 
-import type { CatalogFixture, RecipeDetailsFixture } from '../fixtures';
+import type { CatalogFixture, ProductDetailsFixture, RecipeDetailsFixture } from '../fixtures';
 import { api } from './api';
 
 /** The cursor of item `index`, like the real server's: opaque to the app, so any format works. */
@@ -37,4 +37,10 @@ export const emptyFeed = () => feedOf([]);
 export const recipesOf = (recipes: RecipeDetailsFixture[]) =>
   api.query(RecipeDocument, ({ variables }) => ({
     recipe: recipes.find((recipe) => recipe.id === variables.id) ?? null,
+  }));
+
+/** `product(id)` serves these products, and `null` for any other id, like the real server. */
+export const productsOf = (products: ProductDetailsFixture[]) =>
+  api.query(ProductDocument, ({ variables }) => ({
+    product: products.find((product) => product.id === variables.id) ?? null,
   }));
