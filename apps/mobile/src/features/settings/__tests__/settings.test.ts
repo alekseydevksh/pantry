@@ -1,4 +1,5 @@
-import { createMemoryStorage } from '@/lib/storage';
+import { createMemoryStorage, createMMKVStorage, STORAGE_IDS } from '@/lib/storage';
+import { failNextMMKVWrites } from '@/test/mmkv';
 
 import { defaultSettings, sanitizeSettings } from '../model/settings';
 import { createSettingsStore, SETTINGS_STORAGE_KEY } from '../model/settingsStore';
@@ -84,5 +85,39 @@ describe('settings store', () => {
       theme: 'system',
       aiMode: 'cloud',
     });
+  });
+});
+
+describe('settings store on MMKV', () => {
+  const create = () =>
+    createSettingsStore({
+      storage: createMMKVStorage(STORAGE_IDS.app),
+      defaultLanguage: 'en',
+    });
+
+  it('restores theme, language and AI mode after a restart', () => {
+    const before = create();
+    before.getState().setTheme('dark');
+    before.getState().setLanguage('pl');
+    before.getState().setAiMode('cloud');
+
+    const after = create();
+
+    expect(after.getState()).toMatchObject({ theme: 'dark', language: 'pl', aiMode: 'cloud' });
+  });
+
+  it('saves under the settings key in the app instance, not in the cache instance', () => {
+    create().getState().setTheme('light');
+
+    expect(createMMKVStorage(STORAGE_IDS.app).getItem(SETTINGS_STORAGE_KEY)).not.toBeNull();
+    expect(createMMKVStorage(STORAGE_IDS.apolloCache).getItem(SETTINGS_STORAGE_KEY)).toBeNull();
+  });
+
+  it('keeps working in memory when saving fails', () => {
+    const store = create();
+    failNextMMKVWrites();
+
+    expect(() => store.getState().setTheme('dark')).not.toThrow();
+    expect(store.getState().theme).toBe('dark');
   });
 });

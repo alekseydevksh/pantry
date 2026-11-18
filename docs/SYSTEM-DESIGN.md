@@ -154,12 +154,12 @@ Dashboards are sliced by release, market and platform. Alerts fire on threshold 
 | Navigation: tabs, stacks, modal, typed routes, deep links from cold start | ✅ Built | [app/\_layout.tsx](../apps/mobile/app/_layout.tsx), [deepLinks.test.tsx](../apps/mobile/src/__tests__/deepLinks.test.tsx) |
 | Design system, light/dark themes, safe areas | ✅ Built | [src/design-system/](../apps/mobile/src/design-system/) |
 | i18n (EN, PL) with typed keys | ✅ Built: 2 languages. Many markets, currencies, RTL: 📝 | [src/lib/i18n/](../apps/mobile/src/lib/i18n/) |
-| Settings incl. AI mode | ✅ Built, in memory only. MMKV persistence: 🟡 2.2 | [features/settings/](../apps/mobile/src/features/settings/) |
+| Settings incl. AI mode | ✅ Built, persisted in MMKV | [features/settings/](../apps/mobile/src/features/settings/), [src/lib/storage/](../apps/mobile/src/lib/storage/) |
 | GraphQL contract and generated types | ✅ Built | [schema.graphql](../packages/shared/schema.graphql) |
 | Cursor pagination, idempotent cart mutations | ✅ Built in the mock server | [server/src/pagination.ts](../server/src/pagination.ts), [server/src/cart.ts](../server/src/cart.ts) |
 | Latency and error injection | ✅ Built (`DELAY_*`, `ERROR_RATE`) | [server/src/config.ts](../server/src/config.ts) |
 | CI (typecheck, lint, test, codegen check, Expo Doctor) | ✅ Built | [.github/workflows/ci.yml](../.github/workflows/ci.yml) |
-| Normalized cache, type policies, data masking | ✅ Built ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). MMKV persistence: 🟡 2.2–2.3 | [src/lib/apollo/](../apps/mobile/src/lib/apollo/) |
+| Normalized cache, type policies, data masking | ✅ Built ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). MMKV persistence: 🟡 2.3 | [src/lib/apollo/](../apps/mobile/src/lib/apollo/) |
 | Image strategy | 🟡 `expo-image` in 2.5. CDN resizing: 📝 | — |
 | Search UI (typeahead, filters in URL, states) | 🟡 3.1–3.5 | — |
 | Search index | 📝 Mock uses in-memory token matching, English-only tokenizer | [server/src/search.ts](../server/src/search.ts) |

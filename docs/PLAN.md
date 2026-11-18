@@ -38,6 +38,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 | Typed routes on a fresh clone (Phase 1) | `.expo/types/router.d.ts` and `expo-env.d.ts` are generated and git-ignored, and `tsc` fails without them (CI uses a fresh clone). The mobile `typecheck` script runs `expo customize tsconfig.json` first, which writes both files without changing `tsconfig.json`; this is the command the Expo docs give for CI |
 | Safe areas with Unistyles (Phase 1) | Themed styles go on React Native's own components. Unistyles cannot restyle a third-party view (for example `SafeAreaView`) on a theme change unless it is wrapped with `withUnistyles`, so insets come from `rt.insets` in the StyleSheet |
 | Apollo cache (Phase 2) | Own cursor pagination policy (drops duplicates by node id), and Apollo data masking on: components read their fragment's fields with `useFragment` ([ADR 0007](adr/0007-apollo-cache-pagination-masking-persistence.md)). Retries only for network errors and 5xx, and for mutations only with an `idempotencyKey` |
+| MMKV (Phase 2) | `react-native-mmkv` 4 (Nitro), two instances: `pantry` (settings, later session and offline queue) and `pantry.apollo-cache` (only the persisted cache, so a purge never touches settings). Failed writes are reported, not thrown. Own Jest mock in `src/test/mmkv.ts` that keeps one store per id, so tests can simulate a restart |
 
 ## Android status
 
@@ -112,7 +113,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **2.1 [fable] Apollo Client.** Client in `src/lib/apollo`, HTTP link, retry link for network errors, error link that reports to the (future) observability layer, type policies for cursor pagination (`feed`, `search`) keyed by their arguments.
   - Accept: `fetchMore` appends pages without duplicates; a refetch replaces them.
   - Proof: unit tests of the type policies' merge and read functions.
-- [ ] **2.2 [sonnet] MMKV storage.** `src/lib/storage` wrapper over `react-native-mmkv` (+ `react-native-nitro-modules`), Jest mock, and the MMKV adapter for the settings store from 1.7.
+- [x] **2.2 [sonnet] MMKV storage.** `src/lib/storage` wrapper over `react-native-mmkv` (+ `react-native-nitro-modules`), Jest mock, and the MMKV adapter for the settings store from 1.7.
   - Accept: settings survive an app restart.
   - Proof: adapter unit tests against the mock; manual restart check.
 - [ ] **2.3 [fable] Apollo cache persistor.** Own persistor: restore before first render, debounced write of `cache.extract()` to MMKV, size limit with purge, schema version key that drops an old cache.

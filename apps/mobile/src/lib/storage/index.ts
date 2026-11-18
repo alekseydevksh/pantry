@@ -1,5 +1,5 @@
 // Storage behind an interface, so the app does not depend on one library.
-// Today there is only the in-memory adapter; task 2.2 adds an MMKV adapter with the same shape.
+// Two adapters: memory (tests, and anything that must not survive a restart) and MMKV (mmkv.ts).
 // The methods are synchronous because MMKV is, and a store that reads at startup needs no `await`.
 
 export interface KeyValueStorage {
@@ -22,3 +22,5 @@ export function createMemoryStorage(initial: Record<string, string> = {}): KeyVa
     },
   };
 }
+
+export { createMMKVStorage, STORAGE_IDS, type StorageId } from './mmkv';
