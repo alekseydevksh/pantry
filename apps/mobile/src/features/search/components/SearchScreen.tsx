@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { StyleSheet } from 'react-native-unistyles';
 import { View } from 'react-native';
 
+import { track, type SearchSource } from '@/analytics';
 import { Screen } from '@/design-system';
 import { FeatureErrorBoundary } from '@/lib/error-boundary';
 import { OfflineBanner } from '@/lib/network';
@@ -10,7 +11,9 @@ import { OfflineBanner } from '@/lib/network';
 import { useSearchRoute } from '../hooks/useSearchRoute';
 import { useSearchResults } from '../hooks/useSearchResults';
 import { useSuggestions } from '../hooks/useSuggestions';
+import { useZeroResultsEvent } from '../hooks/useZeroResultsEvent';
 import { clearFilters } from '../model/filters';
+import { searchSubmitted } from '../model/searchEvents';
 import { suggestionPrefix } from '../model/typeahead';
 import { FilterPanel } from './FilterPanel';
 import { SearchField } from './SearchField';
@@ -41,33 +44,45 @@ function SearchContent() {
   const editing = suggestionPrefix(draft) !== input.query;
   const suggestions = useSuggestions(editing ? draft : '');
 
-  function submit(text: string) {
-    setInput({ ...input, query: text });
+  function submit(text: string, source: SearchSource) {
+    const next = { ...input, query: text };
+    setInput(next);
+    // A link that opens a search does not come through here, so it is not a submitted search.
+    const event = searchSubmitted(next, source);
+    if (event) track('search_submitted', event);
   }
 
-  function select(suggestion: string) {
-    setDraft(suggestion);
-    submit(suggestion);
+  function select(text: string, source: SearchSource) {
+    setDraft(text);
+    submit(text, source);
   }
 
   // The suggestions take the place of the results while the user is typing something new.
   const showSuggestions = editing && suggestions.length > 0;
   const results = useSearchResults(input);
+  useZeroResultsEvent(input, results);
 
   return (
     <Screen bottomInset={false} style={styles.screen}>
       <OfflineBanner />
       <View style={styles.field}>
-        <SearchField value={draft} onChangeText={setDraft} onSubmit={submit} />
+        <SearchField
+          value={draft}
+          onChangeText={setDraft}
+          onSubmit={(text) => submit(text, 'field')}
+        />
       </View>
       <FilterPanel input={input} onChange={setInput} />
       {showSuggestions ? (
-        <SuggestionList suggestions={suggestions} onSelect={select} />
+        <SuggestionList
+          suggestions={suggestions}
+          onSelect={(suggestion) => select(suggestion, 'suggestion')}
+        />
       ) : (
         <SearchResults
           results={results}
           input={input}
-          onSearch={select}
+          onSearch={(query) => select(query, 'empty_state')}
           onClearFilters={() => setInput(clearFilters(input))}
         />
       )}

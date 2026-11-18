@@ -14,9 +14,11 @@ import { CatalogImage } from './CatalogImage';
 export type ProductCardProps = {
   /** The feed row. It holds only the type and the id; the card reads the rest from the cache. */
   item: ProductNode;
+  /** Called when the card is pressed, before the details open. */
+  onPress?: () => void;
 };
 
-export function ProductCard({ item }: ProductCardProps) {
+export function ProductCard({ item, onPress }: ProductCardProps) {
   const { t } = useTranslation();
   // ADR 0007: the feed query only spreads the fragment. This component reads its own fields, and
   // re-renders only when this product changes in the cache.
@@ -29,7 +31,10 @@ export function ProductCard({ item }: ProductCardProps) {
     <Card
       style={styles.card}
       accessibilityLabel={t('feed.productLabel', { name: data.name, unit: data.unit, price })}
-      onPress={() => router.push({ pathname: '/product/[id]', params: { id: data.id } })}
+      onPress={() => {
+        onPress?.();
+        router.push({ pathname: '/product/[id]', params: { id: data.id } });
+      }}
     >
       <CatalogImage uri={data.imageUrl} recyclingKey={data.id} size="card" />
       <View style={styles.body}>

@@ -4,6 +4,7 @@
 // Order matters: the Unistyles mock first, then the same theme registration the app entry runs.
 import { act } from '@testing-library/react-native';
 
+import { startTestAnalytics } from './analytics';
 import { resetTestMMKV } from './mmkv';
 import { resetTestNetwork } from './network';
 import { server } from './msw/server';
@@ -39,6 +40,9 @@ jest.mock('react-native-mmkv', () => jest.requireActual('./mmkv').mmkvMock);
 // The API is MSW (see ./msw): a request that no handler answers fails the test.
 beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
 afterAll(() => server.close());
+
+// Each test starts a new analytics session with a memory sink; see ./analytics.ts.
+beforeEach(() => startTestAnalytics());
 
 afterEach(async () => {
   server.resetHandlers();
