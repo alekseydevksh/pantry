@@ -18,6 +18,7 @@ export function resetTestReducedMotion() {
 
 export const reanimatedMock = {
   __esModule: true,
-  default: { View },
+  // `createAnimatedComponent`: Gesture Handler wraps its components with it when it is imported.
+  default: { View, createAnimatedComponent: <T>(component: T): T => component },
   useReducedMotion: () => reducedMotion,
 };

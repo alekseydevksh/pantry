@@ -17,6 +17,11 @@ import { resetTestInsets, resetTestTheme } from './unistyles';
 import '@/design-system/unistyles';
 import { currentLanguage, setLanguage } from '@/lib/i18n';
 
+// Gesture Handler is native code; its own Jest setup mocks the native module. The swipeable row
+// needs the real Reanimated, so it is replaced by a stand-in; see src/test/swipeable.tsx. The swipe
+// itself is checked by hand on a device.
+import 'react-native-gesture-handler/jestSetup';
+
 // (`jest.mock` calls are hoisted above the imports.)
 // The device language must not decide the result of a test: the tests run in English.
 jest.mock('expo-localization', () => ({
@@ -29,6 +34,9 @@ jest.mock('react-native-reanimated', () => jest.requireActual('./reanimated').re
 // `react-native-reanimated/mock`, which lacks what our components use (`useReducedMotion`). Pointing
 // that module at our mock keeps Reanimated the same whatever a test file imports first.
 jest.mock('react-native-reanimated/mock', () => jest.requireActual('./reanimated').reanimatedMock);
+jest.mock('react-native-gesture-handler/ReanimatedSwipeable', () =>
+  jest.requireActual('./swipeable').swipeableMock(),
+);
 
 // FlashList measures its rows on the native side; see src/test/flashlist.ts.
 jest.mock('@shopify/flash-list/dist/recyclerview/utils/measureLayout', () =>

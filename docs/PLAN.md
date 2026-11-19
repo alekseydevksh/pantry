@@ -175,7 +175,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.10 [sonnet] Cart UI and optimistic mutations.** Cart screen, add/remove/set quantity with Apollo optimistic responses, rollback on error with a toast, queue used when offline, sync on reconnect.
   - Accept: the cart updates at once; an error rolls back; offline changes sync when the network returns.
   - Proof: RNTL + MSW tests for success, rollback and offline → online.
-- [ ] **3.11 [sonnet] Cart interactions.** Swipe-to-remove with Gesture Handler and Reanimated, add-to-cart animation, reduced-motion respected, an accessible non-gesture remove action.
+- [x] **3.11 [sonnet] Cart interactions.** Swipe-to-remove with Gesture Handler and Reanimated, add-to-cart animation, reduced-motion respected, an accessible non-gesture remove action.
   - Accept: swipe removes the line; a screen reader user can remove without swiping.
   - Proof: RNTL test for the accessible action; manual check of the gesture.
 - [ ] **3.12 [sonnet] Integration tests.** End-to-end-in-Jest flows with MSW: search → filter → open result → add to cart; offline add → reconnect → server cart matches.
