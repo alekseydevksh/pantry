@@ -178,7 +178,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.11 [sonnet] Cart interactions.** Swipe-to-remove with Gesture Handler and Reanimated, add-to-cart animation, reduced-motion respected, an accessible non-gesture remove action.
   - Accept: swipe removes the line; a screen reader user can remove without swiping.
   - Proof: RNTL test for the accessible action; manual check of the gesture.
-- [ ] **3.12 [sonnet] Integration tests.** End-to-end-in-Jest flows with MSW: search → filter → open result → add to cart; offline add → reconnect → server cart matches.
+- [x] **3.12 [sonnet] Integration tests.** End-to-end-in-Jest flows with MSW: search → filter → open result → add to cart; offline add → reconnect → server cart matches.
   - Accept: both flows pass reliably (run 10 times).
   - Proof: the tests.
 - [ ] **3.13 [sonnet] Phase gate.** Learning log for Phase 3 (Reanimated 4 worklets, Gesture Handler 3, optimistic UI and `useOptimistic`, RNTL user-event and MSW). Summary.
