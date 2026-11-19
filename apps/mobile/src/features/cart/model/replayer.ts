@@ -34,8 +34,10 @@ export function createReplayer({
   store,
   send,
   refetchCart,
-  now = Date.now,
-  random = Math.random,
+  // Read the clock at each call, not once here: a reference to `Date.now` taken now would keep
+  // pointing at a test's fake clock after the test switches back to real time.
+  now = () => Date.now(),
+  random = () => Math.random(),
   onError = () => {},
 }: ReplayerOptions) {
   let running: Promise<void> | null = null;
