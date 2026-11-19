@@ -1,0 +1,39 @@
+# The server cart (ADR 0013). The screen shows it with the queued operations applied on top, so the
+# query selects what the projection needs: the product id and the quantity of each line, and the
+# price (for the total of a line that is only in the queue). The row reads the rest of the product
+# from its own fragment, `ProductHeaderFields`, which the product screen already put in the cache.
+query Cart {
+  cart {
+    id
+    itemCount
+    totalCents
+    lines {
+      id
+      qty
+      product {
+        id
+        priceCents
+        ...ProductHeaderFields
+      }
+    }
+  }
+}
+
+# Every cart write is `setCartQty`: an absolute quantity, safe to send twice (ADR 0013, Decision 1).
+# It returns the whole cart, so the response replaces the cached one.
+mutation SetCartQty($productId: ID!, $qty: Int!, $idempotencyKey: ID!) {
+  setCartQty(productId: $productId, qty: $qty, idempotencyKey: $idempotencyKey) {
+    id
+    itemCount
+    totalCents
+    lines {
+      id
+      qty
+      product {
+        id
+        priceCents
+        ...ProductHeaderFields
+      }
+    }
+  }
+}

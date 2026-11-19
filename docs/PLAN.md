@@ -172,7 +172,7 @@ Source of truth for scope is [SPEC.md](../SPEC.md). This file breaks it into tas
 - [x] **3.9 [fable] Cart model and offline queue.** Pure logic in `features/cart/model`: cart reducer, operation queue with idempotency keys, coalescing (add then remove cancels out), replay with retry and backoff, handling of a permanently rejected operation. Queue persisted through the storage interface.
   - Accept: replay after a failure in the middle never applies an operation twice; the queue survives a restart.
   - Proof: unit tests, including a failure-injection table.
-- [ ] **3.10 [sonnet] Cart UI and optimistic mutations.** Cart screen, add/remove/set quantity with Apollo optimistic responses, rollback on error with a toast, queue used when offline, sync on reconnect.
+- [x] **3.10 [sonnet] Cart UI and optimistic mutations.** Cart screen, add/remove/set quantity with Apollo optimistic responses, rollback on error with a toast, queue used when offline, sync on reconnect.
   - Accept: the cart updates at once; an error rolls back; offline changes sync when the network returns.
   - Proof: RNTL + MSW tests for success, rollback and offline → online.
 - [ ] **3.11 [sonnet] Cart interactions.** Swipe-to-remove with Gesture Handler and Reanimated, add-to-cart animation, reduced-motion respected, an accessible non-gesture remove action.

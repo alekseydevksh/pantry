@@ -96,6 +96,7 @@ export const en = {
     loading: 'Loading the product',
     inStock: 'In stock',
     addToCart: 'Add to cart',
+    inCart: '{{count}} in your cart',
     notFound: {
       title: 'Product not found',
       message: 'This product is not available any more.',
@@ -172,7 +173,29 @@ export const en = {
     empty: 'Your cart is empty.',
     itemCount_one: '{{count}} item',
     itemCount_other: '{{count}} items',
+    total: 'Total: {{price}}',
+    loading: 'Loading the cart',
+    refreshFailed: 'Could not refresh the cart. Showing the saved one.',
+    pending_one: '{{count}} change waiting to sync',
+    pending_other: '{{count}} changes waiting to sync',
+    error: {
+      title: 'Could not load the cart',
+      message: 'Check your connection and try again.',
+    },
+    line: {
+      decrease: 'Remove one {{name}}',
+      increase: 'Add one more {{name}}',
+      quantity: '{{count}} in the cart',
+      remove: 'Remove',
+      removeLabel: 'Remove {{name}} from the cart',
+    },
+    toast: {
+      thisProduct: 'this product',
+      addFailed: 'Could not add {{name}} to your cart.',
+      updateFailed: 'Could not update {{name}} in your cart.',
+    },
   },
+  toast: { dismissHint: 'Double tap to dismiss' },
   settings: {
     title: 'Settings',
     language: { title: 'Language' },

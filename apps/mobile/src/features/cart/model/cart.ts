@@ -87,3 +87,23 @@ export function projectCart(
 ): CartLine[] {
   return ops.reduce<CartLine[]>((lines, op) => applyOp(lines, op), [...serverLines]);
 }
+
+/** What the cart summary shows. */
+export type CartTotals = { itemCount: number; totalCents: number };
+
+/**
+ * The count and the total of `lines`. `priceOf` gives the unit price in cents, or `undefined` for a
+ * product whose price is not known (it counts in the item count but adds nothing to the total).
+ */
+export function cartTotals(
+  lines: readonly CartLine[],
+  priceOf: (productId: string) => number | undefined,
+): CartTotals {
+  return lines.reduce<CartTotals>(
+    (totals, { productId, qty }) => ({
+      itemCount: totals.itemCount + qty,
+      totalCents: totals.totalCents + qty * (priceOf(productId) ?? 0),
+    }),
+    { itemCount: 0, totalCents: 0 },
+  );
+}

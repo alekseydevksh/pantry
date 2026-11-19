@@ -9,8 +9,8 @@ export type CatalogImageProps = {
   uri: string;
   /** The row's id. A recycled list row shows another item's photo, so the image must know that. */
   recyclingKey: string;
-  /** `card`: in a list. `hero`: at the top of a details screen. */
-  size: 'card' | 'hero';
+  /** `card`: in a list. `hero`: at the top of a details screen. `thumb`: a small square, in the cart. */
+  size: 'card' | 'hero' | 'thumb';
 };
 
 /**
@@ -42,4 +42,5 @@ const styles = StyleSheet.create((theme) => ({
   frame: { backgroundColor: theme.colors.surfaceRaised, overflow: 'hidden' },
   card: { height: theme.sizes.cardImage },
   hero: { height: theme.sizes.heroImage },
+  thumb: { width: theme.sizes.thumbImage, height: theme.sizes.thumbImage },
 }));

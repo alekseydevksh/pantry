@@ -1,5 +1,6 @@
 import {
   applyOp,
+  cartTotals,
   isValidIntent,
   MAX_QTY,
   projectCart,
@@ -108,5 +109,33 @@ describe('intents', () => {
   it('qtyOf is 0 for a product that is not in the cart', () => {
     expect(qtyOf(lines(['p1', 3]), 'p1')).toBe(3);
     expect(qtyOf(lines(['p1', 3]), 'p2')).toBe(0);
+  });
+});
+
+describe('cartTotals', () => {
+  const prices: Record<string, number> = { a: 150, b: 99 };
+  const priceOf = (productId: string) => prices[productId];
+
+  it('counts the items and adds up quantity × price', () => {
+    expect(
+      cartTotals(
+        [
+          { productId: 'a', qty: 2 },
+          { productId: 'b', qty: 3 },
+        ],
+        priceOf,
+      ),
+    ).toEqual({ itemCount: 5, totalCents: 2 * 150 + 3 * 99 });
+  });
+
+  it('counts a product with no known price but adds nothing for it', () => {
+    expect(cartTotals([{ productId: 'unknown', qty: 4 }], priceOf)).toEqual({
+      itemCount: 4,
+      totalCents: 0,
+    });
+  });
+
+  it('is zero for an empty cart', () => {
+    expect(cartTotals([], priceOf)).toEqual({ itemCount: 0, totalCents: 0 });
   });
 });

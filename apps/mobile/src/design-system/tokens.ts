@@ -76,6 +76,8 @@ export const sizes = {
   minTouchTarget: 44,
   /** Height of the photo on a feed or search card. */
   cardImage: 160,
+  /** Width and height of the small photo on a cart line. */
+  thumbImage: 88,
   /** Height of the photo at the top of a product or recipe screen. */
   heroImage: 240,
 } as const;

@@ -10,6 +10,13 @@ import { possibleTypesResult } from '@pantry/shared';
 import { cursorPagination } from './pagination';
 
 export const typePolicies: TypePolicies = {
+  Cart: {
+    fields: {
+      // Every cart response is the whole cart, so the new lines replace the old ones (a removed line
+      // must go). Without this Apollo warns that cache data may be lost.
+      lines: { merge: false },
+    },
+  },
   Query: {
     fields: {
       // One feed for everybody: no key arguments.
