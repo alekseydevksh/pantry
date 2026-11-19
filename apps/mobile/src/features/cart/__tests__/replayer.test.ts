@@ -352,6 +352,20 @@ describe('replay: scheduling', () => {
     expect(server.lines).toStrictEqual(lines(['p1', 1], ['p2', 1]));
   });
 
+  it('does not start a second run when a subscriber replays while the first one changes the queue', async () => {
+    // CartSync replays on every change of the queue, including the ones the replayer makes.
+    const { server, store, replayer } = setup();
+    const runs: Promise<void>[] = [];
+    store.subscribe(() => runs.push(replayer.replay()));
+    userDoes(store, server, add('p1'));
+
+    await jest.runAllTimersAsync();
+    await Promise.all(runs);
+
+    expect(server.requests).toStrictEqual(['key-1']);
+    expect(new Set(runs).size).toBe(1);
+  });
+
   it('starts a run for an operation added after a replay found the queue empty', async () => {
     // The app does this at launch: it replays whatever is saved, which is nothing, and later the
     // user adds something. An empty replay finishes before it returns, which must not count as

@@ -39,8 +39,6 @@ export function createReplayer({
   onError = () => {},
 }: ReplayerOptions) {
   let running: Promise<void> | null = null;
-  /** Between the start of `run` and its end, also while it is suspended on an `await`. */
-  let inRun = false;
   let wake: (() => void) | null = null;
   let stopped = false;
 
@@ -87,7 +85,6 @@ export function createReplayer({
   }
 
   async function run(): Promise<void> {
-    inRun = true;
     try {
       while (!stopped) {
         const step = nextStep(store.getState().queue, now());
@@ -98,7 +95,6 @@ export function createReplayer({
     } finally {
       // In the same synchronous step as the last "idle" check, so an operation added after it
       // starts a new run instead of joining one that is about to end.
-      inRun = false;
       running = null;
     }
   }
@@ -110,12 +106,13 @@ export function createReplayer({
      */
     replay(): Promise<void> {
       if (stopped) return Promise.resolve();
-      if (running) return running;
-      const current = run();
-      // A run that found nothing to do has finished before `run` returned, and cleared `running`
-      // itself: keeping its promise would make every later `replay()` return it and send nothing.
-      if (inRun) running = current;
-      return current;
+      // `run` starts in a microtask, after `running` is set. Started now, it would not be set yet
+      // when `run` changes the queue and a subscriber calls `replay()` again (CartSync does): that
+      // call would start a second run inside the first, without end. And a run that finds nothing
+      // to do would finish, and clear `running`, before this line stored its promise there: every
+      // later `replay()` would return that finished promise and send nothing.
+      running ??= Promise.resolve().then(run);
+      return running;
     },
 
     /** Clears the backoffs and replays at once, for example when the network comes back. */
