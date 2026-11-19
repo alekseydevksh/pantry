@@ -366,6 +366,22 @@ describe('replay: scheduling', () => {
     expect(new Set(runs).size).toBe(1);
   });
 
+  it('reads the clock when it runs, not when it was created', async () => {
+    // The replayer is made while the clock is faked (as the router's test renderer does), and the
+    // test goes back to real time. A clock taken at creation would stay frozen at the old time:
+    // every operation would look "not due yet" and the replay would wait forever.
+    const store = createQueueStore(createMemoryStorage());
+    const server = new FakeCartServer();
+    const replayer = createReplayer({ store, send: server.send, refetchCart: jest.fn() });
+    jest.useRealTimers();
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    userDoes(store, server, add('p1'));
+
+    await replayer.replay();
+
+    expect(server.requests).toStrictEqual(['key-1']);
+  });
+
   it('starts a run for an operation added after a replay found the queue empty', async () => {
     // The app does this at launch: it replays whatever is saved, which is nothing, and later the
     // user adds something. An empty replay finishes before it returns, which must not count as
