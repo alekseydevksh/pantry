@@ -1,5 +1,6 @@
 import { screen, userEvent } from '@testing-library/react-native';
 import { router } from 'expo-router';
+import { Text } from 'react-native';
 
 import { FeedDocument, ProductDocument } from '@pantry/shared';
 
@@ -49,24 +50,22 @@ describe('ProductScreen', () => {
     expect(screen.queryByLabelText('Loading the product')).not.toBeOnTheScreen();
   });
 
-  it('has an add-to-cart button that cannot be pressed until the cart exists (Phase 3)', async () => {
+  it('shows what the route passes as actions under the details, once the product has loaded', async () => {
     server.use(productsOf([makeProductDetails(2)]));
-    await renderWithProviders(<ProductScreen id="p2" />);
+    await renderWithProviders(
+      <ProductScreen id="p2" actions={(id) => <Text>{`Actions for ${id}`}</Text>} />,
+    );
 
-    const button = await screen.findByRole('button', { name: 'Add to cart' });
-
-    expect(button).toBeDisabled();
+    expect(screen.queryByText('Actions for p2')).not.toBeOnTheScreen();
+    expect(await screen.findByText('Actions for p2')).toBeOnTheScreen();
   });
 
-  it('says that a product is out of stock, in the header and on the button', async () => {
+  it('says that a product is out of stock', async () => {
     server.use(productsOf([makeProductDetails(2, { inStock: false })]));
 
     await renderWithProviders(<ProductScreen id="p2" />);
 
-    // (Twice: a label under the price, and the text of the button.)
-    expect(await screen.findAllByText('Out of stock')).toHaveLength(2);
-    expect(screen.getByRole('button', { name: 'Out of stock' })).toBeDisabled();
-    expect(screen.queryByRole('button', { name: 'Add to cart' })).not.toBeOnTheScreen();
+    expect(await screen.findByText('Out of stock')).toBeOnTheScreen();
   });
 
   it('lists allergens even when there are none, and leaves out diets when there are none', async () => {
@@ -88,7 +87,6 @@ describe('ProductScreen', () => {
     expect(await screen.findByText('Odpowiednie dla: Wegańskie')).toBeOnTheScreen();
     expect(screen.getByText('Zawiera: Orzechy, Nabiał')).toBeOnTheScreen();
     expect(screen.getByText('Dostępny')).toBeOnTheScreen();
-    expect(screen.getByRole('button', { name: 'Dodaj do koszyka' })).toBeOnTheScreen();
   });
 });
 

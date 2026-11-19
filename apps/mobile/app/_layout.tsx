@@ -3,8 +3,10 @@ import { Stack } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
 
 import { ThemedStatusBar } from '@/design-system';
+import { CartSync } from '@/features/cart';
 import { apolloClient } from '@/lib/apollo/appClient';
 import { useTranslation } from '@/lib/i18n';
+import { ToastHost } from '@/lib/toast';
 
 // The tabs are the first screen of the stack, also when the app opens on a deep link, so a
 // modal or a detail screen always has something to go back to.
@@ -17,6 +19,7 @@ export default function RootLayout() {
   return (
     <ApolloProvider client={apolloClient}>
       <ThemedStatusBar />
+      <CartSync />
       <Stack
         screenOptions={{
           // Only the arrow: the previous screen is the `(tabs)` group, which has no title to show.
@@ -34,6 +37,7 @@ export default function RootLayout() {
           options={{ presentation: 'modal', title: t('screens.assistant') }}
         />
       </Stack>
+      <ToastHost />
     </ApolloProvider>
   );
 }

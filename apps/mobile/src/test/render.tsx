@@ -21,10 +21,12 @@ import { renderRouter, type RenderRouterResult } from 'expo-router/testing-libra
 import type { ReactElement, ReactNode } from 'react';
 
 import type { ThemeName } from '@/design-system';
+import { CartSync } from '@/features/cart';
 import type * as AppClientModule from '@/lib/apollo/appClient';
 import { createApolloClient, createLink } from '@/lib/apollo';
 import { API_URL } from '@/lib/config';
 import { setLanguage, type Language } from '@/lib/i18n';
+import { ToastHost } from '@/lib/toast';
 
 import { setTestTheme } from './unistyles';
 
@@ -57,7 +59,14 @@ async function applyOptions({ theme, language }: ProviderOptions) {
 
 function providers(client: ReturnType<typeof createApolloClient>) {
   return function Providers({ children }: { children: ReactNode }) {
-    return <ApolloProvider client={client}>{children}</ApolloProvider>;
+    // The same app-wide parts as the root layout: the cart sync, and the toasts it raises.
+    return (
+      <ApolloProvider client={client}>
+        <CartSync />
+        {children}
+        <ToastHost />
+      </ApolloProvider>
+    );
   };
 }
 

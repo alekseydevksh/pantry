@@ -5,7 +5,10 @@
 import { act } from '@testing-library/react-native';
 
 import { startTestAnalytics } from './analytics';
+// (Not the feature's index: it loads the components, and Unistyles is not set up yet at this point.)
+import { configureCartQueue } from '@/features/cart/cartQueue';
 import { configureFlags } from '@/flags';
+import { toastStore } from '@/lib/toast/toastStore';
 import { resetTestMMKV } from './mmkv';
 import { resetTestNetwork } from './network';
 import { server } from './msw/server';
@@ -49,12 +52,17 @@ beforeEach(() => startTestAnalytics());
 // Every test starts on the default rollout for a fixed user that is in `list`; a test that needs
 // another variant calls `configureFlags` itself (and restores it).
 let restoreFlags = () => {};
+let restoreCartQueue = () => {};
 beforeEach(() => {
+  // Each test starts with an empty cart queue in memory, and no toast.
+  restoreCartQueue = configureCartQueue();
+  toastStore.getState().dismiss();
   restoreFlags = configureFlags({ config: { search_layout: { weights: { list: 1, grid: 0 } } } });
 });
 
 afterEach(async () => {
   restoreFlags();
+  restoreCartQueue();
   server.resetHandlers();
   // A test that switches to fake timers must not leak them into the next test.
   jest.useRealTimers();

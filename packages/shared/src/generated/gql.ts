@@ -14,6 +14,7 @@ import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
+    "query Cart {\n  cart {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}\n\nmutation SetCartQty($productId: ID!, $qty: Int!, $idempotencyKey: ID!) {\n  setCartQty(productId: $productId, qty: $qty, idempotencyKey: $idempotencyKey) {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}": typeof types.CartDocument,
     "query Feed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          ...ProductCardFields\n        }\n        ... on Recipe {\n          id\n          ...RecipeCardFields\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": typeof types.FeedDocument,
     "query Product($id: ID!) {\n  product(id: $id) {\n    id\n    ...ProductHeaderFields\n    ...ProductDetailsFields\n  }\n}\n\nfragment ProductHeaderFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}\n\nfragment ProductDetailsFields on Product {\n  id\n  description\n  diets\n  allergens\n}": typeof types.ProductDocument,
     "fragment ProductCardFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}": typeof types.ProductCardFieldsFragmentDoc,
@@ -24,6 +25,7 @@ type Documents = {
     "query TestFeed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          name\n          priceCents\n        }\n        ... on Recipe {\n          id\n          name\n          cookTimeMin\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": typeof types.TestFeedDocument,
 };
 const documents: Documents = {
+    "query Cart {\n  cart {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}\n\nmutation SetCartQty($productId: ID!, $qty: Int!, $idempotencyKey: ID!) {\n  setCartQty(productId: $productId, qty: $qty, idempotencyKey: $idempotencyKey) {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}": types.CartDocument,
     "query Feed($first: Int!, $after: String) {\n  feed(first: $first, after: $after) {\n    edges {\n      cursor\n      node {\n        __typename\n        ... on Product {\n          id\n          ...ProductCardFields\n        }\n        ... on Recipe {\n          id\n          ...RecipeCardFields\n        }\n      }\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}": types.FeedDocument,
     "query Product($id: ID!) {\n  product(id: $id) {\n    id\n    ...ProductHeaderFields\n    ...ProductDetailsFields\n  }\n}\n\nfragment ProductHeaderFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}\n\nfragment ProductDetailsFields on Product {\n  id\n  description\n  diets\n  allergens\n}": types.ProductDocument,
     "fragment ProductCardFields on Product {\n  id\n  name\n  imageUrl\n  priceCents\n  unit\n  inStock\n}": types.ProductCardFieldsFragmentDoc,
@@ -48,6 +50,10 @@ const documents: Documents = {
  */
 export function graphql(source: string): unknown;
 
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query Cart {\n  cart {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}\n\nmutation SetCartQty($productId: ID!, $qty: Int!, $idempotencyKey: ID!) {\n  setCartQty(productId: $productId, qty: $qty, idempotencyKey: $idempotencyKey) {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}"): (typeof documents)["query Cart {\n  cart {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}\n\nmutation SetCartQty($productId: ID!, $qty: Int!, $idempotencyKey: ID!) {\n  setCartQty(productId: $productId, qty: $qty, idempotencyKey: $idempotencyKey) {\n    id\n    itemCount\n    totalCents\n    lines {\n      id\n      qty\n      product {\n        id\n        priceCents\n        ...ProductHeaderFields\n      }\n    }\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

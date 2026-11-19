@@ -1,4 +1,5 @@
 import { useQuery } from '@apollo/client/react';
+import type { ReactNode } from 'react';
 import { ScrollView, View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
@@ -9,7 +10,6 @@ import { useTranslation } from '@/lib/i18n';
 import { FeatureErrorBoundary } from '@/lib/error-boundary';
 
 import { detailsStatus } from '../model/details';
-import { AddToCartButton } from './AddToCartButton';
 import { BodySkeleton } from './DetailsSkeleton';
 import { NotFoundState } from './NotFoundState';
 import { ProductDetails } from './ProductDetails';
@@ -18,21 +18,26 @@ import { ProductHeader } from './ProductHeader';
 export type ProductScreenProps = {
   /** The product id from the route, for example `p1`. */
   id: string;
+  /**
+   * What the user can do with the product, shown under its details (the add-to-cart button). The
+   * route passes it, so the catalog does not depend on the cart feature.
+   */
+  actions?: (id: string) => ReactNode;
 };
 
 /**
- * A product: header, details and the add-to-cart button, each reading its own fragment (ADR 0007).
+ * A product: header, details and its actions, each reading its own fragment (ADR 0007).
  * Like the recipe screen, it shows the cached header at once when opened from the feed.
  */
-export function ProductScreen({ id }: ProductScreenProps) {
+export function ProductScreen({ id, actions }: ProductScreenProps) {
   return (
     <FeatureErrorBoundary feature="product" resetKey={id}>
-      <ProductContent id={id} />
+      <ProductContent id={id} actions={actions} />
     </FeatureErrorBoundary>
   );
 }
 
-function ProductContent({ id }: ProductScreenProps) {
+function ProductContent({ id, actions }: ProductScreenProps) {
   const { t } = useTranslation();
   const { data, error, refetch } = useQuery(ProductDocument, { variables: { id } });
   const status = detailsStatus({
@@ -65,7 +70,7 @@ function ProductContent({ id }: ProductScreenProps) {
               {status === 'ready' && (
                 <>
                   <ProductDetails id={id} />
-                  <AddToCartButton id={id} />
+                  {actions?.(id)}
                 </>
               )}
             </View>

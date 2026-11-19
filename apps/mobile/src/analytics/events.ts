@@ -38,6 +38,14 @@ export type AnalyticsEvents = {
     filterCount: number;
   };
   /**
+   * The user added a product to the cart (a stepper in the cart is not an add). Sent when they act,
+   * not when the change reaches the server, so an offline add counts (ADR 0013).
+   */
+  add_to_cart: {
+    productId: string;
+    qty: number;
+  };
+  /**
    * The user saw a variant of a flag (ADR 0012). Once per session, flag and variant. `source` tells
    * an experiment's analysis to leave out overrides (`override`) and the kill switch (`default`).
    */
