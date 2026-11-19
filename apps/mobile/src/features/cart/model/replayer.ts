@@ -39,6 +39,8 @@ export function createReplayer({
   onError = () => {},
 }: ReplayerOptions) {
   let running: Promise<void> | null = null;
+  /** Between the start of `run` and its end, also while it is suspended on an `await`. */
+  let inRun = false;
   let wake: (() => void) | null = null;
   let stopped = false;
 
@@ -85,6 +87,7 @@ export function createReplayer({
   }
 
   async function run(): Promise<void> {
+    inRun = true;
     try {
       while (!stopped) {
         const step = nextStep(store.getState().queue, now());
@@ -95,6 +98,7 @@ export function createReplayer({
     } finally {
       // In the same synchronous step as the last "idle" check, so an operation added after it
       // starts a new run instead of joining one that is about to end.
+      inRun = false;
       running = null;
     }
   }
@@ -106,8 +110,12 @@ export function createReplayer({
      */
     replay(): Promise<void> {
       if (stopped) return Promise.resolve();
-      running ??= run();
-      return running;
+      if (running) return running;
+      const current = run();
+      // A run that found nothing to do has finished before `run` returned, and cleared `running`
+      // itself: keeping its promise would make every later `replay()` return it and send nothing.
+      if (inRun) running = current;
+      return current;
     },
 
     /** Clears the backoffs and replays at once, for example when the network comes back. */
