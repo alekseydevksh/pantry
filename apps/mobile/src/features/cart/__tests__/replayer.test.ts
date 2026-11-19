@@ -352,6 +352,20 @@ describe('replay: scheduling', () => {
     expect(server.lines).toStrictEqual(lines(['p1', 1], ['p2', 1]));
   });
 
+  it('starts a run for an operation added after a replay found the queue empty', async () => {
+    // The app does this at launch: it replays whatever is saved, which is nothing, and later the
+    // user adds something. An empty replay finishes before it returns, which must not count as
+    // "a run is going".
+    const { server, store, replayer } = setup();
+    await replayer.replay();
+
+    userDoes(store, server, add('p1'));
+    await replayAll(replayer);
+
+    expect(server.requests).toStrictEqual(['key-1']);
+    expect(server.lines).toStrictEqual(lines(['p1', 1]));
+  });
+
   it('treats a send that throws as an unknown failure, and reports it', async () => {
     const onError = jest.fn();
     let calls = 0;
