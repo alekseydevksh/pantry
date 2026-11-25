@@ -1,4 +1,4 @@
-import { act, userEvent, waitFor } from '@testing-library/react-native';
+import { act, configure, userEvent, waitFor } from '@testing-library/react-native';
 import { router } from 'expo-router';
 import { screen } from 'expo-router/testing-library';
 
@@ -19,6 +19,12 @@ import { renderApp } from '@/test/render';
 // `renderApp` turns on fake timers, and a request does not finish while time is faked (see
 // test/render.tsx). A flow that needs the server therefore goes back to the real timers once the
 // router is up. Nothing here waits for a debounce or a backoff, so it needs no fake time.
+
+// These flows load the whole route tree, so on a slow CI runner they take several times longer than
+// on a laptop (about 1 s here, over 5 s on GitHub Actions). The defaults (5 s per test, 1 s per
+// `findBy` and `waitFor`) are too tight for that, and a timeout here says nothing about the app.
+jest.setTimeout(30_000);
+configure({ asyncUtilTimeout: 10_000 });
 
 const catalog = [1, 2, 3, 4].map((n) => makeProduct(n, { name: `Soup ${n}`, priceCents: 100 * n }));
 const vegan = new Set(['p2', 'p3']);
